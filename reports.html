@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports & Analytics — ISAAC CLINIC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- APPLICATION SHELL -->
+    <div class="app-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" aria-label="Sidebar Navigation">
+            <div class="sidebar-brand">
+                <span class="brand-title">ISAAC CLINIC</span>
+                <span class="brand-subtitle">Clinic Management</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <span class="nav-section-title">MAIN</span>
+                    <ul>
+                        <li><a href="dashboard.html" class="nav-link"><span class="icon-placeholder">📊</span> Dashboard</a></li>
+                        <li><a href="patients.html" class="nav-link"><span class="icon-placeholder">👥</span> Patients</a></li>
+                        <li><a href="appointments.html" class="nav-link"><span class="icon-placeholder">📅</span> Appointments</a></li>
+                        <li><a href="doctors.html" class="nav-link"><span class="icon-placeholder">👨‍⚕️</span> Doctors</a></li>
+                        <li><a href="staff.html" class="nav-link"><span class="icon-placeholder">👩‍💼</span> Staff</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-section-title">CLINICAL</span>
+                    <ul>
+                        <li><a href="prescriptions.html" class="nav-link"><span class="icon-placeholder">💊</span> Prescriptions</a></li>
+                        <li><a href="laboratory.html" class="nav-link"><span class="icon-placeholder">🧪</span> Laboratory</a></li>
+                        <li><a href="pharmacy.html" class="nav-link"><span class="icon-placeholder">🏥</span> Pharmacy</a></li>
+                        <li><a href="medical-records.html" class="nav-link"><span class="icon-placeholder">📁</span> Medical Records</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-section-title">FINANCE</span>
+                    <ul>
+                        <li><a href="billing.html" class="nav-link"><span class="icon-placeholder">💰</span> Billing</a></li>
+                        <li><a href="payments.html" class="nav-link"><span class="icon-placeholder">💳</span> Payments</a></li>
+                        <li><a href="expenses.html" class="nav-link"><span class="icon-placeholder">📉</span> Expenses</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-section-title">MANAGEMENT</span>
+                    <ul>
+                        <li><a href="reports.html" class="nav-link active" aria-current="page"><span class="icon-placeholder">📈</span> Reports</a></li>
+                        <li><a href="settings.html" class="nav-link"><span class="icon-placeholder">⚙️</span> Settings</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile-card">
+                    <div class="user-avatar-placeholder">DR</div>
+                    <div class="user-info">
+                        <span class="user-name">Dr. Sarah Isaac</span>
+                        <span class="user-role">Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN WRAPPER -->
+        <div class="main-wrapper">
+
+            <!-- TOP HEADER -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="mobile-toggle-btn" aria-label="Toggle Sidebar"><span class="icon-placeholder">☰</span></button>
+                    <div class="header-title-breadcrumb">
+                        <h1 class="page-main-title">Reports & Analytics</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="dashboard.html">Dashboard</a></li>
+                                <li aria-current="page">Reports</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="header-center">
+                    <div class="search-field-wrapper">
+                        <input type="search" placeholder="Search reports..." aria-label="Search reports field">
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <div class="date-range-selector-wrapper">
+                        <select aria-label="Date Range Selector">
+                            <option>Today</option>
+                            <option>Yesterday</option>
+                            <option>This Week</option>
+                            <option selected>This Month</option>
+                            <option>Last Month</option>
+                            <option>This Quarter</option>
+                            <option>This Year</option>
+                            <option>Custom Range</option>
+                        </select>
+                    </div>
+                    <button class="notification-btn" aria-label="Notifications"><span class="icon-placeholder">🔔</span><span class="badge">3</span></button>
+                    <div class="user-mini-profile">
+                        <div class="user-avatar-placeholder">DR</div>
+                        <div class="user-meta">
+                            <span class="user-name">Dr. Sarah Isaac</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- MAIN CONTENT -->
+            <main class="main-content">
+
+                <!-- PAGE HEADER -->
+                <section class="page-header-section">
+                    <div class="page-header-content">
+                        <h2>Reports & Analytics</h2>
+                        <p>Monitor clinic performance, financial activity, patient trends and operational insights.</p>
+                    </div>
+                    <div class="page-header-actions">
+                        <button type="button" class="btn btn-primary">Generate Report</button>
+                        <button type="button" class="btn btn-secondary">Export Report</button>
+                        <button type="button" class="btn btn-outline">Schedule Report</button>
+                    </div>
+                </section>
+
+                <!-- GLOBAL REPORT FILTERS -->
+                <section class="report-filters-section card">
+                    <h3>Global Report Filters</h3>
+                    <form class="filters-grid">
+                        <div class="filter-group">
+                            <label>Date Range</label>
+                            <select aria-label="Filter Date Range">
+                                <option>Today</option>
+                                <option>Yesterday</option>
+                                <option>This Week</option>
+                                <option selected>This Month</option>
+                                <option>Last Month</option>
+                                <option>This Quarter</option>
+                                <option>This Year</option>
+                                <option>Custom Range</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>From Date</label>
+                            <input type="date" aria-label="From Date">
+                        </div>
+                        <div class="filter-group">
+                            <label>To Date</label>
+                            <input type="date" aria-label="To Date">
+                        </div>
+                        <div class="filter-group">
+                            <label>Department</label>
+                            <select aria-label="Department Filter">
+                                <option>All Departments</option>
+                                <option>General Medicine</option>
+                                <option>Cardiology</option>
+                                <option>Dermatology</option>
+                                <option>Pediatrics</option>
+                                <option>Laboratory</option>
+                                <option>Pharmacy</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Doctor</label>
+                            <select aria-label="Doctor Filter">
+                                <option>All Doctors</option>
+                                <option>Select Doctor</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Report Type</label>
+                            <select aria-label="Report Type Filter">
+                                <option>Clinical</option>
+                                <option>Financial</option>
+                                <option>Operational</option>
+                                <option>Patient</option>
+                                <option>Pharmacy</option>
+                                <option>Laboratory</option>
+                            </select>
+                        </div>
+                        <div class="filter-actions">
+                            <button type="button" class="btn btn-primary">Apply Filters</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                            <button type="button" class="btn btn-outline">Export</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- MANAGEMENT KPI CARDS -->
+                <section class="kpi-cards-grid" aria-label="Management KPIs">
+                    <!-- CARD 1 -->
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder">👥</span></div>
+                        <div class="kpi-content">
+                            <span class="kpi-label">Total Patients</span>
+                            <span class="kpi-value">12,450</span>
+                            <span class="kpi-trend positive">+12% from last month</span>
+                        </div>
+                    </article>
+                    <!-- CARD 2 -->
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder">📅</span></div>
+                        <div class="kpi-content">
+                            <span class="kpi-label">Appointments</span>
+                            <span class="kpi-value">3,820</span>
+                            <span class="kpi-trend positive">+8.4% growth</span>
+                        </div>
+                    </article>
+                    <!-- CARD 3 -->
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder">✅</span></div>
+                        <div class="kpi-content">
+                            <span class="kpi-label">Completed Consultations</span>
+                            <span class="kpi-value">3,410</span>
+                            <span class="kpi-supporting">89.3% completion rate</span>
+                        </div>
+                    </article>
+                    <!-- CARD 4 -->
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder">💰</span></div>
+                        <div class="kpi-content">
+                            <span class="kpi-label">Total Revenue</span>
+                            <span class="kpi-value">₹45,80,000</span>
+                            <span class="kpi-trend positive">+15.2% vs target</span>
+                        </div>
+                    </article>
+                    <!-- CARD 5 -->
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder">⏳</span></div>
+                        <div class="kpi-content">
+                            <span class="kpi-label">Outstanding Payments</span>
+                            <span class="kpi-value">₹2,15,000</span>
+                            <span class="kpi-supporting">Requires follow-up</span>
+                        </div>
+                    </article>
+                    <!-- CARD 6 -->
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder">🏥</span></div>
+                        <div class="kpi-content">
+                            <span class="kpi-label">Pharmacy Revenue</span>
+                            <span class="kpi-value">₹12,40,000</span>
+                            <span class="kpi-supporting">27% of total revenue</span>
+                        </div>
+                    </article>
+                    <!-- CARD 7 -->
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder">🧪</span></div>
+                        <div class="kpi-content">
+                            <span class="kpi-label">Laboratory Revenue</span>
+                            <span class="kpi-value">₹8,90,000</span>
+                            <span class="kpi-supporting">19% of total revenue</span>
+                        </div>
+                    </article>
+                    <!-- CARD 8 -->
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder">📉</span></div>
+                        <div class="kpi-content">
+                            <span class="kpi-label">Operating Expenses</span>
+                            <span class="kpi-value">₹18,50,000</span>
+                            <span class="kpi-supporting">Stable month-over-month</span>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- REVENUE OVERVIEW -->
+                <section class="analytics-section card">
+                    <div class="section-header">
+                        <h2>Revenue Overview</h2>
+                        <div class="period-selectors">
+                            <button class="btn btn-sm btn-outline">Daily</button>
+                            <button class="btn btn-sm btn-outline">Weekly</button>
+                            <button class="btn btn-sm btn-primary">Monthly</button>
+                            <button class="btn btn-sm btn-outline">Yearly</button>
+                        </div>
+                    </div>
+                    <div class="revenue-summary-metrics">
+                        <div class="metric-block">
+                            <span class="metric-label">Total Revenue</span>
+                            <span class="metric-val">₹45,80,000</span>
+                        </div>
+                        <div class="metric-block">
+                            <span class="metric-label">Previous Period</span>
+                            <span class="metric-val">₹39,75,000</span>
+                        </div>
+                        <div class="metric-block">
+                            <span class="metric-label">Growth Percentage</span>
+                            <span class="metric-val text-success">+15.2%</span>
+                        </div>
+                        <div class="metric-block">
+                            <span class="metric-label">Average Daily Revenue</span>
+                            <span class="metric-val">₹1,52,666</span>
+                        </div>
+                    </div>
+                    <!-- Chart Container -->
+                    <div class="chart-container" aria-label="Revenue Trend Chart Container">
+                        <div class="chart-title">Revenue Trend Chart</div>
+                        <div class="chart-subtitle">Monthly breakdown of clinical, pharmacy, and laboratory income</div>
+                        <div class="chart-placeholder-area">[ Revenue Trend Chart Placeholder ]</div>
+                        <div class="chart-legend">[ Legend: Consultations | Pharmacy | Laboratory | Total ]</div>
+                    </div>
+                </section>
+
+                <!-- APPOINTMENT ANALYTICS -->
+                <section class="analytics-section card">
+                    <div class="section-header">
+                        <h2>Appointment Analytics</h2>
+                    </div>
+                    <div class="metrics-row">
+                        <div class="metric-pill">Total Appointments: <strong>3,820</strong></div>
+                        <div class="metric-pill">Completed: <strong>3,410</strong></div>
+                        <div class="metric-pill">Cancelled: <strong>210</strong></div>
+                        <div class="metric-pill">No Show: <strong>120</strong></div>
+                        <div class="metric-pill">Pending: <strong>80</strong></div>
+                    </div>
+                    <div class="charts-grid-2">
+                        <div class="chart-container">
+                            <div class="chart-title">Appointment Trend</div>
+                            <div class="chart-placeholder-area">[ Appointment Trend Chart Placeholder ]</div>
+                            <div class="chart-legend">[ Legend: Appointments Over Time ]</div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-title">Appointment Status Distribution</div>
+                            <div class="chart-placeholder-area">[ Status Distribution Pie/Donut Placeholder ]</div>
+                            <div class="chart-legend">[ Legend: Completed | Cancelled | No Show | Pending ]</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PATIENT ANALYTICS -->
+                <section class="analytics-section card">
+                    <div class="section-header">
+                        <h2>Patient Analytics</h2>
+                    </div>
+                    <div class="metrics-row">
+                        <div class="metric-pill">New Patients: <strong>1,450</strong></div>
+                        <div class="metric-pill">Returning Patients: <strong>4,200</strong></div>
+                        <div class="metric-pill">Active Patients: <strong>8,900</strong></div>
+                        <div class="metric-pill">Inactive Patients: <strong>3,550</strong></div>
+                        <div class="metric-pill">Follow-up Patients: <strong>920</strong></div>
+                    </div>
+                    <div class="charts-grid-4">
+                        <div class="chart-container">
+                            <div class="chart-title">A. Patient Registration Trend</div>
+                            <div class="chart-placeholder-area">[ Chart Placeholder ]</div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-title">B. Patient Type Distribution</div>
+                            <div class="chart-placeholder-area">[ Chart Placeholder ]</div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-title">C. Age Group Distribution</div>
+                            <div class="chart-placeholder-area">[ Chart Placeholder ]</div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-title">D. Gender Distribution</div>
+                            <div class="chart-placeholder-area">[ Chart Placeholder ]</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DOCTOR PERFORMANCE -->
+                <section class="table-section card">
+                    <div class="section-header">
+                        <h2>Doctor Performance</h2>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Doctor</th>
+                                    <th>Department</th>
+                                    <th>Appointments</th>
+                                    <th>Completed</th>
+                                    <th>Cancelled</th>
+                                    <th>Patients</th>
+                                    <th>Revenue</th>
+                                    <th>Rating</th>
+                                    <th>Completion Rate</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Dr. Robert Fox</td>
+                                    <td>Cardiology</td>
+                                    <td>240</td>
+                                    <td>230</td>
+                                    <td>10</td>
+                                    <td>195</td>
+                                    <td>₹8,50,000</td>
+                                    <td>4.9</td>
+                                    <td>95.8%</td>
+                                    <td><span class="badge status-excellent">Excellent</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Dr. Eleanor Pena</td>
+                                    <td>Dermatology</td>
+                                    <td>210</td>
+                                    <td>195</td>
+                                    <td>15</td>
+                                    <td>180</td>
+                                    <td>₹6,20,000</td>
+                                    <td>4.8</td>
+                                    <td>92.8%</td>
+                                    <td><span class="badge status-good">Good</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Dr. Cameron Williamson</td>
+                                    <td>Pediatrics</td>
+                                    <td>180</td>
+                                    <td>160</td>
+                                    <td>20</td>
+                                    <td>150</td>
+                                    <td>₹4,90,000</td>
+                                    <td>4.5</td>
+                                    <td>88.8%</td>
+                                    <td><span class="badge status-good">Good</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Dr. Esther Howard</td>
+                                    <td>General Medicine</td>
+                                    <td>310</td>
+                                    <td>280</td>
+                                    <td>30</td>
+                                    <td>290</td>
+                                    <td>₹7,10,000</td>
+                                    <td>4.2</td>
+                                    <td>90.3%</td>
+                                    <td><span class="badge status-average">Average</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Dr. Wade Warren</td>
+                                    <td>Orthopedics</td>
+                                    <td>150</td>
+                                    <td>120</td>
+                                    <td>30</td>
+                                    <td>110</td>
+                                    <td>₹5,50,000</td>
+                                    <td>3.8</td>
+                                    <td>80.0%</td>
+                                    <td><span class="badge status-attention">Needs Attention</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Dr. Jenny Wilson</td>
+                                    <td>Neurology</td>
+                                    <td>130</td>
+                                    <td>125</td>
+                                    <td>5</td>
+                                    <td>115</td>
+                                    <td>₹6,80,000</td>
+                                    <td>4.9</td>
+                                    <td>96.1%</td>
+                                    <td><span class="badge status-excellent">Excellent</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Dr. Albert Flores</td>
+                                    <td>Ophthalmology</td>
+                                    <td>190</td>
+                                    <td>175</td>
+                                    <td>15</td>
+                                    <td>165</td>
+                                    <td>₹3,90,000</td>
+                                    <td>4.6</td>
+                                    <td>92.1%</td>
+                                    <td><span class="badge status-good">Good</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Dr. Courtney Henry</td>
+                                    <td>ENT</td>
+                                    <td>160</td>
+                                    <td>140</td>
+                                    <td>20</td>
+                                    <td>130</td>
+                                    <td>₹2,90,000</td>
+                                    <td>4.1</td>
+                                    <td>87.5%</td>
+                                    <td><span class="badge status-average">Average</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="pagination-container">
+                        <div class="pagination-info">Showing 1–8 of 8 entries</div>
+                        <div class="rows-per-page">
+                            Rows per page: 
+                            <select aria-label="Rows per page">
+                                <option selected>10</option>
+                                <option>25</option>
+                                <option>50</option>
+                                <option>100</option>
+                            </select>
+                        </div>
+                        <div class="pagination-controls">
+                            <button class="btn btn-sm btn-outline" disabled>Previous</button>
+                            <button class="btn btn-sm btn-primary active">1</button>
+                            <button class="btn btn-sm btn-outline" disabled>Next</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DEPARTMENT PERFORMANCE -->
+                <section class="table-section card">
+                    <div class="section-header">
+                        <h2>Department Performance</h2>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Department</th>
+                                    <th>Doctors</th>
+                                    <th>Patients</th>
+                                    <th>Appointments</th>
+                                    <th>Completed</th>
+                                    <th>Revenue</th>
+                                    <th>Expenses</th>
+                                    <th>Net Revenue</th>
+                                    <th>Performance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Cardiology</td>
+                                    <td>4</td>
+                                    <td>650</td>
+                                    <td>720</td>
+                                    <td>690</td>
+                                    <td>₹14,50,000</td>
+                                    <td>₹3,20,000</td>
+                                    <td>₹11,30,000</td>
+                                    <td><span class="badge status-excellent">High</span></td>
+                                </tr>
+                                <tr>
+                                    <td>General Medicine</td>
+                                    <td>6</td>
+                                    <td>1,200</td>
+                                    <td>1,350</td>
+                                    <td>1,250</td>
+                                    <td>₹11,80,000</td>
+                                    <td>₹4,10,000</td>
+                                    <td>₹7,70,000</td>
+                                    <td><span class="badge status-good">Good</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Dermatology</td>
+                                    <td>3</td>
+                                    <td>450</td>
+                                    <td>500</td>
+                                    <td>470</td>
+                                    <td>₹8,20,000</td>
+                                    <td>₹1,90,000</td>
+                                    <td>₹6,30,000</td>
+                                    <td><span class="badge status-good">Good</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Pediatrics</td>
+                                    <td>3</td>
+                                    <td>410</td>
+                                    <td>440</td>
+                                    <td>410</td>
+                                    <td>₹6,90,000</td>
+                                    <td>₹2,10,000</td>
+                                    <td>₹4,80,000</td>
+                                    <td><span class="badge status-average">Average</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Neurology</td>
+                                    <td>2</td>
+                                    <td>280</td>
+                                    <td>310</td>
+                                    <td>300</td>
+                                    <td>₹9,10,000</td>
+                                    <td>₹2,50,000</td>
+                                    <td>₹6,60,000</td>
+                                    <td><span class="badge status-excellent">High</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Orthopedics</td>
+                                    <td>3</td>
+                                    <td>320</td>
+                                    <td>380</td>
+                                    <td>340</td>
+                                    <td>₹7,50,000</td>
+                                    <td>₹2,80,000</td>
+                                    <td>₹4,70,000</td>
+                                    <td><span class="badge status-attention">Moderate</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Ophthalmology</td>
+                                    <td>2</td>
+                                    <td>350</td>
+                                    <td>390</td>
+                                    <td>370</td>
+                                    <td>₹5,40,000</td>
+                                    <td>₹1,60,000</td>
+                                    <td>₹3,80,000</td>
+                                    <td><span class="badge status-good">Good</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="pagination-container">
+                        <div class="pagination-info">Showing 1–7 of 7 entries</div>
+                        <div class="rows-per-page">
+                            Rows per page: 
+                            <select aria-label="Rows per page">
+                                <option selected>10</option>
+                                <option>25</option>
+                                <option>50</option>
+                                <option>100</option>
+                            </select>
+                        </div>
+                        <div class="pagination-controls">
+                            <button class="btn btn-sm btn-outline" disabled>Previous</button>
+                            <button class="btn btn-sm btn-primary active">1</button>
+                            <button class="btn btn-sm btn-outline" disabled>Next</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FINANCIAL REPORT -->
+                <section class="analytics-section card">
+                    <div class="section-header">
+                        <h2>Financial Reports</h2>
+                    </div>
+                    <div class="metrics-grid-summary">
+                        <div class="metric-card-sm">Gross Revenue: <strong>₹52,00,000</strong></div>
+                        <div class="metric-card-sm">Collected Revenue: <strong>₹45,80,000</strong></div>
+                        <div class="metric-card-sm">Pending Revenue: <strong>₹4,20,000</strong></div>
+                        <div class="metric-card-sm">Outstanding: <strong>₹2,00,000</strong></div>
+                        <div class="metric-card-sm">Refunds: <strong>₹1,20,000</strong></div>
+                        <div class="metric-card-sm">Expenses: <strong>₹18,50,000</strong></div>
+                        <div class="metric-card-sm">Net Revenue: <strong>₹27,30,000</strong></div>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Revenue Type</th>
+                                    <th>Transactions</th>
+                                    <th>Gross Amount</th>
+                                    <th>Discounts</th>
+                                    <th>Tax</th>
+                                    <th>Refunds</th>
+                                    <th>Net Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2026-08-14</td>
+                                    <td>Consultation</td>
+                                    <td>140</td>
+                                    <td>₹3,50,000</td>
+                                    <td>₹20,000</td>
+                                    <td>₹17,500</td>
+                                    <td>₹5,000</td>
+                                    <td>₹3,42,500</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-08-14</td>
+                                    <td>Treatment</td>
+                                    <td>45</td>
+                                    <td>₹4,20,000</td>
+                                    <td>₹30,000</td>
+                                    <td>₹21,000</td>
+                                    <td>₹10,000</td>
+                                    <td>₹4,01,000</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-08-14</td>
+                                    <td>Laboratory</td>
+                                    <td>95</td>
+                                    <td>₹1,90,000</td>
+                                    <td>₹10,000</td>
+                                    <td>₹9,500</td>
+                                    <td>₹2,000</td>
+                                    <td>₹1,87,500</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-08-14</td>
+                                    <td>Pharmacy</td>
+                                    <td>210</td>
+                                    <td>₹2,80,000</td>
+                                    <td>₹15,000</td>
+                                    <td>₹14,000</td>
+                                    <td>₹4,000</td>
+                                    <td>₹2,75,000</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-08-14</td>
+                                    <td>Procedure</td>
+                                    <td>18</td>
+                                    <td>₹5,10,000</td>
+                                    <td>₹40,000</td>
+                                    <td>₹25,500</td>
+                                    <td>₹15,000</td>
+                                    <td>₹4,80,500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="pagination-container">
+                        <div class="pagination-info">Showing 1–5 of 5 entries</div>
+                        <div class="rows-per-page">
+                            Rows per page: 
+                            <select aria-label="Rows per page">
+                                <option selected>10</option>
+                                <option>25</option>
+                                <option>50</option>
+                                <option>100</option>
+                            </select>
+                        </div>
+                        <div class="pagination-controls">
+                            <button class="btn btn-sm btn-outline" disabled>Previous</button>
+                            <button class="btn btn-sm btn-primary active">1</button>
+                            <button class="btn btn-sm btn-outline" disabled>Next</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PHARMACY REPORT -->
+                <section class="analytics-section card">
+                    <div class="section-header">
+                        <h2>Pharmacy Analytics</h2>
+                    </div>
+                    <div class="metrics-row">
+                        <div class="metric-pill">Total Medicines: <strong>1,240</strong></div>
+                        <div class="metric-pill">Medicines Dispensed: <strong>4,850</strong></div>
+                        <div class="metric-pill">Pharmacy Revenue: <strong>₹12,40,000</strong></div>
+                        <div class="metric-pill">Low Stock Items: <strong>14</strong></div>
+                        <div class="metric-pill">Expired Items: <strong>3</strong></div>
+                    </div>
+                    <div class="sub-section-grid">
+                        <div class="sub-card">
+                            <h4>A. Top Dispensed Medicines</h4>
+                            <div class="table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Medicine</th>
+                                            <th>Category</th>
+                                            <th>Quantity</th>
+                                            <th>Revenue</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Paracetamol 650mg</td>
+                                            <td>Analgesic</td>
+                                            <td>1,200</td>
+                                            <td>₹45,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Amoxicillin 500mg</td>
+                                            <td>Antibiotic</td>
+                                            <td>850</td>
+                                            <td>₹95,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Omeprazole 20mg</td>
+                                            <td>Antacid</td>
+                                            <td>720</td>
+                                            <td>₹61,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Metformin 500mg</td>
+                                            <td>Antidiabetic</td>
+                                            <td>650</td>
+                                            <td>₹52,000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="sub-card">
+                            <h4>B. Inventory Value</h4>
+                            <div class="inventory-metrics-list">
+                                <div class="inv-metric-item">Current Inventory Value: <strong>₹24,50,000</strong></div>
+                                <div class="inv-metric-item">Expired Stock Value: <strong>₹12,500</strong></div>
+                                <div class="inv-metric-item">Low Stock Value: <strong>₹45,000</strong></div>
+                            </div>
+                            <div class="chart-container mt-3">
+                                <div class="chart-title">C. Pharmacy Revenue Trend</div>
+                                <div class="chart-placeholder-area">[ Pharmacy Revenue Trend Placeholder ]</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- LABORATORY REPORT -->
+                <section class="analytics-section card">
+                    <div class="section-header">
+                        <h2>Laboratory Analytics</h2>
+                    </div>
+                    <div class="metrics-row">
+                        <div class="metric-pill">Total Lab Orders: <strong>1,890</strong></div>
+                        <div class="metric-pill">Completed Tests: <strong>1,810</strong></div>
+                        <div class="metric-pill">Pending Tests: <strong>80</strong></div>
+                        <div class="metric-pill">Critical Results: <strong>24</strong></div>
+                        <div class="metric-pill">Lab Revenue: <strong>₹8,90,000</strong></div>
+                    </div>
+                    <div class="sub-section-grid">
+                        <div class="sub-card">
+                            <h4>A. Most Requested Tests</h4>
+                            <div class="table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Test</th>
+                                            <th>Category</th>
+                                            <th>Orders</th>
+                                            <th>Revenue</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Complete Blood Count (CBC)</td>
+                                            <td>Hematology</td>
+                                            <td>540</td>
+                                            <td>₹2,70,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lipid Profile</td>
+                                            <td>Biochemistry</td>
+                                            <td>380</td>
+                                            <td>₹2,28,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thyroid Profile (T3 T4 TSH)</td>
+                                            <td>Endocrinology</td>
+                                            <td>290</td>
+                                            <td>₹1,74,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Liver Function Test (LFT)</td>
+                                            <td>Biochemistry</td>
+                                            <td>240</td>
+                                            <td>₹1,92,000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="sub-card">
+                            <div class="chart-container">
+                                <div class="chart-title">B. Test Status Distribution</div>
+                                <div class="chart-placeholder-area">[ Test Status Distribution Placeholder ]</div>
+                            </div>
+                            <div class="chart-container mt-3">
+                                <div class="chart-title">C. Laboratory Revenue Trend</div>
+                                <div class="chart-placeholder-area">[ Laboratory Revenue Trend Placeholder ]</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PATIENT CLINICAL REPORT -->
+                <section class="table-section card">
+                    <div class="section-header">
+                        <h2>Patient Clinical Report</h2>
+                    </div>
+                    <div class="metrics-row">
+                        <div class="metric-pill">Total Consultations: <strong>3,410</strong></div>
+                        <div class="metric-pill">Diagnoses Count: <strong>3,150</strong></div>
+                        <div class="metric-pill">Prescriptions Issued: <strong>2,980</strong></div>
+                        <div class="metric-pill">Lab Tests Ordered: <strong>1,890</strong></div>
+                        <div class="metric-pill">Follow-ups: <strong>920</strong></div>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Patient ID</th>
+                                    <th>Patient</th>
+                                    <th>Doctor</th>
+                                    <th>Visit Date</th>
+                                    <th>Visit Type</th>
+                                    <th>Diagnosis</th>
+                                    <th>Prescription</th>
+                                    <th>Lab Orders</th>
+                                    <th>Follow-up</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>PT-10892</td>
+                                    <td>John Doe</td>
+                                    <td>Dr. Robert Fox</td>
+                                    <td>2026-08-14</td>
+                                    <td>Consultation</td>
+                                    <td>Hypertension</td>
+                                    <td>Amlodipine 5mg</td>
+                                    <td>Lipid Profile</td>
+                                    <td>2026-08-28</td>
+                                    <td><span class="badge status-good">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>PT-10893</td>
+                                    <td>Jane Smith</td>
+                                    <td>Dr. Eleanor Pena</td>
+                                    <td>2026-08-14</td>
+                                    <td>Follow-up</td>
+                                    <td>Eczema</td>
+                                    <td>Hydrocortisone Cr.</td>
+                                    <td>None</td>
+                                    <td>2026-09-04</td>
+                                    <td><span class="badge status-good">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>PT-10894</td>
+                                    <td>Michael Johnson</td>
+                                    <td>Dr. Esther Howard</td>
+                                    <td>2026-08-14</td>
+                                    <td>Emergency</td>
+                                    <td>Acute Bronchitis</td>
+                                    <td>Azithromycin 500mg</td>
+                                    <td>CBC, Chest X-Ray</td>
+                                    <td>2026-08-21</td>
+                                    <td><span class="badge status-good">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>PT-10895</td>
+                                    <td>Emily Davis</td>
+                                    <td>Dr. Cameron Williamson</td>
+                                    <td>2026-08-14</td>
+                                    <td>Consultation</td>
+                                    <td>Viral Fever</td>
+                                    <td>Paracetamol 650mg</td>
+                                    <td>CBC</td>
+                                    <td>2026-08-18</td>
+                                    <td><span class="badge status-good">Completed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- EXPENSE REPORT -->
+                <section class="analytics-section card">
+                    <div class="section-header">
+                        <h2>Expense Analytics</h2>
+                    </div>
+                    <div class="metrics-row">
+                        <div class="metric-pill">Total Expenses: <strong>₹18,50,000</strong></div>
+                        <div class="metric-pill">Monthly Expenses: <strong>₹18,50,000</strong></div>
+                        <div class="metric-pill">Pending Expenses: <strong>₹1,20,000</strong></div>
+                    </div>
+                    <div class="expense-categories-chips mb-3">
+                        <span class="badge">Salaries: ₹9,50,000</span>
+                        <span class="badge">Utilities: ₹1,10,000</span>
+                        <span class="badge">Pharmacy Purchases: ₹3,50,000</span>
+                        <span class="badge">Laboratory Supplies: ₹1,40,000</span>
+                        <span class="badge">Equipment: ₹1,00,000</span>
+                        <span class="badge">Maintenance: ₹50,000</span>
+                        <span class="badge">Rent: ₹2,00,000</span>
+                        <span class="badge">Other: ₹50,000</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Expense ID</th>
+                                    <th>Date</th>
+                                    <th>Category</th>
+                                    <th>Description</th>
+                                    <th>Vendor</th>
+                                    <th>Amount</th>
+                                    <th>Payment Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>EXP-301</td>
+                                    <td>2026-08-01</td>
+                                    <td>Rent</td>
+                                    <td>Clinic Monthly Lease</td>
+                                    <td>Metro Realty</td>
+                                    <td>₹2,00,000</td>
+                                    <td><span class="badge status-good">Paid</span></td>
+                                </tr>
+                                <tr>
+                                    <td>EXP-302</td>
+                                    <td>2026-08-05</td>
+                                    <td>Salaries</td>
+                                    <td>Staff Payroll August</td>
+                                    <td>Internal</td>
+                                    <td>₹9,50,000</td>
+                                    <td><span class="badge status-good">Paid</span></td>
+                                </tr>
+                                <tr>
+                                    <td>EXP-303</td>
+                                    <td>2026-08-08</td>
+                                    <td>Pharmacy Purchases</td>
+                                    <td>Medicine Restock Batch A</td>
+                                    <td>PharmaCorp Ltd</td>
+                                    <td>₹3,50,000</td>
+                                    <td><span class="badge status-attention">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>EXP-304</td>
+                                    <td>2026-08-10</td>
+                                    <td>Utilities</td>
+                                    <td>Electricity & Water Bill</td>
+                                    <td>City Municipal</td>
+                                    <td>₹1,10,000</td>
+                                    <td><span class="badge status-good">Paid</span></td>
+                                </tr>
+                                <tr>
+                                    <td>EXP-305</td>
+                                    <td>2026-08-12</td>
+                                    <td>Laboratory Supplies</td>
+                                    <td>Reagents & Test Kits</td>
+                                    <td>BioLab Inc</td>
+                                    <td>₹1,40,000</td>
+                                    <td><span class="badge status-average">Partial</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- OPERATIONAL REPORT -->
+                <section class="analytics-section card">
+                    <div class="section-header">
+                        <h2>Operational Overview</h2>
+                    </div>
+                    <div class="metrics-row">
+                        <div class="metric-pill">Average Appointment Duration: <strong>18 mins</strong></div>
+                        <div class="metric-pill">Average Waiting Time: <strong>12 mins</strong></div>
+                        <div class="metric-pill">Doctor Utilization: <strong>78%</strong></div>
+                        <div class="metric-pill">Room Utilization: <strong>82%</strong></div>
+                        <div class="metric-pill">Lab Turnaround Time: <strong>45 mins</strong></div>
+                        <div class="metric-pill">Pharmacy Processing Time: <strong>8 mins</strong></div>
+                    </div>
+                    <div class="charts-grid-2">
+                        <div class="chart-container">
+                            <div class="chart-title">Daily Clinic Traffic</div>
+                            <div class="chart-placeholder-area">[ Traffic Chart Placeholder ]</div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-title">Peak Hours</div>
+                            <div class="chart-placeholder-area">[ Peak Hours Chart Placeholder ]</div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-title">Waiting Time Trend</div>
+                            <div class="chart-placeholder-area">[ Waiting Time Trend Placeholder ]</div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-title">Resource Utilization</div>
+                            <div class="chart-placeholder-area">[ Resource Utilization Placeholder ]</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- REPORT LIBRARY -->
+                <section class="analytics-section card">
+                    <div class="section-header">
+                        <h2>Report Library</h2>
+                    </div>
+                    <div class="report-category-group">
+                        <h3>Clinical Reports</h3>
+                        <div class="report-cards-grid">
+                            <article class="report-card">
+                                <h4>Patient Visit Report</h4>
+                                <p>Comprehensive logs of all patient visits, diagnoses, and treatments.</p>
+                                <span class="last-gen">Last Generated: 2026-08-14</span>
+                                <div class="report-card-actions">
+                                    <button class="btn btn-sm btn-primary">Generate</button>
+                                    <button class="btn btn-sm btn-outline">Export</button>
+                                </div>
+                            </article>
+                            <article class="report-card">
+                                <h4>Diagnosis Report</h4>
+                                <p>Breakdown of disease incidence and diagnostic trends across departments.</p>
+                                <span class="last-gen">Last Generated: 2026-08-13</span>
+                                <div class="report-card-actions">
+                                    <button class="btn btn-sm btn-primary">Generate</button>
+                                    <button class="btn btn-sm btn-outline">Export</button>
+                                </div>
+                            </article>
+                            <article class="report-card">
+                                <h4>Prescription Report</h4>
+                                <p>Analysis of medications prescribed, dosage patterns, and frequencies.</p>
+                                <span class="last-gen">Last Generated: 2026-08-12</span>
+                                <div class="report-card-actions">
+                                    <button class="btn btn-sm btn-primary">Generate</button>
+                                    <button class="btn btn-sm btn-outline">Export</button>
+                                </div>
+                            </article>
+                            <article class="report-card">
+                                <h4>Medical History Report</h4>
+                                <p>Historical patient health record analytics and chronic condition summaries.</p>
+                                <span class="last-gen">Last Generated: 2026-08-10</span>
+                                <div class="report-card-actions">
+                                    <button class="btn btn-sm btn-primary">Generate</button>
+                                    <button class="btn btn-sm btn-outline">Export</button>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="report-category-group mt-4">
+                        <h3>Financial Reports</h3>
+                        <div class="report-cards-grid">
+                            <article class="report-card">
+                                <h4>Revenue Report</h4>
+                                <p>Detailed revenue streams from consultations, procedures, lab, and pharmacy.</p>
+                                <span class="last-gen">Last Generated: 2026-08-14</span>
+                                <div class="report-card-actions">
+                                    <button class="btn btn-sm btn-primary">Generate</button>
+                                    <button class="btn btn-sm btn-outline">Export</button>
+                                </div>
+                            </article>
+                            <article class="report-card">
+                                <h4>Billing Report</h4>
+                                <p>Invoicing history, paid invoices, and pending payment tracking.</p>
+                                <span class="last-gen">Last Generated: 2026-08-14</span>
+                                <div class="report-card-actions">
+                                    <button class="btn btn-sm btn-primary">Generate</button>
+                                    <button class="btn btn-sm btn-outline">Export</button>
+                                </div>
+                            </article>
+                            <article class="report-card">
+                                <h4>Payment Report</h4>
+                                <p>Transaction methods, cashflows, and payment gateway settlement summaries.</p>
+                                <span class="last-gen">Last Generated: 2026-08-13</span>
+                                <div class="report-card-actions">
+                                    <button class="btn btn-sm btn-primary">Generate</button>
+                                    <button class="btn btn-sm btn-outline">Export</button>
+                                </div>
+                            </article>
+                            <article class="report-card">
+                                <h4>Expense Report</h4>
+                                <p>Categorized operational expenses, vendor bills, and payroll outflows.</p>
+                                <span class="last-gen">Last Generated: 2026-08-11</span>
+                                <div class="report-card-actions">
+                                    <button class="btn btn-sm btn-primary">Generate</button>
+                                    <button class="btn btn-sm btn-outline">Export</button>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="report-category-group mt-4">
+                        <h3>Operational Reports</h3>
+                        <div class="report-cards-grid">
+                            <article class="report-card">
+                                <h4>Appointment Report</h4>
+                                <p>Appointment volumes, cancellations, no-shows, and scheduling efficiency.</p>
+                                <span class="last-gen">Last Generated: 2026-08-14</span>
+                                <div class="report-card-actions">
+                                    <button class="btn btn-sm btn-primary">Generate</button>
+                                    <button class="btn btn-sm btn-outline">Export</button>
+                                </div>
+                            </article>
+                            <article class="report-card">
+                                <h4>Doctor Performance</h4>
+                                <p>Consultation counts, completion rates, patient ratings, and generated revenue.</p>
+                                <span class="last-gen">Last Generated: 2026-08-14</span>
+                                <div class="report-card-actions">
+                                    <button class="btn btn-sm btn-primary">Generate</button>
+                                    <button class="btn btn-sm btn-outline">Export</button>
+                                </div>
+                            </article>
+                            <article class="report-card">
+                                <h4>Department Performance</h4>
+                                <p>Cross-departmental efficiency, patient footfall, and net contributions.</p>
+                                <span class="last-gen">Last Generated: 2026-08-13</span>
+                                <div class="report-card-actions">
+                                    <button class="btn btn-sm btn-primary">Generate</button>
+                                    <button class="btn btn-sm btn-outline">Export</button>
+                                </div>
+                            </article>
+                            <article class="report-card">
+                                <h4>Staff Performance</h4>
+                                <p>Administrative and nursing staff productivity metrics and attendance.</p>
+                                <span class="last-gen">Last Generated: 2026-08-09</span>
+                                <div class="report-card-actions">
+                                    <button class="btn btn-sm btn-primary">Generate</button>
+                                    <button class="btn btn-sm btn-outline">Export</button>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="report-category-group mt-4">
+                        <h3>Inventory Reports</h3>
+                        <div class="report-cards-grid">
+                            <article class="report-card">
+                                <h4>Pharmacy Stock</h4>
+                                <p>Current stock levels, batch numbers, and medicine availability.</p>
+                                <span class="last-gen">Last Generated: 2026-08-14</span>
+                                <div class="report-card-actions">
+                                    <button class="btn btn-sm btn-primary">Generate</button>
+                                    <button class="btn btn-sm btn-outline">Export</button>
+                                </div>
+                            </article>
+                            <article class="report-card">
+                                <h4>Low Stock</h4>
+                                <p>Alerts for items below minimum threshold requiring reordering.</p>
+                                <span class="last-gen">Last Generated: 2026-08-14</span>
+                                <div class="report-card-actions">
+                                    <button class="btn btn-sm btn-primary">Generate</button>
+                                    <button class="btn btn-sm btn-outline">Export</button>
+                                </div>
+                            </article>
+                            <article class="report-card">
+                                <h4>Expiry Report</h4>
+                                <p>Tracking nearing-expiry medications and expired stock write-offs.</p>
+                                <span class="last-gen">Last Generated: 2026-08-13</span>
+                                <div class="report-card-actions">
+                                    <button class="btn btn-sm btn-primary">Generate</button>
+                                    <button class="btn btn-sm btn-outline">Export</button>
+                                </div>
+                            </article>
+                            <article class="report-card">
+                                <h4>Laboratory Inventory</h4>
+                                <p>Reagents, test kits, and consumable inventory tracking.</p>
+                                <span class="last-gen">Last Generated: 2026-08-10</span>
+                                <div class="report-card-actions">
+                                    <button class="btn btn-sm btn-primary">Generate</button>
+                                    <button class="btn btn-sm btn-outline">Export</button>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CUSTOM REPORT BUILDER -->
+                <section class="analytics-section card">
+                    <div class="section-header">
+                        <h2>Create Custom Report</h2>
+                    </div>
+                    <form class="custom-report-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Report Name</label>
+                                <input type="text" placeholder="Enter custom report name" aria-label="Report Name">
+                            </div>
+                            <div class="form-group">
+                                <label>Report Category</label>
+                                <select aria-label="Report Category">
+                                    <option>Clinical</option>
+                                    <option>Financial</option>
+                                    <option>Operational</option>
+                                    <option>Patient</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Data Source</label>
+                                <select aria-label="Data Source">
+                                    <option>Patients</option>
+                                    <option>Appointments</option>
+                                    <option>Doctors</option>
+                                    <option>Billing</option>
+                                    <option>Pharmacy</option>
+                                    <option>Laboratory</option>
+                                    <option>Expenses</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>From Date</label>
+                                <input type="date" aria-label="From Date">
+                            </div>
+                            <div class="form-group">
+                                <label>To Date</label>
+                                <input type="date" aria-label="To Date">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Columns Selection</label>
+                            <div class="checkbox-group-grid">
+                                <label><input type="checkbox" checked> ID / Reference</label>
+                                <label><input type="checkbox" checked> Name / Title</label>
+                                <label><input type="checkbox" checked> Date & Time</label>
+                                <label><input type="checkbox"> Department</label>
+                                <label><input type="checkbox"> Status</label>
+                                <label><input type="checkbox"> Amount / Revenue</label>
+                                <label><input type="checkbox"> Assigned Doctor</label>
+                                <label><input type="checkbox"> Remarks / Notes</label>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Filters</label>
+                                <input type="text" placeholder="Add Filter placeholder" aria-label="Add Filter placeholder">
+                            </div>
+                            <div class="form-group">
+                                <label>Grouping</label>
+                                <input type="text" placeholder="Group By placeholder" aria-label="Group By placeholder">
+                            </div>
+                            <div class="form-group">
+                                <label>Sorting</label>
+                                <input type="text" placeholder="Sort By placeholder" aria-label="Sort By placeholder">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Format</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="format" checked> PDF</label>
+                                <label><input type="radio" name="format"> Excel</label>
+                                <label><input type="radio" name="format"> CSV</label>
+                            </div>
+                        </div>
+
+                        <div class="builder-actions">
+                            <button type="button" class="btn btn-secondary">Preview Report</button>
+                            <button type="button" class="btn btn-primary">Generate Report</button>
+                            <button type="button" class="btn btn-outline">Save Template</button>
+                            <button type="reset" class="btn btn-outline">Cancel</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- SCHEDULED REPORTS -->
+                <section class="table-section card">
+                    <div class="section-header">
+                        <h2>Scheduled Reports</h2>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Report Name</th>
+                                    <th>Report Type</th>
+                                    <th>Frequency</th>
+                                    <th>Recipient</th>
+                                    <th>Last Generated</th>
+                                    <th>Next Run</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Monthly Financial Summary</td>
+                                    <td>Financial</td>
+                                    <td>Monthly</td>
+                                    <td>admin@isaaclinic.com</td>
+                                    <td>2026-08-01</td>
+                                    <td>2026-09-01</td>
+                                    <td><span class="badge status-good">Active</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline">Edit</button>
+                                        <button class="btn btn-sm btn-primary">Run Now</button>
+                                        <button class="btn btn-sm btn-outline">Pause</button>
+                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Weekly Pharmacy Stock Alert</td>
+                                    <td>Inventory</td>
+                                    <td>Weekly</td>
+                                    <td>pharmacy@isaaclinic.com</td>
+                                    <td>2026-08-10</td>
+                                    <td>2026-08-17</td>
+                                    <td><span class="badge status-good">Active</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline">Edit</button>
+                                        <button class="btn btn-sm btn-primary">Run Now</button>
+                                        <button class="btn btn-sm btn-outline">Pause</button>
+                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Daily Appointment Log</td>
+                                    <td>Operational</td>
+                                    <td>Daily</td>
+                                    <td>reception@isaaclinic.com</td>
+                                    <td>2026-08-14</td>
+                                    <td>2026-08-15</td>
+                                    <td><span class="badge status-average">Paused</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline">Edit</button>
+                                        <button class="btn btn-sm btn-primary">Run Now</button>
+                                        <button class="btn btn-sm btn-outline">Resume</button>
+                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- RECENT REPORTS -->
+                <section class="table-section card">
+                    <div class="section-header">
+                        <h2>Recent Reports</h2>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Report ID</th>
+                                    <th>Report Name</th>
+                                    <th>Type</th>
+                                    <th>Generated By</th>
+                                    <th>Generated Date</th>
+                                    <th>Format</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>REP-9001</td>
+                                    <td>Monthly Financial Statement</td>
+                                    <td>Financial</td>
+                                    <td>Dr. Sarah Isaac</td>
+                                    <td>2026-08-14 14:30</td>
+                                    <td>PDF</td>
+                                    <td><span class="badge status-good">Ready</span></td>
+                                    <td><button class="btn btn-sm btn-primary">Download</button></td>
+                                </tr>
+                                <tr>
+                                    <td>REP-9002</td>
+                                    <td>Cardiology Department Audit</td>
+                                    <td>Clinical</td>
+                                    <td>Dr. Robert Fox</td>
+                                    <td>2026-08-14 12:15</td>
+                                    <td>Excel</td>
+                                    <td><span class="badge status-good">Ready</span></td>
+                                    <td><button class="btn btn-sm btn-primary">Download</button></td>
+                                </tr>
+                                <tr>
+                                    <td>REP-9003</td>
+                                    <td>Pharmacy Low Stock Audit</td>
+                                    <td>Inventory</td>
+                                    <td>System</td>
+                                    <td>2026-08-14 09:00</td>
+                                    <td>CSV</td>
+                                    <td><span class="badge status-good">Ready</span></td>
+                                    <td><button class="btn btn-sm btn-primary">Download</button></td>
+                                </tr>
+                                <tr>
+                                    <td>REP-9004</td>
+                                    <td>Patient Demographics Q3</td>
+                                    <td>Patient</td>
+                                    <td>Dr. Sarah Isaac</td>
+                                    <td>2026-08-13 16:45</td>
+                                    <td>PDF</td>
+                                    <td><span class="badge status-good">Ready</span></td>
+                                    <td><button class="btn btn-sm btn-primary">Download</button></td>
+                                </tr>
+                                <tr>
+                                    <td>REP-9005</td>
+                                    <td>Laboratory Test Volume Report</td>
+                                    <td>Laboratory</td>
+                                    <td>Lab Tech</td>
+                                    <td>2026-08-13 11:20</td>
+                                    <td>Excel</td>
+                                    <td><span class="badge status-attention">Processing</span></td>
+                                    <td><button class="btn btn-sm btn-outline" disabled>Wait</button></td>
+                                </tr>
+                                <tr>
+                                    <td>REP-9006</td>
+                                    <td>Staff Attendance & Payroll</td>
+                                    <td>Operational</td>
+                                    <td>HR Manager</td>
+                                    <td>2026-08-12 15:00</td>
+                                    <td>PDF</td>
+                                    <td><span class="badge status-good">Ready</span></td>
+                                    <td><button class="btn btn-sm btn-primary">Download</button></td>
+                                </tr>
+                                <tr>
+                                    <td>REP-9007</td>
+                                    <td>Emergency Consultations Log</td>
+                                    <td>Clinical</td>
+                                    <td>Dr. Esther Howard</td>
+                                    <td>2026-08-11 18:30</td>
+                                    <td>CSV</td>
+                                    <td><span class="badge status-attention">Failed</span></td>
+                                    <td><button class="btn btn-sm btn-outline">Retry</button></td>
+                                </tr>
+                                <tr>
+                                    <td>REP-9008</td>
+                                    <td>Annual Asset Depreciation</td>
+                                    <td>Financial</td>
+                                    <td>Finance Dept</td>
+                                    <td>2026-08-10 10:10</td>
+                                    <td>PDF</td>
+                                    <td><span class="badge status-good">Ready</span></td>
+                                    <td><button class="btn btn-sm btn-primary">Download</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="pagination-container">
+                        <div class="pagination-info">Showing 1–8 of 8 entries</div>
+                        <div class="rows-per-page">
+                            Rows per page: 
+                            <select aria-label="Rows per page">
+                                <option selected>10</option>
+                                <option>25</option>
+                                <option>50</option>
+                                <option>100</option>
+                            </select>
+                        </div>
+                        <div class="pagination-controls">
+                            <button class="btn btn-sm btn-outline" disabled>Previous</button>
+                            <button class="btn btn-sm btn-primary active">1</button>
+                            <button class="btn btn-sm btn-outline" disabled>Next</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CHART PLACEHOLDER SYSTEM (Required Registry Showcase) -->
+                <section class="analytics-section card">
+                    <div class="section-header">
+                        <h2>Chart Placeholder System (Registry)</h2>
+                    </div>
+                    <div class="charts-grid-2">
+                        <div class="chart-container" aria-label="Revenue Trend Chart Summary">
+                            <div class="chart-title">Revenue Trend</div>
+                            <div class="chart-subtitle">Monthly financial inflows</div>
+                            <div class="chart-placeholder-area">[ Chart Placeholder: Revenue Trend ]</div>
+                            <div class="chart-legend">[ Legend: Revenue ]</div>
+                        </div>
+                        <div class="chart-container" aria-label="Appointment Trend Chart Summary">
+                            <div class="chart-title">Appointment Trend</div>
+                            <div class="chart-subtitle">Daily bookings</div>
+                            <div class="chart-placeholder-area">[ Chart Placeholder: Appointment Trend ]</div>
+                            <div class="chart-legend">[ Legend: Appointments ]</div>
+                        </div>
+                        <div class="chart-container" aria-label="Patient Growth Chart Summary">
+                            <div class="chart-title">Patient Growth</div>
+                            <div class="chart-subtitle">New vs Returning</div>
+                            <div class="chart-placeholder-area">[ Chart Placeholder: Patient Growth ]</div>
+                            <div class="chart-legend">[ Legend: Growth ]</div>
+                        </div>
+                        <div class="chart-container" aria-label="Doctor Performance Chart Summary">
+                            <div class="chart-title">Doctor Performance</div>
+                            <div class="chart-subtitle">Consultation volume per doctor</div>
+                            <div class="chart-placeholder-area">[ Chart Placeholder: Doctor Performance ]</div>
+                            <div class="chart-legend">[ Legend: Doctors ]</div>
+                        </div>
+                        <div class="chart-container" aria-label="Department Performance Chart Summary">
+                            <div class="chart-title">Department Performance</div>
+                            <div class="chart-subtitle">Revenue contribution per dept</div>
+                            <div class="chart-placeholder-area">[ Chart Placeholder: Department Performance ]</div>
+                            <div class="chart-legend">[ Legend: Departments ]</div>
+                        </div>
+                        <div class="chart-container" aria-label="Pharmacy Revenue Chart Summary">
+                            <div class="chart-title">Pharmacy Revenue</div>
+                            <div class="chart-subtitle">Medicine sales overview</div>
+                            <div class="chart-placeholder-area">[ Chart Placeholder: Pharmacy Revenue ]</div>
+                            <div class="chart-legend">[ Legend: Pharmacy ]</div>
+                        </div>
+                        <div class="chart-container" aria-label="Laboratory Revenue Chart Summary">
+                            <div class="chart-title">Laboratory Revenue</div>
+                            <div class="chart-subtitle">Test earnings overview</div>
+                            <div class="chart-placeholder-area">[ Chart Placeholder: Laboratory Revenue ]</div>
+                            <div class="chart-legend">[ Legend: Laboratory ]</div>
+                        </div>
+                        <div class="chart-container" aria-label="Expense Trend Chart Summary">
+                            <div class="chart-title">Expense Trend</div>
+                            <div class="chart-subtitle">Monthly outflows</div>
+                            <div class="chart-placeholder-area">[ Chart Placeholder: Expense Trend ]</div>
+                            <div class="chart-legend">[ Legend: Expenses ]</div>
+                        </div>
+                        <div class="chart-container" aria-label="Patient Demographics Chart Summary">
+                            <div class="chart-title">Patient Demographics</div>
+                            <div class="chart-subtitle">Age and gender distribution</div>
+                            <div class="chart-placeholder-area">[ Chart Placeholder: Patient Demographics ]</div>
+                            <div class="chart-legend">[ Legend: Demographics ]</div>
+                        </div>
+                        <div class="chart-container" aria-label="Clinic Traffic Chart Summary">
+                            <div class="chart-title">Clinic Traffic</div>
+                            <div class="chart-subtitle">Hourly footfall</div>
+                            <div class="chart-placeholder-area">[ Chart Placeholder: Clinic Traffic ]</div>
+                            <div class="chart-legend">[ Legend: Traffic ]</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- EMPTY STATES DEMONSTRATION -->
+                <section class="analytics-section card">
+                    <div class="section-header">
+                        <h2>Empty States Demonstration</h2>
+                    </div>
+                    <div class="empty-states-grid">
+                        <div class="empty-state">
+                            <div class="empty-icon"><span class="icon-placeholder">📭</span></div>
+                            <h4>No Reports Found</h4>
+                            <p>We couldn't find any reports matching your search criteria.</p>
+                            <button class="btn btn-sm btn-primary">Clear Search</button>
+                        </div>
+                        <div class="empty-state">
+                            <div class="empty-icon"><span class="icon-placeholder">📊</span></div>
+                            <h4>No Data Available</h4>
+                            <p>There is currently no data available for the selected timeframe.</p>
+                            <button class="btn btn-sm btn-primary">Change Date Range</button>
+                        </div>
+                        <div class="empty-state">
+                            <div class="empty-icon"><span class="icon-placeholder">⏰</span></div>
+                            <h4>No Scheduled Reports</h4>
+                            <p>You have not configured any automated scheduled reports yet.</p>
+                            <button class="btn btn-sm btn-primary">Schedule Report</button>
+                        </div>
+                        <div class="empty-state">
+                            <div class="empty-icon"><span class="icon-placeholder">📁</span></div>
+                            <h4>No Recent Reports</h4>
+                            <p>Generated reports will appear here for quick download.</p>
+                            <button class="btn btn-sm btn-primary">Generate Now</button>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- FOOTER -->
+            <footer class="app-footer">
+                <p>&copy; 2026 ISAAC CLINIC Management System. All rights reserved.</p>
+            </footer>
+
+        </div>
+    </div>
+
+</body>
+</html>

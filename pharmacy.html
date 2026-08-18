@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Management - ISAAC CLINIC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" aria-label="Main Sidebar">
+            <div class="brand-section">
+                <h1 class="brand-title">ISAAC CLINIC</h1>
+                <p class="brand-subtitle">Clinic Management</p>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-group">
+                    <span class="nav-category">MAIN</span>
+                    <a href="index.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📊</span> Dashboard</a>
+                    <a href="patients.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">👥</span> Patients</a>
+                    <a href="appointments.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📅</span> Appointments</a>
+                    <a href="doctors.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">👨‍⚕️</span> Doctors</a>
+                    <a href="staff.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📋</span> Staff</a>
+                </div>
+                <div class="nav-group">
+                    <span class="nav-category">CLINICAL</span>
+                    <a href="prescriptions.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">💊</span> Prescriptions</a>
+                    <a href="laboratory.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">🔬</span> Laboratory</a>
+                    <a href="pharmacy.html" class="nav-link active" aria-current="page"><span class="icon-placeholder" aria-hidden="true">🏥</span> Pharmacy</a>
+                    <a href="medical-records.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📁</span> Medical Records</a>
+                </div>
+                <div class="nav-group">
+                    <span class="nav-category">FINANCE</span>
+                    <a href="billing.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">💳</span> Billing</a>
+                    <a href="payments.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">💰</span> Payments</a>
+                    <a href="expenses.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📉</span> Expenses</a>
+                </div>
+                <div class="nav-group">
+                    <span class="nav-category">MANAGEMENT</span>
+                    <a href="reports.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📈</span> Reports</a>
+                    <a href="settings.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">⚙️</span> Settings</a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile-mini">
+                    <div class="user-avatar-placeholder" aria-hidden="true">Dr</div>
+                    <div class="user-info">
+                        <span class="user-name">Dr. Sarah Isaac</span>
+                        <span class="user-role">Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Wrapper -->
+        <div class="main-wrapper">
+            <!-- Top Header -->
+            <header class="top-header" role="banner">
+                <div class="header-left">
+                    <button class="sidebar-toggle-btn" aria-label="Toggle Sidebar"><span class="icon-placeholder" aria-hidden="true">☰</span></button>
+                    <div class="breadcrumb-container">
+                        <h2 class="page-title">Pharmacy</h2>
+                        <nav aria-label="Breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="index.html">Dashboard</a></li>
+                                <li aria-current="page">Pharmacy</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <div class="header-center">
+                    <div class="global-search-container">
+                        <input type="search" class="global-search-input" placeholder="Search medicine, SKU, batch or supplier" aria-label="Search medicine, SKU, batch or supplier">
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="notification-btn" aria-label="Notifications"><span class="icon-placeholder" aria-hidden="true">🔔</span><span class="badge" aria-label="3 unread notifications">3</span></button>
+                    <div class="user-profile-header">
+                        <div class="user-avatar-placeholder" aria-hidden="true">SI</div>
+                        <div class="user-meta">
+                            <span class="user-name">Dr. Sarah Isaac</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="main-content" role="main">
+                <!-- Page Header -->
+                <section class="page-header-section">
+                    <div class="page-header-content">
+                        <h3 class="page-heading">Pharmacy Management</h3>
+                        <p class="page-description">Manage medicines, inventory, stock levels, dispensing and pharmacy operations.</p>
+                    </div>
+                    <div class="page-actions">
+                        <button type="button" class="btn btn-primary" aria-label="Add Medicine">Add Medicine</button>
+                        <button type="button" class="btn btn-secondary" aria-label="Dispense Medicine">Dispense Medicine</button>
+                        <button type="button" class="btn btn-outline" aria-label="Stock Adjustment">Stock Adjustment</button>
+                        <button type="button" class="btn btn-outline" aria-label="Export Inventory">Export Inventory</button>
+                    </div>
+                </section>
+
+                <!-- Pharmacy KPI Cards -->
+                <section class="kpi-grid" aria-label="Pharmacy Summary">
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">💊</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">Total Medicines</span>
+                            <h4 class="kpi-value">1,248</h4>
+                            <span class="kpi-trend positive">Active inventory items</span>
+                        </div>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">💰</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">Total Stock Value</span>
+                            <h4 class="kpi-value">₹24,50,000</h4>
+                            <span class="kpi-trend positive">Asset valuation</span>
+                        </div>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">⚠️</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">Low Stock</span>
+                            <h4 class="kpi-value">12</h4>
+                            <span class="kpi-trend warning">Action required</span>
+                        </div>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">⏳</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">Expiring Soon</span>
+                            <h4 class="kpi-value">8</h4>
+                            <span class="kpi-trend warning">Within 60 days</span>
+                        </div>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">❌</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">Expired</span>
+                            <h4 class="kpi-value">3</h4>
+                            <span class="kpi-trend danger">Needs removal</span>
+                        </div>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">🧾</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">Today's Dispensing</span>
+                            <h4 class="kpi-value">84</h4>
+                            <span class="kpi-trend positive">+15% vs yesterday</span>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Search & Filter Toolbar -->
+                <section class="filter-section" aria-label="Pharmacy Filters">
+                    <form class="filter-form">
+                        <div class="filter-group search-group">
+                            <label for="pharmacy-search">Search</label>
+                            <input type="text" id="pharmacy-search" placeholder="Medicine name, medicine ID/SKU, batch number or supplier">
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-category">Medicine Category</label>
+                            <select id="filter-category">
+                                <option value="">All Categories</option>
+                                <option value="tablets">Tablets</option>
+                                <option value="capsules">Capsules</option>
+                                <option value="syrups">Syrups</option>
+                                <option value="injections">Injections</option>
+                                <option value="topical">Creams & Ointments</option>
+                                <option value="drops">Drops</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-type">Medicine Type</label>
+                            <select id="filter-type">
+                                <option value="">All Types</option>
+                                <option value="generic">Generic</option>
+                                <option value="branded">Branded</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-stock-status">Stock Status</label>
+                            <select id="filter-stock-status">
+                                <option value="">All Statuses</option>
+                                <option value="in-stock">In Stock</option>
+                                <option value="low-stock">Low Stock</option>
+                                <option value="out-of-stock">Out of Stock</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-expiry-status">Expiry Status</label>
+                            <select id="filter-expiry-status">
+                                <option value="">All Expiry Statuses</option>
+                                <option value="good">Good</option>
+                                <option value="expiring-soon">Expiring Soon</option>
+                                <option value="expired">Expired</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-supplier">Supplier</label>
+                            <select id="filter-supplier">
+                                <option value="">All Suppliers</option>
+                                <option value="sup1">MediCorp Pharma</option>
+                                <option value="sup2">Apollo Pharmaceuticals</option>
+                                <option value="sup3">HealthCare Drugs Ltd</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-prescription">Prescription Required</label>
+                            <select id="filter-prescription">
+                                <option value="">All</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="expiry-from">Expiry From</label>
+                            <input type="date" id="expiry-from">
+                        </div>
+                        <div class="filter-group">
+                            <label for="expiry-to">Expiry To</label>
+                            <input type="date" id="expiry-to">
+                        </div>
+                        <div class="filter-actions">
+                            <button type="button" class="btn btn-primary" aria-label="Search Medicines">Search</button>
+                            <button type="button" class="btn btn-secondary" aria-label="Apply Filters">Filter</button>
+                            <button type="reset" class="btn btn-outline" aria-label="Reset Filters">Reset</button>
+                            <button type="button" class="btn btn-outline" aria-label="Export Inventory">Export</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Bulk Action Bar (Hidden/Structural) -->
+                <section class="bulk-action-bar" aria-label="Bulk Actions" hidden>
+                    <span class="selected-count">0 Medicines Selected</span>
+                    <div class="bulk-buttons">
+                        <button type="button" class="btn btn-outline">Export</button>
+                        <button type="button" class="btn btn-outline">Adjust Stock</button>
+                        <button type="button" class="btn btn-outline">Mark for Reorder</button>
+                        <button type="button" class="btn btn-outline">Archive</button>
+                    </div>
+                </section>
+
+                <!-- Medicine Inventory Table -->
+                <section class="table-section" aria-labelledby="inventory-heading">
+                    <div class="section-header">
+                        <h4 id="inventory-heading">Medicine Inventory</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" aria-label="Select all medicines"></th>
+                                    <th>Medicine ID</th>
+                                    <th>Medicine</th>
+                                    <th>Category</th>
+                                    <th>Form</th>
+                                    <th>Strength</th>
+                                    <th>Batch No.</th>
+                                    <th>Stock</th>
+                                    <th>Unit</th>
+                                    <th>Expiry Date</th>
+                                    <th>Supplier</th>
+                                    <th>Selling Price</th>
+                                    <th>Stock Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select Paracetamol 500mg"></td>
+                                    <td>MED-5001</td>
+                                    <td>Paracetamol</td>
+                                    <td>Tablets</td>
+                                    <td>Tablet</td>
+                                    <td>500mg</td>
+                                    <td>BAT-9012</td>
+                                    <td>1,200</td>
+                                    <td>Strips</td>
+                                    <td>2028-05-12</td>
+                                    <td>MediCorp Pharma</td>
+                                    <td>₹25.00</td>
+                                    <td><span class="badge badge-paid">In Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Paracetamol 500mg">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Paracetamol 500mg">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Adjust Stock for Paracetamol 500mg">📊</button>
+                                            <button type="button" class="btn-icon" aria-label="Dispense Paracetamol 500mg">💊</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for Paracetamol 500mg">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select Amoxicillin 250mg"></td>
+                                    <td>MED-5002</td>
+                                    <td>Amoxicillin</td>
+                                    <td>Capsules</td>
+                                    <td>Capsule</td>
+                                    <td>250mg</td>
+                                    <td>BAT-9013</td>
+                                    <td>45</td>
+                                    <td>Strips</td>
+                                    <td>2027-11-20</td>
+                                    <td>Apollo Pharmaceuticals</td>
+                                    <td>₹120.00</td>
+                                    <td><span class="badge badge-partial">Low Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Amoxicillin 250mg">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Amoxicillin 250mg">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Adjust Stock for Amoxicillin 250mg">📊</button>
+                                            <button type="button" class="btn-icon" aria-label="Dispense Amoxicillin 250mg">💊</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for Amoxicillin 250mg">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select Cetirizine 10mg"></td>
+                                    <td>MED-5003</td>
+                                    <td>Cetirizine</td>
+                                    <td>Tablets</td>
+                                    <td>Tablet</td>
+                                    <td>10mg</td>
+                                    <td>BAT-9014</td>
+                                    <td>850</td>
+                                    <td>Strips</td>
+                                    <td>2028-08-15</td>
+                                    <td>HealthCare Drugs Ltd</td>
+                                    <td>₹35.00</td>
+                                    <td><span class="badge badge-paid">In Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Cetirizine 10mg">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Cetirizine 10mg">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Adjust Stock for Cetirizine 10mg">📊</button>
+                                            <button type="button" class="btn-icon" aria-label="Dispense Cetirizine 10mg">💊</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for Cetirizine 10mg">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select Cough Syrup DX"></td>
+                                    <td>MED-5004</td>
+                                    <td>Cough Syrup DX</td>
+                                    <td>Syrups</td>
+                                    <td>Syrup</td>
+                                    <td>100ml</td>
+                                    <td>BAT-9015</td>
+                                    <td>0</td>
+                                    <td>Bottles</td>
+                                    <td>2027-06-30</td>
+                                    <td>MediCorp Pharma</td>
+                                    <td>₹95.00</td>
+                                    <td><span class="badge badge-overdue">Out of Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Cough Syrup DX">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Cough Syrup DX">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Adjust Stock for Cough Syrup DX">📊</button>
+                                            <button type="button" class="btn-icon" aria-label="Dispense Cough Syrup DX">💊</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for Cough Syrup DX">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select Diclofenac Sodium Gel"></td>
+                                    <td>MED-5005</td>
+                                    <td>Diclofenac Gel</td>
+                                    <td>Creams & Ointments</td>
+                                    <td>Cream</td>
+                                    <td>30g</td>
+                                    <td>BAT-9016</td>
+                                    <td>320</td>
+                                    <td>Tubes</td>
+                                    <td>2027-09-10</td>
+                                    <td>Apollo Pharmaceuticals</td>
+                                    <td>₹75.00</td>
+                                    <td><span class="badge badge-paid">In Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Diclofenac Gel">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Diclofenac Gel">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Adjust Stock for Diclofenac Gel">📊</button>
+                                            <button type="button" class="btn-icon" aria-label="Dispense Diclofenac Gel">💊</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for Diclofenac Gel">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select Pantoprazole 40mg"></td>
+                                    <td>MED-5006</td>
+                                    <td>Pantoprazole</td>
+                                    <td>Tablets</td>
+                                    <td>Tablet</td>
+                                    <td>40mg</td>
+                                    <td>BAT-9017</td>
+                                    <td>500</td>
+                                    <td>Strips</td>
+                                    <td>2028-02-28</td>
+                                    <td>HealthCare Drugs Ltd</td>
+                                    <td>₹110.00</td>
+                                    <td><span class="badge badge-paid">In Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Pantoprazole 40mg">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Pantoprazole 40mg">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Adjust Stock for Pantoprazole 40mg">📊</button>
+                                            <button type="button" class="btn-icon" aria-label="Dispense Pantoprazole 40mg">💊</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for Pantoprazole 40mg">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select Insulin Regular"></td>
+                                    <td>MED-5007</td>
+                                    <td>Insulin Regular</td>
+                                    <td>Injections</td>
+                                    <td>Injection</td>
+                                    <td>10ml</td>
+                                    <td>BAT-9018</td>
+                                    <td>15</td>
+                                    <td>Vials</td>
+                                    <td>2026-09-05</td>
+                                    <td>MediCorp Pharma</td>
+                                    <td>₹450.00</td>
+                                    <td><span class="badge badge-partial">Expiring Soon</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Insulin Regular">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Insulin Regular">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Adjust Stock for Insulin Regular">📊</button>
+                                            <button type="button" class="btn-icon" aria-label="Dispense Insulin Regular">💊</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for Insulin Regular">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select Salbutamol Inhaler"></td>
+                                    <td>MED-5008</td>
+                                    <td>Salbutamol Inhaler</td>
+                                    <td>Medical Supplies</td>
+                                    <td>Inhaler</td>
+                                    <td>100mcg</td>
+                                    <td>BAT-9019</td>
+                                    <td>210</td>
+                                    <td>Pieces</td>
+                                    <td>2028-04-10</td>
+                                    <td>Apollo Pharmaceuticals</td>
+                                    <td>₹280.00</td>
+                                    <td><span class="badge badge-paid">In Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Salbutamol Inhaler">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Salbutamol Inhaler">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Adjust Stock for Salbutamol Inhaler">📊</button>
+                                            <button type="button" class="btn-icon" aria-label="Dispense Salbutamol Inhaler">💊</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for Salbutamol Inhaler">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select Eye Drops Normal Saline"></td>
+                                    <td>MED-5009</td>
+                                    <td>Eye Drops Saline</td>
+                                    <td>Drops</td>
+                                    <td>Drops</td>
+                                    <td>10ml</td>
+                                    <td>BAT-9020</td>
+                                    <td>180</td>
+                                    <td>Bottles</td>
+                                    <td>2027-10-15</td>
+                                    <td>HealthCare Drugs Ltd</td>
+                                    <td>₹65.00</td>
+                                    <td><span class="badge badge-paid">In Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Eye Drops Saline">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Eye Drops Saline">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Adjust Stock for Eye Drops Saline">📊</button>
+                                            <button type="button" class="btn-icon" aria-label="Dispense Eye Drops Saline">💊</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for Eye Drops Saline">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select Azithromycin 500mg"></td>
+                                    <td>MED-5010</td>
+                                    <td>Azithromycin</td>
+                                    <td>Tablets</td>
+                                    <td>Tablet</td>
+                                    <td>500mg</td>
+                                    <td>BAT-9021</td>
+                                    <td>30</td>
+                                    <td>Strips</td>
+                                    <td>2026-06-10</td>
+                                    <td>MediCorp Pharma</td>
+                                    <td>₹145.00</td>
+                                    <td><span class="badge badge-overdue">Expired</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Azithromycin 500mg">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Azithromycin 500mg">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Adjust Stock for Azithromycin 500mg">📊</button>
+                                            <button type="button" class="btn-icon" aria-label="Dispense Azithromycin 500mg">💊</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for Azithromycin 500mg">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Empty State for Inventory (Hidden) -->
+                    <div class="empty-state" hidden>
+                        <div class="empty-icon"><span class="icon-placeholder" aria-hidden="true">📭</span></div>
+                        <h5>No Medicines Found</h5>
+                        <p>There are no medicines matching your search criteria.</p>
+                        <button type="button" class="btn btn-primary">Add New Medicine</button>
+                    </div>
+                    <!-- Pagination -->
+                    <nav class="pagination-container" aria-label="Inventory Table Navigation">
+                        <span class="pagination-info">Showing 1–10 of 1,248 medicines</span>
+                        <div class="pagination-controls">
+                            <label for="rows-per-page-inv">Rows per page:</label>
+                            <select id="rows-per-page-inv">
+                                <option value="10" selected>10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                            <button type="button" class="btn btn-outline" disabled>Previous</button>
+                            <span class="page-numbers">Page 1 of 125</span>
+                            <button type="button" class="btn btn-outline">Next</button>
+                        </div>
+                    </nav>
+                </section>
+
+                <!-- Low Stock Alerts Section -->
+                <section class="table-section" aria-labelledby="low-stock-heading">
+                    <div class="section-header">
+                        <h4 id="low-stock-heading">Low Stock Alerts</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Medicine</th>
+                                    <th>Current Stock</th>
+                                    <th>Minimum Stock</th>
+                                    <th>Required Quantity</th>
+                                    <th>Supplier</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Amoxicillin 250mg</td>
+                                    <td>45</td>
+                                    <td>100</td>
+                                    <td>200</td>
+                                    <td>Apollo Pharmaceuticals</td>
+                                    <td><span class="badge badge-partial">Low Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn btn-primary btn-sm">Reorder</button>
+                                            <button type="button" class="btn btn-outline btn-sm">View Medicine</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Cough Syrup DX</td>
+                                    <td>0</td>
+                                    <td>50</td>
+                                    <td>100</td>
+                                    <td>MediCorp Pharma</td>
+                                    <td><span class="badge badge-overdue">Out of Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn btn-primary btn-sm">Reorder</button>
+                                            <button type="button" class="btn btn-outline btn-sm">View Medicine</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Insulin Regular</td>
+                                    <td>15</td>
+                                    <td>30</td>
+                                    <td>50</td>
+                                    <td>MediCorp Pharma</td>
+                                    <td><span class="badge badge-partial">Low Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn btn-primary btn-sm">Reorder</button>
+                                            <button type="button" class="btn btn-outline btn-sm">View Medicine</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Azithromycin 500mg</td>
+                                    <td>30</td>
+                                    <td>50</td>
+                                    <td>100</td>
+                                    <td>MediCorp Pharma</td>
+                                    <td><span class="badge badge-partial">Low Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn btn-primary btn-sm">Reorder</button>
+                                            <button type="button" class="btn btn-outline btn-sm">View Medicine</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Multivitamin Capsules</td>
+                                    <td>20</td>
+                                    <td>75</td>
+                                    <td>150</td>
+                                    <td>HealthCare Drugs Ltd</td>
+                                    <td><span class="badge badge-partial">Low Stock</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn btn-primary btn-sm">Reorder</button>
+                                            <button type="button" class="btn btn-outline btn-sm">View Medicine</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Empty State for Low Stock (Hidden) -->
+                    <div class="empty-state" hidden>
+                        <div class="empty-icon"><span class="icon-placeholder" aria-hidden="true">📭</span></div>
+                        <h5>No Low Stock Medicines</h5>
+                        <p>All medicine inventory levels are currently sufficient.</p>
+                    </div>
+                </section>
+
+                <!-- Expiry Management Section -->
+                <div class="grid-two-column">
+                    <!-- A. Expiring Soon -->
+                    <section class="table-section" aria-labelledby="expiring-soon-heading">
+                        <div class="section-header">
+                            <h4 id="expiring-soon-heading">A. Expiring Soon Medicines</h4>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Medicine</th>
+                                        <th>Batch</th>
+                                        <th>Stock</th>
+                                        <th>Expiry Date</th>
+                                        <th>Days Remaining</th>
+                                        <th>Supplier</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Insulin Regular</td>
+                                        <td>BAT-9018</td>
+                                        <td>15</td>
+                                        <td>2026-09-05</td>
+                                        <td>21 days</td>
+                                        <td>MediCorp Pharma</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button type="button" class="btn btn-outline btn-sm">Review</button>
+                                                <button type="button" class="btn btn-secondary btn-sm">Remove</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Paracetamol Syrup</td>
+                                        <td>BAT-8821</td>
+                                        <td>28</td>
+                                        <td>2026-09-18</td>
+                                        <td>34 days</td>
+                                        <td>Apollo Pharma</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button type="button" class="btn btn-outline btn-sm">Review</button>
+                                                <button type="button" class="btn btn-secondary btn-sm">Remove</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aspirin 75mg</td>
+                                        <td>BAT-8742</td>
+                                        <td>60</td>
+                                        <td>2026-10-02</td>
+                                        <td>48 days</td>
+                                        <td>HealthCare Drugs</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button type="button" class="btn btn-outline btn-sm">Review</button>
+                                                <button type="button" class="btn btn-secondary btn-sm">Remove</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Empty State (Hidden) -->
+                        <div class="empty-state" hidden>
+                            <div class="empty-icon"><span class="icon-placeholder" aria-hidden="true">📭</span></div>
+                            <h5>No Expiry Alerts</h5>
+                            <p>No medicines are expiring soon.</p>
+                        </div>
+                    </section>
+
+                    <!-- B. Expired Medicines -->
+                    <section class="table-section" aria-labelledby="expired-heading">
+                        <div class="section-header">
+                            <h4 id="expired-heading">B. Expired Medicines</h4>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Medicine</th>
+                                        <th>Batch</th>
+                                        <th>Stock</th>
+                                        <th>Expiry Date</th>
+                                        <th>Supplier</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Azithromycin 500mg</td>
+                                        <td>BAT-9021</td>
+                                        <td>30</td>
+                                        <td>2026-06-10</td>
+                                        <td>MediCorp Pharma</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button type="button" class="btn btn-outline btn-sm">Review</button>
+                                                <button type="button" class="btn btn-danger btn-sm" style="background-color: #dc3545; color: white;">Remove from Stock</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vitamin C Drops</td>
+                                        <td>BAT-8451</td>
+                                        <td>12</td>
+                                        <td>2026-07-15</td>
+                                        <td>Apollo Pharma</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button type="button" class="btn btn-outline btn-sm">Review</button>
+                                                <button type="button" class="btn btn-danger btn-sm" style="background-color: #dc3545; color: white;">Remove from Stock</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Omeprazole 20mg</td>
+                                        <td>BAT-8210</td>
+                                        <td>45</td>
+                                        <td>2026-08-01</td>
+                                        <td>HealthCare Drugs</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button type="button" class="btn btn-outline btn-sm">Review</button>
+                                                <button type="button" class="btn btn-danger btn-sm" style="background-color: #dc3545; color: white;">Remove from Stock</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Empty State (Hidden) -->
+                        <div class="empty-state" hidden>
+                            <div class="empty-icon"><span class="icon-placeholder" aria-hidden="true">📭</span></div>
+                            <h5>No Expired Medicines</h5>
+                            <p>All inventory items are within valid expiry dates.</p>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Stock Movement Section -->
+                <section class="table-section" aria-labelledby="stock-movement-heading">
+                    <div class="section-header">
+                        <h4 id="stock-movement-heading">Stock Movement</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Movement ID</th>
+                                    <th>Date</th>
+                                    <th>Medicine</th>
+                                    <th>Batch</th>
+                                    <th>Movement Type</th>
+                                    <th>Quantity</th>
+                                    <th>Previous Stock</th>
+                                    <th>New Stock</th>
+                                    <th>Reference</th>
+                                    <th>Performed By</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>MOV-3001</td>
+                                    <td>2026-08-15 10:30</td>
+                                    <td>Paracetamol 500mg</td>
+                                    <td>BAT-9012</td>
+                                    <td><span class="badge badge-paid">Purchase</span></td>
+                                    <td>+500</td>
+                                    <td>700</td>
+                                    <td>1,200</td>
+                                    <td>PO-8820</td>
+                                    <td>Dr. Sarah Isaac</td>
+                                </tr>
+                                <tr>
+                                    <td>MOV-3002</td>
+                                    <td>2026-08-15 11:15</td>
+                                    <td>Cetirizine 10mg</td>
+                                    <td>BAT-9014</td>
+                                    <td><span class="badge badge-partial">Dispensing</span></td>
+                                    <td>-10</td>
+                                    <td>860</td>
+                                    <td>850</td>
+                                    <td>RX-1001</td>
+                                    <td>Pharmacy Staff</td>
+                                </tr>
+                                <tr>
+                                    <td>MOV-3003</td>
+                                    <td>2026-08-14 14:20</td>
+                                    <td>Amoxicillin 250mg</td>
+                                    <td>BAT-9013</td>
+                                    <td><span class="badge badge-partial">Dispensing</span></td>
+                                    <td>-20</td>
+                                    <td>65</td>
+                                    <td>45</td>
+                                    <td>RX-1004</td>
+                                    <td>Pharmacy Staff</td>
+                                </tr>
+                                <tr>
+                                    <td>MOV-3004</td>
+                                    <td>2026-08-14 09:00</td>
+                                    <td>Diclofenac Gel</td>
+                                    <td>BAT-9016</td>
+                                    <td><span class="badge badge-paid">Purchase</span></td>
+                                    <td>+200</td>
+                                    <td>120</td>
+                                    <td>320</td>
+                                    <td>PO-8815</td>
+                                    <td>Dr. Sarah Isaac</td>
+                                </tr>
+                                <tr>
+                                    <td>MOV-3005</td>
+                                    <td>2026-08-13 16:45</td>
+                                    <td>Azithromycin 500mg</td>
+                                    <td>BAT-9021</td>
+                                    <td><span class="badge badge-overdue">Expired</span></td>
+                                    <td>-30</td>
+                                    <td>30</td>
+                                    <td>0</td>
+                                    <td>EXP-012</td>
+                                    <td>Inventory Mgr</td>
+                                </tr>
+                                <tr>
+                                    <td>MOV-3006</td>
+                                    <td>2026-08-12 13:10</td>
+                                    <td>Pantoprazole 40mg</td>
+                                    <td>BAT-9017</td>
+                                    <td><span class="badge badge-paid">Purchase</span></td>
+                                    <td>+300</td>
+                                    <td>200</td>
+                                    <td>500</td>
+                                    <td>PO-8810</td>
+                                    <td>Dr. Sarah Isaac</td>
+                                </tr>
+                                <tr>
+                                    <td>MOV-3007</td>
+                                    <td>2026-08-11 15:00</td>
+                                    <td>Cough Syrup DX</td>
+                                    <td>BAT-9015</td>
+                                    <td><span class="badge badge-partial">Dispensing</span></td>
+                                    <td>-5</td>
+                                    <td>5</td>
+                                    <td>0</td>
+                                    <td>RX-0992</td>
+                                    <td>Pharmacy Staff</td>
+                                </tr>
+                                <tr>
+                                    <td>MOV-3008</td>
+                                    <td>2026-08-10 11:30</td>
+                                    <td>Salbutamol Inhaler</td>
+                                    <td>BAT-9019</td>
+                                    <td><span class="badge badge-paid">Adjustment</span></td>
+                                    <td>+10</td>
+                                    <td>200</td>
+                                    <td>210</td>
+                                    <td>ADJ-102</td>
+                                    <td>Inventory Mgr</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Empty State (Hidden) -->
+                    <div class="empty-state" hidden>
+                        <div class="empty-icon"><span class="icon-placeholder" aria-hidden="true">📭</span></div>
+                        <h5>No Stock Movements</h5>
+                        <p>There are no recorded stock movements matching your criteria.</p>
+                    </div>
+                    <!-- Pagination -->
+                    <nav class="pagination-container" aria-label="Stock Movement Navigation">
+                        <span class="pagination-info">Showing 1–8 of 450 movements</span>
+                        <div class="pagination-controls">
+                            <label for="rows-per-page-mov">Rows per page:</label>
+                            <select id="rows-per-page-mov">
+                                <option value="10" selected>10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                            </select>
+                            <button type="button" class="btn btn-outline" disabled>Previous</button>
+                            <span class="page-numbers">Page 1 of 57</span>
+                            <button type="button" class="btn btn-outline">Next</button>
+                        </div>
+                    </nav>
+                </section>
+
+                <!-- Pharmacy Sales / Dispensing -->
+                <section class="table-section" aria-labelledby="dispensing-heading">
+                    <div class="section-header">
+                        <h4 id="dispensing-heading">Pharmacy Sales / Dispensing Records</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Transaction ID</th>
+                                    <th>Patient</th>
+                                    <th>Prescription ID</th>
+                                    <th>Medicine</th>
+                                    <th>Quantity</th>
+                                    <th>Amount</th>
+                                    <th>Payment Status</th>
+                                    <th>Date</th>
+                                    <th>Dispensed By</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>TXN-7001</td>
+                                    <td>Aarav Sharma</td>
+                                    <td>PRX-2026-011</td>
+                                    <td>Paracetamol 500mg</td>
+                                    <td>2 Strips</td>
+                                    <td>₹50.00</td>
+                                    <td><span class="badge badge-paid">Paid</span></td>
+                                    <td>2026-08-15</td>
+                                    <td>Pharmacy Staff</td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Receipt</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TXN-7002</td>
+                                    <td>Priya Patel</td>
+                                    <td>PRX-2026-012</td>
+                                    <td>Amoxicillin 250mg</td>
+                                    <td>1 Strip</td>
+                                    <td>₹120.00</td>
+                                    <td><span class="badge badge-partial">Partial</span></td>
+                                    <td>2026-08-15</td>
+                                    <td>Pharmacy Staff</td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Receipt</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TXN-7003</td>
+                                    <td>Rohan Verma</td>
+                                    <td>PRX-2026-013</td>
+                                    <td>Cetirizine 10mg</td>
+                                    <td>1 Strip</td>
+                                    <td>₹35.00</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td>2026-08-14</td>
+                                    <td>Pharmacy Staff</td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Verify</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TXN-7004</td>
+                                    <td>Ananya Gupta</td>
+                                    <td>PRX-2026-014</td>
+                                    <td>Diclofenac Gel</td>
+                                    <td>1 Tube</td>
+                                    <td>₹75.00</td>
+                                    <td><span class="badge badge-paid">Paid</span></td>
+                                    <td>2026-08-14</td>
+                                    <td>Pharmacy Staff</td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Receipt</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TXN-7005</td>
+                                    <td>Kabir Singh</td>
+                                    <td>PRX-2026-015</td>
+                                    <td>Pantoprazole 40mg</td>
+                                    <td>2 Strips</td>
+                                    <td>₹220.00</td>
+                                    <td><span class="badge badge-paid">Paid</span></td>
+                                    <td>2026-08-13</td>
+                                    <td>Pharmacy Staff</td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Receipt</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TXN-7006</td>
+                                    <td>Meera Nair</td>
+                                    <td>PRX-2026-016</td>
+                                    <td>Salbutamol Inhaler</td>
+                                    <td>1 Piece</td>
+                                    <td>₹280.00</td>
+                                    <td><span class="badge badge-refunded">Refunded</span></td>
+                                    <td>2026-08-12</td>
+                                    <td>Pharmacy Staff</td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TXN-7007</td>
+                                    <td>Vikram Malhotra</td>
+                                    <td>PRX-2026-017</td>
+                                    <td>Eye Drops Saline</td>
+                                    <td>1 Bottle</td>
+                                    <td>₹65.00</td>
+                                    <td><span class="badge badge-paid">Paid</span></td>
+                                    <td>2026-08-12</td>
+                                    <td>Pharmacy Staff</td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Receipt</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TXN-7008</td>
+                                    <td>Neha Joshi</td>
+                                    <td>PRX-2026-018</td>
+                                    <td>Paracetamol 500mg</td>
+                                    <td>1 Strip</td>
+                                    <td>₹25.00</td>
+                                    <td><span class="badge badge-paid">Paid</span></td>
+                                    <td>2026-08-11</td>
+                                    <td>Pharmacy Staff</td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Receipt</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Empty State (Hidden) -->
+                    <div class="empty-state" hidden>
+                        <div class="empty-icon"><span class="icon-placeholder" aria-hidden="true">📭</span></div>
+                        <h5>No Dispensing Records</h5>
+                        <p>There are no pharmacy sales or dispensing records found.</p>
+                    </div>
+                    <!-- Pagination -->
+                    <nav class="pagination-container" aria-label="Dispensing Records Navigation">
+                        <span class="pagination-info">Showing 1–8 of 840 records</span>
+                        <div class="pagination-controls">
+                            <label for="rows-per-page-disp">Rows per page:</label>
+                            <select id="rows-per-page-disp">
+                                <option value="10" selected>10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                            </select>
+                            <button type="button" class="btn btn-outline" disabled>Previous</button>
+                            <span class="page-numbers">Page 1 of 105</span>
+                            <button type="button" class="btn btn-outline">Next</button>
+                        </div>
+                    </nav>
+                </section>
+
+                <!-- Pharmacy Analytics Section -->
+                <section class="card-section" aria-labelledby="pharmacy-analytics-heading">
+                    <div class="section-header">
+                        <h4 id="pharmacy-analytics-heading">Pharmacy Analytics & Reports</h4>
+                    </div>
+                    <div class="grid-two-column">
+                        <div class="analytics-sub-section">
+                            <h5>A. Pharmacy Revenue</h5>
+                            <div class="chart-placeholder" aria-label="Pharmacy Revenue Chart Placeholder">
+                                <span>[Revenue: Today, This Week, This Month Chart Placeholder]</span>
+                            </div>
+                        </div>
+                        <div class="analytics-sub-section">
+                            <h5>B. Medicine Dispensing</h5>
+                            <div class="chart-placeholder" aria-label="Medicine Dispensing Chart Placeholder">
+                                <span>[Most Dispensed Medicines & Volume Chart Placeholder]</span>
+                            </div>
+                        </div>
+                        <div class="analytics-sub-section">
+                            <h5>C. Inventory Value</h5>
+                            <div class="chart-placeholder" aria-label="Inventory Value Chart Placeholder">
+                                <span>[Current Stock Value vs Expired vs Low Stock Chart Placeholder]</span>
+                            </div>
+                        </div>
+                        <div class="analytics-sub-section">
+                            <h5>D. Category Distribution</h5>
+                            <div class="chart-placeholder" aria-label="Category Distribution Chart Placeholder">
+                                <span>[Tablets, Capsules, Syrups, Injections, Topical, Other Chart Placeholder]</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Medicine Categories Overview -->
+                <section class="card-section" aria-labelledby="categories-heading">
+                    <div class="section-header">
+                        <h4 id="categories-heading">Medicine Categories Overview</h4>
+                    </div>
+                    <div class="payment-methods-grid">
+                        <div class="payment-method-card">
+                            <span class="method-name">Tablets</span>
+                            <span class="method-count">420 medicines</span>
+                            <span class="method-amount">₹8,50,000</span>
+                            <span class="method-percentage"><button type="button" class="btn btn-outline btn-sm">View Category</button></span>
+                        </div>
+                        <div class="payment-method-card">
+                            <span class="method-name">Capsules</span>
+                            <span class="method-count">210 medicines</span>
+                            <span class="method-amount">₹5,20,000</span>
+                            <span class="method-percentage"><button type="button" class="btn btn-outline btn-sm">View Category</button></span>
+                        </div>
+                        <div class="payment-method-card">
+                            <span class="method-name">Syrups</span>
+                            <span class="method-count">150 medicines</span>
+                            <span class="method-amount">₹3,10,000</span>
+                            <span class="method-percentage"><button type="button" class="btn btn-outline btn-sm">View Category</button></span>
+                        </div>
+                        <div class="payment-method-card">
+                            <span class="method-name">Injections</span>
+                            <span class="method-count">95 medicines</span>
+                            <span class="method-amount">₹4,80,000</span>
+                            <span class="method-percentage"><button type="button" class="btn btn-outline btn-sm">View Category</button></span>
+                        </div>
+                        <div class="payment-method-card">
+                            <span class="method-name">Creams & Ointments</span>
+                            <span class="method-count">120 medicines</span>
+                            <span class="method-amount">₹1,50,000</span>
+                            <span class="method-percentage"><button type="button" class="btn btn-outline btn-sm">View Category</button></span>
+                        </div>
+                        <div class="payment-method-card">
+                            <span class="method-name">Drops</span>
+                            <span class="method-count">85 medicines</span>
+                            <span class="method-amount">₹90,000</span>
+                            <span class="method-percentage"><button type="button" class="btn btn-outline btn-sm">View Category</button></span>
+                        </div>
+                        <div class="payment-method-card">
+                            <span class="method-name">Medical Supplies</span>
+                            <span class="method-count">110 medicines</span>
+                            <span class="method-amount">₹50,000</span>
+                            <span class="method-percentage"><button type="button" class="btn btn-outline btn-sm">View Category</button></span>
+                        </div>
+                        <div class="payment-method-card">
+                            <span class="method-name">Other</span>
+                            <span class="method-count">58 medicines</span>
+                            <span class="method-amount">₹0</span>
+                            <span class="method-percentage"><button type="button" class="btn btn-outline btn-sm">View Category</button></span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Supplier Overview -->
+                <section class="table-section" aria-labelledby="supplier-heading">
+                    <div class="section-header">
+                        <h4 id="supplier-heading">Supplier Overview</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Supplier Name</th>
+                                    <th>Supplier ID</th>
+                                    <th>Contact Placeholder</th>
+                                    <th>Medicines Supplied</th>
+                                    <th>Total Stock Value</th>
+                                    <th>Last Purchase</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>MediCorp Pharma</td>
+                                    <td>SUP-101</td>
+                                    <td>+91 98111 22334</td>
+                                    <td>450</td>
+                                    <td>₹12,40,000</td>
+                                    <td>2026-08-15</td>
+                                    <td><span class="badge badge-paid">Active</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Apollo Pharmaceuticals</td>
+                                    <td>SUP-102</td>
+                                    <td>+91 98222 33445</td>
+                                    <td>380</td>
+                                    <td>₹8,10,000</td>
+                                    <td>2026-08-10</td>
+                                    <td><span class="badge badge-paid">Active</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>HealthCare Drugs Ltd</td>
+                                    <td>SUP-103</td>
+                                    <td>+91 98333 44556</td>
+                                    <td>290</td>
+                                    <td>₹4,00,000</td>
+                                    <td>2026-08-02</td>
+                                    <td><span class="badge badge-paid">Active</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Global Pharma Distributors</td>
+                                    <td>SUP-104</td>
+                                    <td>+91 98444 55667</td>
+                                    <td>88</td>
+                                    <td>₹0</td>
+                                    <td>2026-05-20</td>
+                                    <td><span class="badge badge-pending">Inactive</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Prime Meds India</td>
+                                    <td>SUP-105</td>
+                                    <td>+91 98555 66778</td>
+                                    <td>40</td>
+                                    <td>₹0</td>
+                                    <td>2026-07-01</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Forms Container Wrapper -->
+                <div class="forms-container-wrapper">
+                    <!-- Add Medicine Form -->
+                    <section class="form-section-card" aria-labelledby="add-medicine-heading">
+                        <div class="section-header">
+                            <h4 id="add-medicine-heading">Add New Medicine</h4>
+                        </div>
+                        <form class="invoice-form">
+                            <fieldset>
+                                <legend>Basic Information</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="med-name">Medicine Name</label>
+                                        <input type="text" id="med-name" placeholder="Enter medicine name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="med-sku">Medicine ID / SKU</label>
+                                        <input type="text" id="med-sku" placeholder="e.g. MED-5011">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="med-generic">Generic Name</label>
+                                        <input type="text" id="med-generic" placeholder="Generic name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="med-category">Category</label>
+                                        <select id="med-category">
+                                            <option value="">Select category...</option>
+                                            <option value="tablets">Tablets</option>
+                                            <option value="capsules">Capsules</option>
+                                            <option value="syrups">Syrups</option>
+                                            <option value="injections">Injections</option>
+                                            <option value="topical">Creams & Ointments</option>
+                                            <option value="drops">Drops</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="med-form">Medicine Form</label>
+                                        <select id="med-form">
+                                            <option value="">Select form...</option>
+                                            <option value="tablet">Tablet</option>
+                                            <option value="capsule">Capsule</option>
+                                            <option value="syrup">Syrup</option>
+                                            <option value="injection">Injection</option>
+                                            <option value="cream">Cream</option>
+                                            <option value="ointment">Ointment</option>
+                                            <option value="drops">Drops</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="med-strength">Strength</label>
+                                        <input type="text" id="med-strength" placeholder="e.g. 500mg">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="med-description">Description</label>
+                                        <textarea id="med-description" placeholder="Medicine description..."></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Inventory Information</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="med-batch">Batch Number</label>
+                                        <input type="text" id="med-batch" placeholder="Batch number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="med-quantity">Quantity</label>
+                                        <input type="number" id="med-quantity" placeholder="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="med-unit">Unit</label>
+                                        <input type="text" id="med-unit" placeholder="Strips / Bottles / Vials">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="med-min-stock">Minimum Stock Level</label>
+                                        <input type="number" id="med-min-stock" placeholder="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="med-max-stock">Maximum Stock Level</label>
+                                        <input type="number" id="med-max-stock" placeholder="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="med-purchase-price">Purchase Price</label>
+                                        <input type="number" id="med-purchase-price" placeholder="₹0.00">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="med-selling-price">Selling Price</label>
+                                        <input type="number" id="med-selling-price" placeholder="₹0.00">
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Expiry & Supplier</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="med-mfg-date">Manufacturing Date</label>
+                                        <input type="date" id="med-mfg-date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="med-expiry-date">Expiry Date</label>
+                                        <input type="date" id="med-expiry-date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="med-supplier-select">Supplier</label>
+                                        <select id="med-supplier-select">
+                                            <option value="">Select supplier...</option>
+                                            <option value="sup1">MediCorp Pharma</option>
+                                            <option value="sup2">Apollo Pharmaceuticals</option>
+                                            <option value="sup3">HealthCare Drugs Ltd</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="med-supplier-invoice">Supplier Invoice Number</label>
+                                        <input type="text" id="med-supplier-invoice" placeholder="Invoice #">
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Prescription & Additional Details</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="med-presc-req">Prescription Required</label>
+                                        <select id="med-presc-req">
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="med-controlled">Controlled Medicine indicator</label>
+                                        <select id="med-controlled">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="med-storage">Storage Instructions</label>
+                                        <input type="text" id="med-storage" placeholder="e.g. Store in cool, dry place">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="med-notes">Notes</label>
+                                        <textarea id="med-notes" placeholder="Additional notes..."></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary">Save Medicine</button>
+                                <button type="button" class="btn btn-outline">Cancel</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <!-- Dispense Medicine Form -->
+                    <section class="form-section-card" aria-labelledby="dispense-form-heading">
+                        <div class="section-header">
+                            <h4 id="dispense-form-heading">Dispense Medicine Form</h4>
+                        </div>
+                        <form class="invoice-form">
+                            <fieldset>
+                                <legend>Patient & Prescription</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="disp-patient">Select Patient</label>
+                                        <select id="disp-patient">
+                                            <option value="">Choose patient...</option>
+                                            <option value="pt-1001">Aarav Sharma (PT-1001)</option>
+                                            <option value="pt-1002">Priya Patel (PT-1002)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="disp-patient-id">Patient ID</label>
+                                        <input type="text" id="disp-patient-id" placeholder="Auto-filled" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="disp-presc-id">Prescription ID</label>
+                                        <input type="text" id="disp-presc-id" placeholder="PRX-2026-XXX">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="disp-doctor">Prescribing Doctor</label>
+                                        <input type="text" id="disp-doctor" placeholder="Doctor name">
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Medicine Details</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="disp-medicine-select">Select Medicine</label>
+                                        <select id="disp-medicine-select">
+                                            <option value="">Choose medicine...</option>
+                                            <option value="med-5001">Paracetamol 500mg</option>
+                                            <option value="med-5002">Amoxicillin 250mg</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="disp-batch">Batch Number</label>
+                                        <input type="text" id="disp-batch" placeholder="Batch #">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="disp-available-stock">Available Stock</label>
+                                        <input type="text" id="disp-available-stock" placeholder="0" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="disp-quantity">Quantity</label>
+                                        <input type="number" id="disp-quantity" placeholder="1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="disp-unit-price">Unit Price</label>
+                                        <input type="number" id="disp-unit-price" placeholder="₹0.00">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="disp-discount">Discount</label>
+                                        <input type="number" id="disp-discount" placeholder="₹0.00">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="disp-total">Total</label>
+                                        <input type="text" id="disp-total" placeholder="₹0.00" readonly>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Payment & Notes</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="disp-payment-method">Payment Method</label>
+                                        <select id="disp-payment-method">
+                                            <option value="cash">Cash</option>
+                                            <option value="card">Card</option>
+                                            <option value="upi">UPI</option>
+                                            <option value="bank">Bank Transfer</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="disp-payment-status">Payment Status</label>
+                                        <select id="disp-payment-status">
+                                            <option value="paid">Paid</option>
+                                            <option value="pending">Pending</option>
+                                            <option value="partial">Partial</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="disp-notes">Dispensing Notes</label>
+                                        <textarea id="disp-notes" placeholder="Optional notes..."></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary">Dispense Medicine</button>
+                                <button type="button" class="btn btn-outline">Cancel</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <!-- Stock Adjustment Form -->
+                    <section class="form-section-card" aria-labelledby="stock-adj-heading">
+                        <div class="section-header">
+                            <h4 id="stock-adj-heading">Stock Adjustment Form</h4>
+                        </div>
+                        <form class="invoice-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="adj-medicine">Medicine</label>
+                                    <select id="adj-medicine">
+                                        <option value="">Select medicine...</option>
+                                        <option value="med-5001">Paracetamol 500mg</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="adj-batch">Batch Number</label>
+                                    <input type="text" id="adj-batch" placeholder="Batch #">
+                                </div>
+                                <div class="form-group">
+                                    <label for="adj-current-stock">Current Stock</label>
+                                    <input type="text" id="adj-current-stock" placeholder="0" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="adj-type">Adjustment Type</label>
+                                    <select id="adj-type">
+                                        <option value="add">Add Stock</option>
+                                        <option value="remove">Remove Stock</option>
+                                        <option value="damaged">Damaged</option>
+                                        <option value="expired">Expired</option>
+                                        <option value="correction">Correction</option>
+                                        <option value="return">Return</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="adj-quantity">Adjustment Quantity</label>
+                                    <input type="number" id="adj-quantity" placeholder="0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="adj-new-stock">New Stock</label>
+                                    <input type="text" id="adj-new-stock" placeholder="0" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="adj-reason">Reason</label>
+                                    <input type="text" id="adj-reason" placeholder="Reason for adjustment">
+                                </div>
+                                <div class="form-group">
+                                    <label for="adj-reference">Reference</label>
+                                    <input type="text" id="adj-reference" placeholder="Ref ID">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <label for="adj-notes">Notes</label>
+                                    <textarea id="adj-notes" placeholder="Detailed notes..."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary">Save Adjustment</button>
+                                <button type="button" class="btn btn-outline">Cancel</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <!-- Medicine Details Panel (Structural Modal) -->
+                    <aside class="side-panel-container" aria-label="Medicine Details Panel">
+                        <div class="section-header">
+                            <h4>Medicine Details</h4>
+                        </div>
+                        <div class="panel-content">
+                            <div class="panel-section">
+                                <h5>Medicine Information</h5>
+                                <p><strong>Medicine Name:</strong> Paracetamol</p>
+                                <p><strong>Medicine ID:</strong> MED-5001</p>
+                                <p><strong>Generic Name:</strong> Paracetamol / Acetaminophen</p>
+                                <p><strong>Category:</strong> Tablets</p>
+                                <p><strong>Form:</strong> Tablet</p>
+                                <p><strong>Strength:</strong> 500mg</p>
+                            </div>
+                            <div class="panel-section">
+                                <h5>Inventory</h5>
+                                <p><strong>Current Stock:</strong> 1,200 Strips</p>
+                                <p><strong>Minimum Stock:</strong> 100 Strips</p>
+                                <p><strong>Maximum Stock:</strong> 2,000 Strips</p>
+                                <p><strong>Stock Value:</strong> ₹30,000</p>
+                            </div>
+                            <div class="panel-section">
+                                <h5>Batch Information</h5>
+                                <p><strong>Batch Number:</strong> BAT-9012</p>
+                                <p><strong>Manufacturing Date:</strong> 2025-05-12</p>
+                                <p><strong>Expiry Date:</strong> 2028-05-12</p>
+                                <p><strong>Days Remaining:</strong> 1,000 days</p>
+                            </div>
+                            <div class="panel-section">
+                                <h5>Pricing</h5>
+                                <p><strong>Purchase Price:</strong> ₹20.00</p>
+                                <p><strong>Selling Price:</strong> ₹25.00</p>
+                            </div>
+                            <div class="panel-section">
+                                <h5>Supplier & Status</h5>
+                                <p><strong>Supplier:</strong> MediCorp Pharma</p>
+                                <p><strong>Invoice Number:</strong> INV-8820</p>
+                                <p><strong>Stock Status:</strong> <span class="badge badge-paid">In Stock</span></p>
+                                <p><strong>Expiry Status:</strong> <span class="badge badge-paid">Good</span></p>
+                                <p><strong>Prescription Required:</strong> No</p>
+                            </div>
+                            <div class="panel-actions">
+                                <button type="button" class="btn btn-outline btn-sm">Edit Medicine</button>
+                                <button type="button" class="btn btn-outline btn-sm">Adjust Stock</button>
+                                <button type="button" class="btn btn-secondary btn-sm">Dispense</button>
+                                <button type="button" class="btn btn-primary btn-sm">Reorder</button>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="app-footer" role="contentinfo">
+                <p>&copy; 2026 ISAAC CLINIC. Premium Clinic Management Dashboard. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratory Management - ISAAC CLINIC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" aria-label="Main Sidebar">
+            <div class="brand-section">
+                <h1 class="brand-title">ISAAC CLINIC</h1>
+                <p class="brand-subtitle">Clinic Management</p>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-group">
+                    <span class="nav-category">MAIN</span>
+                    <a href="index.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📊</span> Dashboard</a>
+                    <a href="patients.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">👥</span> Patients</a>
+                    <a href="appointments.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📅</span> Appointments</a>
+                    <a href="doctors.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">👨‍⚕️</span> Doctors</a>
+                    <a href="staff.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📋</span> Staff</a>
+                </div>
+                <div class="nav-group">
+                    <span class="nav-category">CLINICAL</span>
+                    <a href="prescriptions.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">💊</span> Prescriptions</a>
+                    <a href="laboratory.html" class="nav-link active" aria-current="page"><span class="icon-placeholder" aria-hidden="true">🔬</span> Laboratory</a>
+                    <a href="pharmacy.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">🏥</span> Pharmacy</a>
+                    <a href="medical-records.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📁</span> Medical Records</a>
+                </div>
+                <div class="nav-group">
+                    <span class="nav-category">FINANCE</span>
+                    <a href="billing.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">💳</span> Billing</a>
+                    <a href="payments.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">💰</span> Payments</a>
+                    <a href="expenses.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📉</span> Expenses</a>
+                </div>
+                <div class="nav-group">
+                    <span class="nav-category">MANAGEMENT</span>
+                    <a href="reports.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📈</span> Reports</a>
+                    <a href="settings.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">⚙️</span> Settings</a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile-mini">
+                    <div class="user-avatar-placeholder" aria-hidden="true">Dr</div>
+                    <div class="user-info">
+                        <span class="user-name">Dr. Sarah Isaac</span>
+                        <span class="user-role">Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Wrapper -->
+        <div class="main-wrapper">
+            <!-- Top Header -->
+            <header class="top-header" role="banner">
+                <div class="header-left">
+                    <button class="sidebar-toggle-btn" aria-label="Toggle Sidebar"><span class="icon-placeholder" aria-hidden="true">☰</span></button>
+                    <div class="breadcrumb-container">
+                        <h2 class="page-title">Laboratory</h2>
+                        <nav aria-label="Breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="index.html">Dashboard</a></li>
+                                <li aria-current="page">Laboratory</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <div class="header-center">
+                    <div class="global-search-container">
+                        <input type="search" class="global-search-input" placeholder="Search Patient, Test ID, Order ID or Sample ID" aria-label="Search Patient, Test ID, Order ID or Sample ID">
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="notification-btn" aria-label="Notifications"><span class="icon-placeholder" aria-hidden="true">🔔</span><span class="badge" aria-label="4 unread notifications">4</span></button>
+                    <div class="user-profile-header">
+                        <div class="user-avatar-placeholder" aria-hidden="true">SI</div>
+                        <div class="user-meta">
+                            <span class="user-name">Dr. Sarah Isaac</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="main-content" role="main">
+                <!-- Page Header -->
+                <section class="page-header-section">
+                    <div class="page-header-content">
+                        <h3 class="page-heading">Laboratory Management</h3>
+                        <p class="page-description">Manage laboratory tests, sample collection, test processing and patient reports.</p>
+                    </div>
+                    <div class="page-actions">
+                        <button type="button" class="btn btn-primary" aria-label="New Lab Order">New Lab Order</button>
+                        <button type="button" class="btn btn-secondary" aria-label="Collect Sample">Collect Sample</button>
+                        <button type="button" class="btn btn-outline" aria-label="Add Test">Add Test</button>
+                        <button type="button" class="btn btn-outline" aria-label="Export Reports">Export Reports</button>
+                    </div>
+                </section>
+
+                <!-- Laboratory KPI Cards -->
+                <section class="kpi-grid" aria-label="Laboratory Summary">
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">🧪</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">Today's Lab Orders</span>
+                            <h4 class="kpi-value">48</h4>
+                            <span class="kpi-trend positive">+12% vs yesterday</span>
+                        </div>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">🩸</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">Pending Samples</span>
+                            <h4 class="kpi-value">14</h4>
+                            <span class="kpi-trend warning">Awaiting collection</span>
+                        </div>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">⏳</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">Tests In Progress</span>
+                            <h4 class="kpi-value">22</h4>
+                            <span class="kpi-trend positive">Processing active</span>
+                        </div>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">📋</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">Reports Ready</span>
+                            <h4 class="kpi-value">35</h4>
+                            <span class="kpi-trend positive">Ready for release</span>
+                        </div>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">🚨</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">Critical Results</span>
+                            <h4 class="kpi-value">2</h4>
+                            <span class="kpi-trend danger">Immediate attention</span>
+                        </div>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">💰</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">Today's Lab Revenue</span>
+                            <h4 class="kpi-value">₹45,200</h4>
+                            <span class="kpi-trend positive">+8% vs yesterday</span>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Search & Filter Toolbar -->
+                <section class="filter-section" aria-label="Laboratory Filters">
+                    <form class="filter-form">
+                        <div class="filter-group search-group">
+                            <label for="lab-search">Search</label>
+                            <input type="text" id="lab-search" placeholder="Patient Name, Patient ID, Test ID, Order ID or Sample ID">
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-category">Test Category</label>
+                            <select id="filter-category">
+                                <option value="">All Categories</option>
+                                <option value="hematology">Hematology</option>
+                                <option value="biochemistry">Biochemistry</option>
+                                <option value="microbiology">Microbiology</option>
+                                <option value="immunology">Immunology</option>
+                                <option value="pathology">Pathology</option>
+                                <option value="radiology">Radiology</option>
+                                <option value="urinalysis">Urinalysis</option>
+                                <option value="hormone">Hormone Tests</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-test-status">Test Status</label>
+                            <select id="filter-test-status">
+                                <option value="">All Statuses</option>
+                                <option value="ordered">Ordered</option>
+                                <option value="sample-pending">Sample Pending</option>
+                                <option value="sample-collected">Sample Collected</option>
+                                <option value="processing">Processing</option>
+                                <option value="completed">Completed</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-sample-status">Sample Status</label>
+                            <select id="filter-sample-status">
+                                <option value="">All Sample Statuses</option>
+                                <option value="pending">Pending</option>
+                                <option value="collected">Collected</option>
+                                <option value="rejected">Rejected</option>
+                                <option value="processing">Processing</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-priority">Priority</label>
+                            <select id="filter-priority">
+                                <option value="">All Priorities</option>
+                                <option value="normal">Normal</option>
+                                <option value="urgent">Urgent</option>
+                                <option value="critical">Critical</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-doctor">Doctor</label>
+                            <select id="filter-doctor">
+                                <option value="">All Doctors</option>
+                                <option value="doc1">Dr. Rajesh Kumar</option>
+                                <option value="doc2">Dr. Priya Sharma</option>
+                                <option value="doc3">Dr. Amit Patel</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-technician">Lab Technician</label>
+                            <select id="filter-technician">
+                                <option value="">All Technicians</option>
+                                <option value="tech1">Ramesh Verma</option>
+                                <option value="tech2">Sunita Rao</option>
+                                <option value="tech3">Manoj Kumar</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="date-from">From Date</label>
+                            <input type="date" id="date-from">
+                        </div>
+                        <div class="filter-group">
+                            <label for="date-to">To Date</label>
+                            <input type="date" id="date-to">
+                        </div>
+                        <div class="filter-actions">
+                            <button type="button" class="btn btn-primary" aria-label="Search">Search</button>
+                            <button type="button" class="btn btn-secondary" aria-label="Apply Filter">Filter</button>
+                            <button type="reset" class="btn btn-outline" aria-label="Reset Filters">Reset</button>
+                            <button type="button" class="btn btn-outline" aria-label="Export Reports">Export</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Bulk Action Bar (Hidden/Structural) -->
+                <section class="bulk-action-bar" aria-label="Bulk Actions" hidden>
+                    <span class="selected-count">0 Orders Selected</span>
+                    <div class="bulk-buttons">
+                        <button type="button" class="btn btn-outline">Export</button>
+                        <button type="button" class="btn btn-outline">Assign Technician</button>
+                        <button type="button" class="btn btn-outline">Change Priority</button>
+                        <button type="button" class="btn btn-outline">Cancel Orders</button>
+                    </div>
+                </section>
+
+                <!-- Critical Results Alert Section -->
+                <section class="table-section" aria-labelledby="critical-alert-heading" style="border-left: 4px solid #dc3545; background-color: #fff8f8;">
+                    <div class="section-header">
+                        <h4 id="critical-alert-heading" style="color: #dc3545;">🚨 Critical Results Alert</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Patient</th>
+                                    <th>Patient ID</th>
+                                    <th>Test</th>
+                                    <th>Result Status</th>
+                                    <th>Critical Indicator</th>
+                                    <th>Doctor</th>
+                                    <th>Report Time</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Aarav Sharma</td>
+                                    <td>PT-1001</td>
+                                    <td>Serum Potassium</td>
+                                    <td><span class="badge badge-overdue">Critical High (6.8 mEq/L)</span></td>
+                                    <td><span class="badge badge-overdue">Hyperkalemia</span></td>
+                                    <td>Dr. Rajesh Kumar</td>
+                                    <td>2026-08-15 19:10</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn btn-primary btn-sm">View Result</button>
+                                            <button type="button" class="btn btn-secondary btn-sm">Notify Doctor</button>
+                                            <button type="button" class="btn btn-outline btn-sm">Mark Reviewed</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Priya Patel</td>
+                                    <td>PT-1002</td>
+                                    <td>Hemoglobin</td>
+                                    <td><span class="badge badge-overdue">Critical Low (5.2 g/dL)</span></td>
+                                    <td><span class="badge badge-overdue">Severe Anemia</span></td>
+                                    <td>Dr. Priya Sharma</td>
+                                    <td>2026-08-15 18:45</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn btn-primary btn-sm">View Result</button>
+                                            <button type="button" class="btn btn-secondary btn-sm">Notify Doctor</button>
+                                            <button type="button" class="btn btn-outline btn-sm">Mark Reviewed</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Empty State for Critical Results (Hidden) -->
+                    <div class="empty-state" hidden>
+                        <div class="empty-icon"><span class="icon-placeholder" aria-hidden="true">✅</span></div>
+                        <h5>No Critical Results</h5>
+                        <p>There are no critical laboratory results requiring immediate review at this time.</p>
+                    </div>
+                </section>
+
+                <!-- Lab Order Table -->
+                <section class="table-section" aria-labelledby="lab-orders-heading">
+                    <div class="section-header">
+                        <h4 id="lab-orders-heading">Lab Orders</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" aria-label="Select all orders"></th>
+                                    <th>Order ID</th>
+                                    <th>Patient</th>
+                                    <th>Patient ID</th>
+                                    <th>Doctor</th>
+                                    <th>Test(s)</th>
+                                    <th>Sample</th>
+                                    <th>Order Date</th>
+                                    <th>Priority</th>
+                                    <th>Status</th>
+                                    <th>Payment</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select order ORD-9001"></td>
+                                    <td>ORD-9001</td>
+                                    <td>Aarav Sharma</td>
+                                    <td>PT-1001</td>
+                                    <td>Dr. Rajesh Kumar</td>
+                                    <td>Complete Blood Count</td>
+                                    <td>Blood</td>
+                                    <td>2026-08-15 09:30</td>
+                                    <td><span class="badge badge-overdue">Critical</span></td>
+                                    <td><span class="badge badge-paid">Completed</span></td>
+                                    <td><span class="badge badge-paid">Paid</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View ORD-9001">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Collect Sample for ORD-9001">🩸</button>
+                                            <button type="button" class="btn-icon" aria-label="Process ORD-9001">⚙️</button>
+                                            <button type="button" class="btn-icon" aria-label="Enter Result for ORD-9001">📝</button>
+                                            <button type="button" class="btn-icon" aria-label="View Report for ORD-9001">📄</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for ORD-9001">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select order ORD-9002"></td>
+                                    <td>ORD-9002</td>
+                                    <td>Priya Patel</td>
+                                    <td>PT-1002</td>
+                                    <td>Dr. Priya Sharma</td>
+                                    <td>Lipid Profile, LFT</td>
+                                    <td>Blood</td>
+                                    <td>2026-08-15 10:15</td>
+                                    <td><span class="badge badge-partial">Urgent</span></td>
+                                    <td><span class="badge badge-partial">Processing</span></td>
+                                    <td><span class="badge badge-partial">Partial</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View ORD-9002">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Collect Sample for ORD-9002">🩸</button>
+                                            <button type="button" class="btn-icon" aria-label="Process ORD-9002">⚙️</button>
+                                            <button type="button" class="btn-icon" aria-label="Enter Result for ORD-9002">📝</button>
+                                            <button type="button" class="btn-icon" aria-label="View Report for ORD-9002">📄</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for ORD-9002">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select order ORD-9003"></td>
+                                    <td>ORD-9003</td>
+                                    <td>Rohan Verma</td>
+                                    <td>PT-1003</td>
+                                    <td>Dr. Amit Patel</td>
+                                    <td>Blood Glucose, HbA1c</td>
+                                    <td>Blood</td>
+                                    <td>2026-08-15 11:00</td>
+                                    <td><span class="badge badge-paid">Normal</span></td>
+                                    <td><span class="badge badge-paid">Sample Collected</span></td>
+                                    <td><span class="badge badge-paid">Paid</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View ORD-9003">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Collect Sample for ORD-9003">🩸</button>
+                                            <button type="button" class="btn-icon" aria-label="Process ORD-9003">⚙️</button>
+                                            <button type="button" class="btn-icon" aria-label="Enter Result for ORD-9003">📝</button>
+                                            <button type="button" class="btn-icon" aria-label="View Report for ORD-9003">📄</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for ORD-9003">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select order ORD-9004"></td>
+                                    <td>ORD-9004</td>
+                                    <td>Ananya Gupta</td>
+                                    <td>PT-1004</td>
+                                    <td>Dr. Rajesh Kumar</td>
+                                    <td>Thyroid Profile (T3, T4, TSH)</td>
+                                    <td>Serum</td>
+                                    <td>2026-08-15 11:45</td>
+                                    <td><span class="badge badge-paid">Normal</span></td>
+                                    <td><span class="badge badge-pending">Sample Pending</span></td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View ORD-9004">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Collect Sample for ORD-9004">🩸</button>
+                                            <button type="button" class="btn-icon" aria-label="Process ORD-9004">⚙️</button>
+                                            <button type="button" class="btn-icon" aria-label="Enter Result for ORD-9004">📝</button>
+                                            <button type="button" class="btn-icon" aria-label="View Report for ORD-9004">📄</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for ORD-9004">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select order ORD-9005"></td>
+                                    <td>ORD-9005</td>
+                                    <td>Kabir Singh</td>
+                                    <td>PT-1005</td>
+                                    <td>Dr. Priya Sharma</td>
+                                    <td>Urine Routine & Microscopy</td>
+                                    <td>Urine</td>
+                                    <td>2026-08-15 12:20</td>
+                                    <td><span class="badge badge-paid">Normal</span></td>
+                                    <td><span class="badge badge-paid">Completed</span></td>
+                                    <td><span class="badge badge-paid">Paid</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View ORD-9005">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Collect Sample for ORD-9005">🩸</button>
+                                            <button type="button" class="btn-icon" aria-label="Process ORD-9005">⚙️</button>
+                                            <button type="button" class="btn-icon" aria-label="Enter Result for ORD-9005">📝</button>
+                                            <button type="button" class="btn-icon" aria-label="View Report for ORD-9005">📄</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for ORD-9005">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select order ORD-9006"></td>
+                                    <td>ORD-9006</td>
+                                    <td>Meera Nair</td>
+                                    <td>PT-1006</td>
+                                    <td>Dr. Amit Patel</td>
+                                    <td>Kidney Function Test (KFT)</td>
+                                    <td>Blood</td>
+                                    <td>2026-08-15 13:10</td>
+                                    <td><span class="badge badge-partial">Urgent</span></td>
+                                    <td><span class="badge badge-partial">Processing</span></td>
+                                    <td><span class="badge badge-paid">Paid</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View ORD-9006">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Collect Sample for ORD-9006">🩸</button>
+                                            <button type="button" class="btn-icon" aria-label="Process ORD-9006">⚙️</button>
+                                            <button type="button" class="btn-icon" aria-label="Enter Result for ORD-9006">📝</button>
+                                            <button type="button" class="btn-icon" aria-label="View Report for ORD-9006">📄</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for ORD-9006">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select order ORD-9007"></td>
+                                    <td>ORD-9007</td>
+                                    <td>Vikram Malhotra</td>
+                                    <td>PT-1007</td>
+                                    <td>Dr. Rajesh Kumar</td>
+                                    <td>Vitamin D & B12</td>
+                                    <td>Serum</td>
+                                    <td>2026-08-15 14:00</td>
+                                    <td><span class="badge badge-paid">Normal</span></td>
+                                    <td><span class="badge badge-pending">Ordered</span></td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View ORD-9007">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Collect Sample for ORD-9007">🩸</button>
+                                            <button type="button" class="btn-icon" aria-label="Process ORD-9007">⚙️</button>
+                                            <button type="button" class="btn-icon" aria-label="Enter Result for ORD-9007">📝</button>
+                                            <button type="button" class="btn-icon" aria-label="View Report for ORD-9007">📄</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for ORD-9007">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select order ORD-9008"></td>
+                                    <td>ORD-9008</td>
+                                    <td>Neha Joshi</td>
+                                    <td>PT-1008</td>
+                                    <td>Dr. Priya Sharma</td>
+                                    <td>C-Reactive Protein (CRP)</td>
+                                    <td>Blood</td>
+                                    <td>2026-08-15 14:45</td>
+                                    <td><span class="badge badge-overdue">Critical</span></td>
+                                    <td><span class="badge badge-partial">Processing</span></td>
+                                    <td><span class="badge badge-paid">Paid</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View ORD-9008">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Collect Sample for ORD-9008">🩸</button>
+                                            <button type="button" class="btn-icon" aria-label="Process ORD-9008">⚙️</button>
+                                            <button type="button" class="btn-icon" aria-label="Enter Result for ORD-9008">📝</button>
+                                            <button type="button" class="btn-icon" aria-label="View Report for ORD-9008">📄</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for ORD-9008">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select order ORD-9009"></td>
+                                    <td>ORD-9009</td>
+                                    <td>Siddharth Roy</td>
+                                    <td>PT-1009</td>
+                                    <td>Dr. Amit Patel</td>
+                                    <td>Widal Test for Typhoid</td>
+                                    <td>Blood</td>
+                                    <td>2026-08-15 15:30</td>
+                                    <td><span class="badge badge-partial">Urgent</span></td>
+                                    <td><span class="badge badge-paid">Sample Collected</span></td>
+                                    <td><span class="badge badge-partial">Partial</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View ORD-9009">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Collect Sample for ORD-9009">🩸</button>
+                                            <button type="button" class="btn-icon" aria-label="Process ORD-9009">⚙️</button>
+                                            <button type="button" class="btn-icon" aria-label="Enter Result for ORD-9009">📝</button>
+                                            <button type="button" class="btn-icon" aria-label="View Report for ORD-9009">📄</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for ORD-9009">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select order ORD-9010"></td>
+                                    <td>ORD-9010</td>
+                                    <td>Divya Sen</td>
+                                    <td>PT-1010</td>
+                                    <td>Dr. Rajesh Kumar</td>
+                                    <td>Dengue NS1 Antigen</td>
+                                    <td>Blood</td>
+                                    <td>2026-08-15 16:10</td>
+                                    <td><span class="badge badge-overdue">Critical</span></td>
+                                    <td><span class="badge badge-paid">Completed</span></td>
+                                    <td><span class="badge badge-paid">Paid</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View ORD-9010">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Collect Sample for ORD-9010">🩸</button>
+                                            <button type="button" class="btn-icon" aria-label="Process ORD-9010">⚙️</button>
+                                            <button type="button" class="btn-icon" aria-label="Enter Result for ORD-9010">📝</button>
+                                            <button type="button" class="btn-icon" aria-label="View Report for ORD-9010">📄</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for ORD-9010">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Empty State for Lab Orders (Hidden) -->
+                    <div class="empty-state" hidden>
+                        <div class="empty-icon"><span class="icon-placeholder" aria-hidden="true">📭</span></div>
+                        <h5>No Lab Orders Found</h5>
+                        <p>There are no laboratory orders matching your search criteria.</p>
+                        <button type="button" class="btn btn-primary">Create New Lab Order</button>
+                    </div>
+                    <!-- Pagination -->
+                    <nav class="pagination-container" aria-label="Lab Orders Table Navigation">
+                        <span class="pagination-info">Showing 1–10 of 148 orders</span>
+                        <div class="pagination-controls">
+                            <label for="rows-per-page-orders">Rows per page:</label>
+                            <select id="rows-per-page-orders">
+                                <option value="10" selected>10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                            <button type="button" class="btn btn-outline" disabled>Previous</button>
+                            <span class="page-numbers">Page 1 of 15</span>
+                            <button type="button" class="btn btn-outline">Next</button>
+                        </div>
+                    </nav>
+                </section>
+
+                <!-- Sample Collection Tracker -->
+                <section class="table-section" aria-labelledby="sample-tracker-heading">
+                    <div class="section-header">
+                        <h4 id="sample-tracker-heading">Sample Collection Tracker</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Sample ID</th>
+                                    <th>Order ID</th>
+                                    <th>Patient</th>
+                                    <th>Sample Type</th>
+                                    <th>Collection Time</th>
+                                    <th>Collected By</th>
+                                    <th>Status</th>
+                                    <th>Priority</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>SMP-4001</td>
+                                    <td>ORD-9001</td>
+                                    <td>Aarav Sharma</td>
+                                    <td>Blood</td>
+                                    <td>2026-08-15 09:40</td>
+                                    <td>Ramesh Verma</td>
+                                    <td><span class="badge badge-paid">Completed</span></td>
+                                    <td><span class="badge badge-overdue">Critical</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>SMP-4002</td>
+                                    <td>ORD-9002</td>
+                                    <td>Priya Patel</td>
+                                    <td>Blood</td>
+                                    <td>2026-08-15 10:25</td>
+                                    <td>Sunita Rao</td>
+                                    <td><span class="badge badge-partial">Processing</span></td>
+                                    <td><span class="badge badge-partial">Urgent</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>SMP-4003</td>
+                                    <td>ORD-9003</td>
+                                    <td>Rohan Verma</td>
+                                    <td>Blood</td>
+                                    <td>2026-08-15 11:10</td>
+                                    <td>Ramesh Verma</td>
+                                    <td><span class="badge badge-paid">Collected</span></td>
+                                    <td><span class="badge badge-paid">Normal</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>SMP-4004</td>
+                                    <td>ORD-9004</td>
+                                    <td>Ananya Gupta</td>
+                                    <td>Serum</td>
+                                    <td>--</td>
+                                    <td>--</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td><span class="badge badge-paid">Normal</span></td>
+                                    <td><button type="button" class="btn btn-primary btn-sm">Collect Now</button></td>
+                                </tr>
+                                <tr>
+                                    <td>SMP-4005</td>
+                                    <td>ORD-9005</td>
+                                    <td>Kabir Singh</td>
+                                    <td>Urine</td>
+                                    <td>2026-08-15 12:30</td>
+                                    <td>Manoj Kumar</td>
+                                    <td><span class="badge badge-paid">Completed</span></td>
+                                    <td><span class="badge badge-paid">Normal</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>SMP-4006</td>
+                                    <td>ORD-9006</td>
+                                    <td>Meera Nair</td>
+                                    <td>Blood</td>
+                                    <td>2026-08-15 13:20</td>
+                                    <td>Sunita Rao</td>
+                                    <td><span class="badge badge-partial">Processing</span></td>
+                                    <td><span class="badge badge-partial">Urgent</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>SMP-4007</td>
+                                    <td>ORD-9007</td>
+                                    <td>Vikram Malhotra</td>
+                                    <td>Serum</td>
+                                    <td>--</td>
+                                    <td>--</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td><span class="badge badge-paid">Normal</span></td>
+                                    <td><button type="button" class="btn btn-primary btn-sm">Collect Now</button></td>
+                                </tr>
+                                <tr>
+                                    <td>SMP-4008</td>
+                                    <td>ORD-9008</td>
+                                    <td>Neha Joshi</td>
+                                    <td>Blood</td>
+                                    <td>2026-08-15 14:55</td>
+                                    <td>Ramesh Verma</td>
+                                    <td><span class="badge badge-partial">Processing</span></td>
+                                    <td><span class="badge badge-overdue">Critical</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Details</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Empty State for Sample Tracker (Hidden) -->
+                    <div class="empty-state" hidden>
+                        <div class="empty-icon"><span class="icon-placeholder" aria-hidden="true">📭</span></div>
+                        <h5>No Pending Samples</h5>
+                        <p>All patient samples have been successfully collected and processed.</p>
+                    </div>
+                    <!-- Pagination -->
+                    <nav class="pagination-container" aria-label="Sample Tracker Navigation">
+                        <span class="pagination-info">Showing 1–8 of 54 samples</span>
+                        <div class="pagination-controls">
+                            <label for="rows-per-page-sample">Rows per page:</label>
+                            <select id="rows-per-page-sample">
+                                <option value="10" selected>10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                            </select>
+                            <button type="button" class="btn btn-outline" disabled>Previous</button>
+                            <span class="page-numbers">Page 1 of 7</span>
+                            <button type="button" class="btn btn-outline">Next</button>
+                        </div>
+                    </nav>
+                </section>
+
+                <!-- Test Categories Overview -->
+                <section class="card-section" aria-labelledby="test-categories-heading">
+                    <div class="section-header">
+                        <h4 id="test-categories-heading">Test Categories Overview</h4>
+                    </div>
+                    <div class="payment-methods-grid">
+                        <div class="payment-method-card">
+                            <span class="method-name">Hematology</span>
+                            <span class="method-count">18 tests</span>
+                            <span class="method-amount">15 orders today</span>
+                            <span class="method-percentage"><button type="button" class="btn btn-outline btn-sm">View Category</button></span>
+                        </div>
+                        <div class="payment-method-card">
+                            <span class="method-name">Biochemistry</span>
+                            <span class="method-count">24 tests</span>
+                            <span class="method-amount">18 orders today</span>
+                            <span class="method-percentage"><button type="button" class="btn btn-outline btn-sm">View Category</button></span>
+                        </div>
+                        <div class="payment-method-card">
+                            <span class="method-name">Microbiology</span>
+                            <span class="method-count">12 tests</span>
+                            <span class="method-amount">4 orders today</span>
+                            <span class="method-percentage"><button type="button" class="btn btn-outline btn-sm">View Category</button></span>
+                        </div>
+                        <div class="payment-method-card">
+                            <span class="method-name">Immunology</span>
+                            <span class="method-count">15 tests</span>
+                            <span class="method-amount">6 orders today</span>
+                            <span class="method-percentage"><button type="button" class="btn btn-outline btn-sm">View Category</button></span>
+                        </div>
+                        <div class="payment-method-card">
+                            <span class="method-name">Pathology</span>
+                            <span class="method-count">10 tests</span>
+                            <span class="method-amount">2 orders today</span>
+                            <span class="method-percentage"><button type="button" class="btn btn-outline btn-sm">View Category</button></span>
+                        </div>
+                        <div class="payment-method-card">
+                            <span class="method-name">Radiology</span>
+                            <span class="method-count">8 tests</span>
+                            <span class="method-amount">0 orders today</span>
+                            <span class="method-percentage"><button type="button" class="btn btn-outline btn-sm">View Category</button></span>
+                        </div>
+                        <div class="payment-method-card">
+                            <span class="method-name">Urinalysis</span>
+                            <span class="method-count">6 tests</span>
+                            <span class="method-amount">8 orders today</span>
+                            <span class="method-percentage"><button type="button" class="btn btn-outline btn-sm">View Category</button></span>
+                        </div>
+                        <div class="payment-method-card">
+                            <span class="method-name">Hormone Tests</span>
+                            <span class="method-count">14 tests</span>
+                            <span class="method-amount">5 orders today</span>
+                            <span class="method-percentage"><button type="button" class="btn btn-outline btn-sm">View Category</button></span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Pending Reports Section -->
+                <section class="table-section" aria-labelledby="pending-reports-heading">
+                    <div class="section-header">
+                        <h4 id="pending-reports-heading">Pending Reports</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Report ID</th>
+                                    <th>Order ID</th>
+                                    <th>Patient</th>
+                                    <th>Test</th>
+                                    <th>Sample</th>
+                                    <th>Assigned Technician</th>
+                                    <th>Ordered At</th>
+                                    <th>Expected Completion</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>REP-6001</td>
+                                    <td>ORD-9002</td>
+                                    <td>Priya Patel</td>
+                                    <td>Lipid Profile, LFT</td>
+                                    <td>SMP-4002</td>
+                                    <td>Ramesh Verma</td>
+                                    <td>2026-08-15 10:15</td>
+                                    <td>2026-08-15 14:00</td>
+                                    <td><span class="badge badge-partial">Processing</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn btn-outline btn-sm">View</button>
+                                            <button type="button" class="btn btn-primary btn-sm">Complete Report</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>REP-6002</td>
+                                    <td>ORD-9006</td>
+                                    <td>Meera Nair</td>
+                                    <td>Kidney Function Test</td>
+                                    <td>SMP-4006</td>
+                                    <td>Sunita Rao</td>
+                                    <td>2026-08-15 13:10</td>
+                                    <td>2026-08-15 16:30</td>
+                                    <td><span class="badge badge-partial">Awaiting Review</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn btn-outline btn-sm">View</button>
+                                            <button type="button" class="btn btn-primary btn-sm">Complete Report</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>REP-6003</td>
+                                    <td>ORD-9008</td>
+                                    <td>Neha Joshi</td>
+                                    <td>C-Reactive Protein</td>
+                                    <td>SMP-4008</td>
+                                    <td>Manoj Kumar</td>
+                                    <td>2026-08-15 14:45</td>
+                                    <td>2026-08-15 17:30</td>
+                                    <td><span class="badge badge-partial">Awaiting Approval</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn btn-outline btn-sm">View</button>
+                                            <button type="button" class="btn btn-secondary btn-sm">Notify Doctor</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>REP-6004</td>
+                                    <td>ORD-9009</td>
+                                    <td>Siddharth Roy</td>
+                                    <td>Widal Test</td>
+                                    <td>SMP-4009</td>
+                                    <td>Ramesh Verma</td>
+                                    <td>2026-08-15 15:30</td>
+                                    <td>2026-08-15 19:00</td>
+                                    <td><span class="badge badge-overdue">Delayed</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn btn-outline btn-sm">View</button>
+                                            <button type="button" class="btn btn-secondary btn-sm">Notify Doctor</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Empty State for Pending Reports (Hidden) -->
+                    <div class="empty-state" hidden>
+                        <div class="empty-icon"><span class="icon-placeholder" aria-hidden="true">📭</span></div>
+                        <h5>No Pending Reports</h5>
+                        <p>All laboratory test reports have been completed and verified.</p>
+                    </div>
+                </section>
+
+                <!-- Completed Reports Section -->
+                <section class="table-section" aria-labelledby="completed-reports-heading">
+                    <div class="section-header">
+                        <h4 id="completed-reports-heading">Completed Reports</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Report ID</th>
+                                    <th>Patient</th>
+                                    <th>Test</th>
+                                    <th>Doctor</th>
+                                    <th>Completed Date</th>
+                                    <th>Pathologist</th>
+                                    <th>Result Status</th>
+                                    <th>Report Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>REP-5991</td>
+                                    <td>Aarav Sharma</td>
+                                    <td>Complete Blood Count</td>
+                                    <td>Dr. Rajesh Kumar</td>
+                                    <td>2026-08-15 11:30</td>
+                                    <td>Dr. Anand Mehta</td>
+                                    <td><span class="badge badge-overdue">Critical</span></td>
+                                    <td><span class="badge badge-paid">Verified</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Report</button></td>
+                                </tr>
+                                <tr>
+                                    <td>REP-5992</td>
+                                    <td>Kabir Singh</td>
+                                    <td>Urine Routine</td>
+                                    <td>Dr. Priya Sharma</td>
+                                    <td>2026-08-15 13:45</td>
+                                    <td>Dr. Anand Mehta</td>
+                                    <td><span class="badge badge-paid">Normal</span></td>
+                                    <td><span class="badge badge-paid">Released</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Report</button></td>
+                                </tr>
+                                <tr>
+                                    <td>REP-5993</td>
+                                    <td>Divya Sen</td>
+                                    <td>Dengue NS1 Antigen</td>
+                                    <td>Dr. Rajesh Kumar</td>
+                                    <td>2026-08-15 17:15</td>
+                                    <td>Dr. Sunita Deshmukh</td>
+                                    <td><span class="badge badge-overdue">Critical</span></td>
+                                    <td><span class="badge badge-paid">Verified</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Report</button></td>
+                                </tr>
+                                <tr>
+                                    <td>REP-5994</td>
+                                    <td>Rohan Verma</td>
+                                    <td>Blood Glucose Fasting</td>
+                                    <td>Dr. Amit Patel</td>
+                                    <td>2026-08-14 10:20</td>
+                                    <td>Dr. Anand Mehta</td>
+                                    <td><span class="badge badge-partial">Abnormal</span></td>
+                                    <td><span class="badge badge-paid">Released</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Report</button></td>
+                                </tr>
+                                <tr>
+                                    <td>REP-5995</td>
+                                    <td>Ananya Gupta</td>
+                                    <td>Serum Creatinine</td>
+                                    <td>Dr. Rajesh Kumar</td>
+                                    <td>2026-08-14 11:50</td>
+                                    <td>Dr. Sunita Deshmukh</td>
+                                    <td><span class="badge badge-paid">Normal</span></td>
+                                    <td><span class="badge badge-paid">Released</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Report</button></td>
+                                </tr>
+                                <tr>
+                                    <td>REP-5996</td>
+                                    <td>Priya Patel</td>
+                                    <td>HbA1c</td>
+                                    <td>Dr. Priya Sharma</td>
+                                    <td>2026-08-14 14:10</td>
+                                    <td>Dr. Anand Mehta</td>
+                                    <td><span class="badge badge-partial">Abnormal</span></td>
+                                    <td><span class="badge badge-paid">Released</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Report</button></td>
+                                </tr>
+                                <tr>
+                                    <td>REP-5997</td>
+                                    <td>Vikram Malhotra</td>
+                                    <td>Liver Function Test</td>
+                                    <td>Dr. Amit Patel</td>
+                                    <td>2026-08-14 16:30</td>
+                                    <td>Dr. Sunita Deshmukh</td>
+                                    <td><span class="badge badge-paid">Normal</span></td>
+                                    <td><span class="badge badge-paid">Released</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Report</button></td>
+                                </tr>
+                                <tr>
+                                    <td>REP-5998</td>
+                                    <td>Neha Joshi</td>
+                                    <td>Thyroid Profile</td>
+                                    <td>Dr. Rajesh Kumar</td>
+                                    <td>2026-08-13 15:20</td>
+                                    <td>Dr. Anand Mehta</td>
+                                    <td><span class="badge badge-paid">Normal</span></td>
+                                    <td><span class="badge badge-paid">Released</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Report</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Empty State for Completed Reports (Hidden) -->
+                    <div class="empty-state" hidden>
+                        <div class="empty-icon"><span class="icon-placeholder" aria-hidden="true">📭</span></div>
+                        <h5>No Completed Reports</h5>
+                        <p>There are no completed reports found matching the criteria.</p>
+                    </div>
+                    <!-- Pagination -->
+                    <nav class="pagination-container" aria-label="Completed Reports Navigation">
+                        <span class="pagination-info">Showing 1–8 of 1,120 reports</span>
+                        <div class="pagination-controls">
+                            <label for="rows-per-page-completed">Rows per page:</label>
+                            <select id="rows-per-page-completed">
+                                <option value="10" selected>10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                            </select>
+                            <button type="button" class="btn btn-outline" disabled>Previous</button>
+                            <span class="page-numbers">Page 1 of 140</span>
+                            <button type="button" class="btn btn-outline">Next</button>
+                        </div>
+                    </nav>
+                </section>
+
+                <!-- Lab Technicians / Staff Section -->
+                <section class="table-section" aria-labelledby="lab-staff-heading">
+                    <div class="section-header">
+                        <h4 id="lab-staff-heading">Lab Technicians & Pathologists</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Staff</th>
+                                    <th>Staff ID</th>
+                                    <th>Role</th>
+                                    <th>Department</th>
+                                    <th>Current Status</th>
+                                    <th>Tests Today</th>
+                                    <th>Pending Tests</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 10px;">
+                                            <div class="user-avatar-placeholder" aria-hidden="true">RV</div>
+                                            <span>Ramesh Verma</span>
+                                        </div>
+                                    </td>
+                                    <td>STF-301</td>
+                                    <td>Senior Technician</td>
+                                    <td>Hematology</td>
+                                    <td><span class="badge badge-paid">Available</span></td>
+                                    <td>16</td>
+                                    <td>2</td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Profile</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 10px;">
+                                            <div class="user-avatar-placeholder" aria-hidden="true">SR</div>
+                                            <span>Sunita Rao</span>
+                                        </div>
+                                    </td>
+                                    <td>STF-302</td>
+                                    <td>Lab Technician</td>
+                                    <td>Biochemistry</td>
+                                    <td><span class="badge badge-partial">Processing</span></td>
+                                    <td>14</td>
+                                    <td>4</td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Profile</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 10px;">
+                                            <div class="user-avatar-placeholder" aria-hidden="true">AM</div>
+                                            <span>Dr. Anand Mehta</span>
+                                        </div>
+                                    </td>
+                                    <td>STF-303</td>
+                                    <td>Pathologist</td>
+                                    <td>Pathology & Histology</td>
+                                    <td><span class="badge badge-paid">Available</span></td>
+                                    <td>22</td>
+                                    <td>1</td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Profile</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 10px;">
+                                            <div class="user-avatar-placeholder" aria-hidden="true">MK</div>
+                                            <span>Manoj Kumar</span>
+                                        </div>
+                                    </td>
+                                    <td>STF-304</td>
+                                    <td>Lab Assistant</td>
+                                    <td>Microbiology</td>
+                                    <td><span class="badge badge-overdue">Busy</span></td>
+                                    <td>10</td>
+                                    <td>5</td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Profile</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 10px;">
+                                            <div class="user-avatar-placeholder" aria-hidden="true">SD</div>
+                                            <span>Dr. Sunita Deshmukh</span>
+                                        </div>
+                                    </td>
+                                    <td>STF-305</td>
+                                    <td>Pathologist</td>
+                                    <td>Biochemistry & Immunology</td>
+                                    <td><span class="badge badge-paid">Available</span></td>
+                                    <td>18</td>
+                                    <td>0</td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Profile</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 10px;">
+                                            <div class="user-avatar-placeholder" aria-hidden="true">AP</div>
+                                            <span>Anita Pillai</span>
+                                        </div>
+                                    </td>
+                                    <td>STF-306</td>
+                                    <td>Lab Technician</td>
+                                    <td>Urinalysis</td>
+                                    <td><span class="badge badge-pending">Off Duty</span></td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">View Profile</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Lab Test Catalog Section -->
+                <section class="table-section" aria-labelledby="test-catalog-heading">
+                    <div class="section-header">
+                        <h4 id="test-catalog-heading">Lab Test Catalog</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Test ID</th>
+                                    <th>Test Name</th>
+                                    <th>Category</th>
+                                    <th>Sample Type</th>
+                                    <th>Turnaround Time</th>
+                                    <th>Price</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>TST-101</td>
+                                    <td>Complete Blood Count (CBC)</td>
+                                    <td>Hematology</td>
+                                    <td>Blood</td>
+                                    <td>4 Hours</td>
+                                    <td>₹450.00</td>
+                                    <td><span class="badge badge-paid">Active</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TST-102</td>
+                                    <td>Blood Glucose Fasting</td>
+                                    <td>Biochemistry</td>
+                                    <td>Blood</td>
+                                    <td>2 Hours</td>
+                                    <td>₹150.00</td>
+                                    <td><span class="badge badge-paid">Active</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TST-103</td>
+                                    <td>Lipid Profile</td>
+                                    <td>Biochemistry</td>
+                                    <td>Blood</td>
+                                    <td>6 Hours</td>
+                                    <td>₹800.00</td>
+                                    <td><span class="badge badge-paid">Active</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TST-104</td>
+                                    <td>Liver Function Test (LFT)</td>
+                                    <td>Biochemistry</td>
+                                    <td>Blood</td>
+                                    <td>6 Hours</td>
+                                    <td>₹950.00</td>
+                                    <td><span class="badge badge-paid">Active</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TST-105</td>
+                                    <td>Kidney Function Test (KFT)</td>
+                                    <td>Biochemistry</td>
+                                    <td>Blood</td>
+                                    <td>6 Hours</td>
+                                    <td>₹900.00</td>
+                                    <td><span class="badge badge-paid">Active</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TST-106</td>
+                                    <td>Thyroid Profile (T3, T4, TSH)</td>
+                                    <td>Hormone Tests</td>
+                                    <td>Serum</td>
+                                    <td>12 Hours</td>
+                                    <td>₹1,100.00</td>
+                                    <td><span class="badge badge-paid">Active</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TST-107</td>
+                                    <td>Urine Routine & Microscopy</td>
+                                    <td>Urinalysis</td>
+                                    <td>Urine</td>
+                                    <td>3 Hours</td>
+                                    <td>₹250.00</td>
+                                    <td><span class="badge badge-paid">Active</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TST-108</td>
+                                    <td>HbA1c (Glycated Hemoglobin)</td>
+                                    <td>Biochemistry</td>
+                                    <td>Blood</td>
+                                    <td>4 Hours</td>
+                                    <td>₹600.00</td>
+                                    <td><span class="badge badge-paid">Active</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TST-109</td>
+                                    <td>Vitamin D (25-OH)</td>
+                                    <td>Hormone Tests</td>
+                                    <td>Serum</td>
+                                    <td>24 Hours</td>
+                                    <td>₹1,500.00</td>
+                                    <td><span class="badge badge-paid">Active</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TST-110</td>
+                                    <td>C-Reactive Protein (CRP)</td>
+                                    <td>Immunology</td>
+                                    <td>Blood</td>
+                                    <td>4 Hours</td>
+                                    <td>₹500.00</td>
+                                    <td><span class="badge badge-paid">Active</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Edit</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Empty State for Test Catalog (Hidden) -->
+                    <div class="empty-state" hidden>
+                        <div class="empty-icon"><span class="icon-placeholder" aria-hidden="true">📭</span></div>
+                        <h5>No Tests Found</h5>
+                        <p>There are no laboratory tests found matching your search criteria.</p>
+                        <button type="button" class="btn btn-primary">Add New Test</button>
+                    </div>
+                    <!-- Pagination -->
+                    <nav class="pagination-container" aria-label="Test Catalog Navigation">
+                        <span class="pagination-info">Showing 1–10 of 84 tests</span>
+                        <div class="pagination-controls">
+                            <label for="rows-per-page-catalog">Rows per page:</label>
+                            <select id="rows-per-page-catalog">
+                                <option value="10" selected>10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                            </select>
+                            <button type="button" class="btn btn-outline" disabled>Previous</button>
+                            <span class="page-numbers">Page 1 of 9</span>
+                            <button type="button" class="btn btn-outline">Next</button>
+                        </div>
+                    </nav>
+                </section>
+
+                <!-- Equipment Status Section -->
+                <section class="table-section" aria-labelledby="equipment-heading">
+                    <div class="section-header">
+                        <h4 id="equipment-heading">Laboratory Equipment Status</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Equipment Name</th>
+                                    <th>Equipment ID</th>
+                                    <th>Type</th>
+                                    <th>Current Status</th>
+                                    <th>Last Maintenance</th>
+                                    <th>Next Maintenance</th>
+                                    <th>Assigned Department</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Automated Hematology Analyzer</td>
+                                    <td>EQ-501</td>
+                                    <td>Analyzer</td>
+                                    <td><span class="badge badge-paid">Operational</span></td>
+                                    <td>2026-07-10</td>
+                                    <td>2026-10-10</td>
+                                    <td>Hematology</td>
+                                </tr>
+                                <tr>
+                                    <td>Clinical Chemistry Analyzer</td>
+                                    <td>EQ-502</td>
+                                    <td>Analyzer</td>
+                                    <td><span class="badge badge-paid">Operational</span></td>
+                                    <td>2026-08-01</td>
+                                    <td>2026-11-01</td>
+                                    <td>Biochemistry</td>
+                                </tr>
+                                <tr>
+                                    <td>Centrifuge High Speed</td>
+                                    <td>EQ-503</td>
+                                    <td>Processing</td>
+                                    <td><span class="badge badge-partial">Maintenance</span></td>
+                                    <td>2026-06-15</td>
+                                    <td>2026-08-20</td>
+                                    <td>Sample Collection</td>
+                                </tr>
+                                <tr>
+                                    <td>Immunoassay Analyzer</td>
+                                    <td>EQ-504</td>
+                                    <td>Analyzer</td>
+                                    <td><span class="badge badge-paid">Operational</span></td>
+                                    <td>2026-07-20</td>
+                                    <td>2026-10-20</td>
+                                    <td>Immunology</td>
+                                </tr>
+                                <tr>
+                                    <td>Microscope Digital Trinocular</td>
+                                    <td>EQ-505</td>
+                                    <td>Microscopy</td>
+                                    <td><span class="badge badge-overdue">Calibration Required</span></td>
+                                    <td>2026-05-12</td>
+                                    <td>2026-08-18</td>
+                                    <td>Pathology</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Lab Analytics Section -->
+                <section class="card-section" aria-labelledby="lab-analytics-heading">
+                    <div class="section-header">
+                        <h4 id="lab-analytics-heading">Laboratory Analytics & Reports</h4>
+                    </div>
+                    <div class="grid-two-column">
+                        <div class="analytics-sub-section">
+                            <h5>A. Lab Orders Overview</h5>
+                            <div class="chart-placeholder" aria-label="Lab Orders Overview Chart Placeholder">
+                                <span>[Orders: Today, This Week, This Month Chart Placeholder]</span>
+                            </div>
+                        </div>
+                        <div class="analytics-sub-section">
+                            <h5>B. Test Completion</h5>
+                            <div class="chart-placeholder" aria-label="Test Completion Chart Placeholder">
+                                <span>[Completed, Processing, Pending, Cancelled Chart Placeholder]</span>
+                            </div>
+                        </div>
+                        <div class="analytics-sub-section">
+                            <h5>C. Revenue Overview</h5>
+                            <div class="chart-placeholder" aria-label="Revenue Overview Chart Placeholder">
+                                <span>[Revenue: Today, This Week, This Month Chart Placeholder]</span>
+                            </div>
+                        </div>
+                        <div class="analytics-sub-section">
+                            <h5>D. Most Requested Tests</h5>
+                            <div class="chart-placeholder" aria-label="Most Requested Tests Chart Placeholder">
+                                <span>[CBC, Lipid Profile, LFT, Thyroid Profile, Glucose Chart Placeholder]</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="analytics-sub-section" style="margin-top: 20px;">
+                        <h5>E. Turnaround Time (TAT)</h5>
+                        <p style="margin-top: 8px; color: #555;"><strong>Average TAT:</strong> 4.2 Hours | <strong>Fastest Test:</strong> Blood Glucose (1.5 Hours) | <strong>Delayed Tests:</strong> 2 Orders (Widal Test / Microbial Culture)</p>
+                    </div>
+                </section>
+
+                <!-- Forms Container Wrapper -->
+                <div class="forms-container-wrapper">
+                    <!-- New Lab Order Form -->
+                    <section class="form-section-card" aria-labelledby="new-lab-order-heading">
+                        <div class="section-header">
+                            <h4 id="new-lab-order-heading">Create New Lab Order</h4>
+                        </div>
+                        <form class="invoice-form">
+                            <fieldset>
+                                <legend>Patient Information</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="order-patient">Select Patient</label>
+                                        <select id="order-patient">
+                                            <option value="">Choose patient...</option>
+                                            <option value="pt-1001">Aarav Sharma (PT-1001)</option>
+                                            <option value="pt-1002">Priya Patel (PT-1002)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="order-patient-id">Patient ID</label>
+                                        <input type="text" id="order-patient-id" placeholder="Auto-filled" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="order-patient-contact">Contact Placeholder</label>
+                                        <input type="text" id="order-patient-contact" placeholder="Phone / Email" readonly>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Doctor & Order Details</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="order-doctor">Select Doctor</label>
+                                        <select id="order-doctor">
+                                            <option value="">Choose doctor...</option>
+                                            <option value="doc1">Dr. Rajesh Kumar</option>
+                                            <option value="doc2">Dr. Priya Sharma</option>
+                                            <option value="doc3">Dr. Amit Patel</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="order-department">Department</label>
+                                        <input type="text" id="order-department" placeholder="Department name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="order-date">Order Date</label>
+                                        <input type="date" id="order-date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="order-priority">Priority</label>
+                                        <select id="order-priority">
+                                            <option value="normal">Normal</option>
+                                            <option value="urgent">Urgent</option>
+                                            <option value="critical">Critical</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="order-clinical-notes">Clinical Notes</label>
+                                        <textarea id="order-clinical-notes" placeholder="Relevant clinical symptoms or history..."></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Tests Selection</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="select-test">Select Test</label>
+                                        <select id="select-test">
+                                            <option value="">Choose test...</option>
+                                            <option value="tst-101">Complete Blood Count (CBC)</option>
+                                            <option value="tst-102">Blood Glucose Fasting</option>
+                                            <option value="tst-103">Lipid Profile</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="test-category-val">Category</label>
+                                        <input type="text" id="test-category-val" placeholder="Auto-filled" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="test-sample-type">Sample Type</label>
+                                        <input type="text" id="test-sample-type" placeholder="Auto-filled" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="test-price">Price</label>
+                                        <input type="number" id="test-price" placeholder="₹0.00" readonly>
+                                    </div>
+                                    <div class="form-group" style="display: flex; align-items: flex-end;">
+                                        <button type="button" class="btn btn-outline" aria-label="Remove Test">Remove</button>
+                                    </div>
+                                </div>
+                                <div class="form-row" style="margin-top: 10px;">
+                                    <button type="button" class="btn btn-secondary" aria-label="Add Test">Add Test</button>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Billing & Payment</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="order-subtotal">Subtotal</label>
+                                        <input type="text" id="order-subtotal" placeholder="₹0.00" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="order-discount">Discount</label>
+                                        <input type="number" id="order-discount" placeholder="₹0.00">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="order-tax">Tax (GST)</label>
+                                        <input type="text" id="order-tax" placeholder="₹0.00" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="order-total">Total</label>
+                                        <input type="text" id="order-total" placeholder="₹0.00" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="order-payment-status">Payment Status</label>
+                                        <select id="order-payment-status">
+                                            <option value="paid">Paid</option>
+                                            <option value="pending">Pending</option>
+                                            <option value="partial">Partial</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary">Save Order</button>
+                                <button type="button" class="btn btn-secondary">Place Lab Order</button>
+                                <button type="button" class="btn btn-outline">Cancel</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <!-- Sample Collection Form -->
+                    <section class="form-section-card" aria-labelledby="sample-collection-form-heading">
+                        <div class="section-header">
+                            <h4 id="sample-collection-form-heading">Sample Collection Form</h4>
+                        </div>
+                        <form class="invoice-form">
+                            <fieldset>
+                                <legend>Sample & Order Details</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="coll-order-id">Order ID</label>
+                                        <input type="text" id="coll-order-id" placeholder="ORD-XXXX">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="coll-patient">Patient Name</label>
+                                        <input type="text" id="coll-patient" placeholder="Patient name" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="coll-sample-id">Sample ID</label>
+                                        <input type="text" id="coll-sample-id" placeholder="SMP-XXXX">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="coll-sample-type">Sample Type</label>
+                                        <select id="coll-sample-type">
+                                            <option value="blood">Blood</option>
+                                            <option value="urine">Urine</option>
+                                            <option value="serum">Serum</option>
+                                            <option value="plasma">Plasma</option>
+                                            <option value="swab">Swab</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Collection Details</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="coll-date">Collection Date</label>
+                                        <input type="date" id="coll-date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="coll-time">Collection Time</label>
+                                        <input type="time" id="coll-time">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="coll-by">Collected By</label>
+                                        <input type="text" id="coll-by" placeholder="Technician name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="coll-site">Collection Site</label>
+                                        <input type="text" id="coll-site" placeholder="e.g. Left Arm / Phlebotomy Room 2">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="coll-condition">Sample Condition</label>
+                                        <select id="coll-condition">
+                                            <option value="good">Good</option>
+                                            <option value="insufficient">Insufficient</option>
+                                            <option value="hemolyzed">Hemolyzed</option>
+                                            <option value="contaminated">Contaminated</option>
+                                            <option value="rejected">Rejected</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="coll-notes">Notes</label>
+                                        <textarea id="coll-notes" placeholder="Sample collection remarks..."></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary">Save Sample</button>
+                                <button type="button" class="btn btn-secondary">Mark Collected</button>
+                                <button type="button" class="btn btn-outline">Cancel</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <!-- Enter Test Result Form -->
+                    <section class="form-section-card" aria-labelledby="enter-result-heading">
+                        <div class="section-header">
+                            <h4 id="enter-result-heading">Enter Test Result Form</h4>
+                        </div>
+                        <form class="invoice-form">
+                            <fieldset>
+                                <legend>Order & Sample Context</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="res-order-id">Order ID</label>
+                                        <input type="text" id="res-order-id" placeholder="ORD-XXXX">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="res-patient">Patient</label>
+                                        <input type="text" id="res-patient" placeholder="Patient name" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="res-sample-id">Sample ID</label>
+                                        <input type="text" id="res-sample-id" placeholder="SMP-XXXX" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="res-test">Test Name</label>
+                                        <input type="text" id="res-test" placeholder="Test name" readonly>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Test Parameters & Results</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="res-parameter">Test Parameter</label>
+                                        <input type="text" id="res-parameter" placeholder="e.g. Hemoglobin">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="res-value">Result</label>
+                                        <input type="text" id="res-value" placeholder="Result value">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="res-unit">Unit</label>
+                                        <input type="text" id="res-unit" placeholder="e.g. g/dL">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="res-ref-range">Reference Range</label>
+                                        <input type="text" id="res-ref-range" placeholder="e.g. 13.0 - 17.0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="res-status">Result Status</label>
+                                        <select id="res-status">
+                                            <option value="normal">Normal</option>
+                                            <option value="abnormal">Abnormal</option>
+                                            <option value="critical">Critical</option>
+                                            <option value="inconclusive">Inconclusive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row" style="margin-top: 10px;">
+                                    <button type="button" class="btn btn-outline" aria-label="Add Parameter">Add Parameter</button>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Technician & Notes</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="res-technician">Technician</label>
+                                        <input type="text" id="res-technician" placeholder="Technician name">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="res-notes">Notes</label>
+                                        <textarea id="res-notes" placeholder="Pathologist or technician remarks..."></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline">Save Draft</button>
+                                <button type="button" class="btn btn-primary">Submit for Review</button>
+                                <button type="button" class="btn btn-secondary">Cancel</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <!-- Lab Report Details Panel (Structural Modal) -->
+                    <aside class="side-panel-container" aria-label="Laboratory Report Details Panel">
+                        <div class="section-header">
+                            <h4>Laboratory Report Details</h4>
+                        </div>
+                        <div class="panel-content">
+                            <div class="panel-section">
+                                <h5>Patient Information</h5>
+                                <p><strong>Patient Name:</strong> Aarav Sharma</p>
+                                <p><strong>Patient ID:</strong> PT-1001</p>
+                                <p><strong>Age / Gender:</strong> 35 Years / Male</p>
+                            </div>
+                            <div class="panel-section">
+                                <h5>Order Information</h5>
+                                <p><strong>Order ID:</strong> ORD-9001</p>
+                                <p><strong>Order Date:</strong> 2026-08-15 09:30</p>
+                                <p><strong>Doctor:</strong> Dr. Rajesh Kumar</p>
+                                <p><strong>Department:</strong> General Medicine</p>
+                            </div>
+                            <div class="panel-section">
+                                <h5>Sample Information</h5>
+                                <p><strong>Sample ID:</strong> SMP-4001</p>
+                                <p><strong>Sample Type:</strong> Blood</p>
+                                <p><strong>Collection Date:</strong> 2026-08-15 09:40</p>
+                                <p><strong>Collected By:</strong> Ramesh Verma</p>
+                            </div>
+                            <div class="panel-section">
+                                <h5>Test Results</h5>
+                                <p><strong>Hemoglobin:</strong> 14.5 g/dL (Normal: 13.0 - 17.0)</p>
+                                <p><strong>WBC Count:</strong> 8,200 /μL (Normal: 4,000 - 11,000)</p>
+                                <p><strong>Platelets:</strong> 2,50,000 /μL (Normal: 1,50,000 - 4,50,000)</p>
+                                <p><strong>Serum Potassium:</strong> <span class="badge badge-overdue">6.8 mEq/L (Critical High)</span></p>
+                            </div>
+                            <div class="panel-section">
+                                <h5>Report Verification</h5>
+                                <p><strong>Technician:</strong> Ramesh Verma</p>
+                                <p><strong>Pathologist:</strong> Dr. Anand Mehta</p>
+                                <p><strong>Verified Date:</strong> 2026-08-15 11:30</p>
+                                <p><strong>Report Status:</strong> <span class="badge badge-paid">Verified</span></p>
+                            </div>
+                            <div class="panel-actions">
+                                <button type="button" class="btn btn-outline btn-sm">Print Report</button>
+                                <button type="button" class="btn btn-outline btn-sm">Download Report</button>
+                                <button type="button" class="btn btn-secondary btn-sm">Release Report</button>
+                                <button type="button" class="btn btn-primary btn-sm">Notify Doctor</button>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="app-footer" role="contentinfo">
+                <p>&copy; 2026 ISAAC CLINIC. Premium Clinic Management Dashboard. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

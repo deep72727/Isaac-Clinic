@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing & Payments - ISAAC CLINIC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" aria-label="Main Sidebar">
+            <div class="brand-section">
+                <h1 class="brand-title">ISAAC CLINIC</h1>
+                <p class="brand-subtitle">Clinic Management</p>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-group">
+                    <span class="nav-category">MAIN</span>
+                    <a href="index.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📊</span> Dashboard</a>
+                    <a href="patients.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">👥</span> Patients</a>
+                    <a href="appointments.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📅</span> Appointments</a>
+                    <a href="doctors.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">👨‍⚕️</span> Doctors</a>
+                    <a href="staff.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📋</span> Staff</a>
+                </div>
+                <div class="nav-group">
+                    <span class="nav-category">CLINICAL</span>
+                    <a href="prescriptions.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">💊</span> Prescriptions</a>
+                    <a href="laboratory.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">🔬</span> Laboratory</a>
+                    <a href="pharmacy.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">🏥</span> Pharmacy</a>
+                    <a href="medical-records.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📁</span> Medical Records</a>
+                </div>
+                <div class="nav-group">
+                    <span class="nav-category">FINANCE</span>
+                    <a href="billing.html" class="nav-link active" aria-current="page"><span class="icon-placeholder" aria-hidden="true">💳</span> Billing</a>
+                    <a href="payments.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">💰</span> Payments</a>
+                    <a href="expenses.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📉</span> Expenses</a>
+                </div>
+                <div class="nav-group">
+                    <span class="nav-category">MANAGEMENT</span>
+                    <a href="reports.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">📈</span> Reports</a>
+                    <a href="settings.html" class="nav-link"><span class="icon-placeholder" aria-hidden="true">⚙️</span> Settings</a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile-mini">
+                    <div class="user-avatar-placeholder" aria-hidden="true">Dr</div>
+                    <div class="user-info">
+                        <span class="user-name">Dr. Sarah Isaac</span>
+                        <span class="user-role">Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Wrapper -->
+        <div class="main-wrapper">
+            <!-- Top Header -->
+            <header class="top-header" role="banner">
+                <div class="header-left">
+                    <button class="sidebar-toggle-btn" aria-label="Toggle Sidebar"><span class="icon-placeholder" aria-hidden="true">☰</span></button>
+                    <div class="breadcrumb-container">
+                        <h2 class="page-title">Billing</h2>
+                        <nav aria-label="Breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="index.html">Dashboard</a></li>
+                                <li aria-current="page">Billing</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <div class="header-center">
+                    <div class="global-search-container">
+                        <input type="search" class="global-search-input" placeholder="Search globally..." aria-label="Global Search">
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="notification-btn" aria-label="Notifications"><span class="icon-placeholder" aria-hidden="true">🔔</span><span class="badge" aria-label="3 unread notifications">3</span></button>
+                    <div class="user-profile-header">
+                        <div class="user-avatar-placeholder" aria-hidden="true">SI</div>
+                        <div class="user-meta">
+                            <span class="user-name">Dr. Sarah Isaac</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="main-content" role="main">
+                <!-- Page Header -->
+                <section class="page-header-section">
+                    <div class="page-header-content">
+                        <h3 class="page-heading">Billing & Payments</h3>
+                        <p class="page-description">Manage invoices, payments, receipts and outstanding patient balances.</p>
+                    </div>
+                    <div class="page-actions">
+                        <button type="button" class="btn btn-primary" aria-label="Create Invoice">Create Invoice</button>
+                        <button type="button" class="btn btn-secondary" aria-label="Record Payment">Record Payment</button>
+                        <button type="button" class="btn btn-outline" aria-label="Export Report">Export Report</button>
+                    </div>
+                </section>
+
+                <!-- Financial KPI Cards -->
+                <section class="kpi-grid" aria-label="Financial Summary">
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">💵</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">Today's Revenue</span>
+                            <h4 class="kpi-value">₹45,200</h4>
+                            <span class="kpi-trend positive">+12% from yesterday</span>
+                        </div>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">📊</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">This Month Revenue</span>
+                            <h4 class="kpi-value">₹12,45,800</h4>
+                            <span class="kpi-trend positive">+8% vs last month</span>
+                        </div>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">⏳</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">Pending Payments</span>
+                            <h4 class="kpi-value">₹84,500</h4>
+                            <span class="kpi-trend warning">14 invoices pending</span>
+                        </div>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">⚠️</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">Outstanding Balance</span>
+                            <h4 class="kpi-value">₹1,25,000</h4>
+                            <span class="kpi-trend danger">Requires follow-up</span>
+                        </div>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">✅</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">Paid Invoices</span>
+                            <h4 class="kpi-value">342</h4>
+                            <span class="kpi-trend positive">Current billing cycle</span>
+                        </div>
+                    </article>
+                    <article class="kpi-card">
+                        <div class="kpi-icon"><span class="icon-placeholder" aria-hidden="true">❌</span></div>
+                        <div class="kpi-body">
+                            <span class="kpi-label">Overdue Invoices</span>
+                            <h4 class="kpi-value">18</h4>
+                            <span class="kpi-trend danger">Action needed</span>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Billing Search & Filter Toolbar -->
+                <section class="filter-section" aria-label="Billing Filters">
+                    <form class="filter-form">
+                        <div class="filter-group search-group">
+                            <label for="billing-search">Search</label>
+                            <input type="text" id="billing-search" placeholder="Search Invoice ID, Patient Name or Patient ID">
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-invoice-status">Invoice Status</label>
+                            <select id="filter-invoice-status">
+                                <option value="">All Statuses</option>
+                                <option value="issued">Issued</option>
+                                <option value="paid">Paid</option>
+                                <option value="cancelled">Cancelled</option>
+                                <option value="draft">Draft</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-payment-status">Payment Status</label>
+                            <select id="filter-payment-status">
+                                <option value="">All Statuses</option>
+                                <option value="paid">Paid</option>
+                                <option value="pending">Pending</option>
+                                <option value="partial">Partial</option>
+                                <option value="overdue">Overdue</option>
+                                <option value="refunded">Refunded</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-payment-method">Payment Method</label>
+                            <select id="filter-payment-method">
+                                <option value="">All Methods</option>
+                                <option value="cash">Cash</option>
+                                <option value="card">Card</option>
+                                <option value="upi">UPI</option>
+                                <option value="bank">Bank Transfer</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-billing-type">Billing Type</label>
+                            <select id="filter-billing-type">
+                                <option value="">All Types</option>
+                                <option value="consultation">Consultation</option>
+                                <option value="treatment">Treatment</option>
+                                <option value="laboratory">Laboratory</option>
+                                <option value="pharmacy">Pharmacy</option>
+                                <option value="procedure">Procedure</option>
+                                <option value="package">Package</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filter-doctor">Doctor</label>
+                            <select id="filter-doctor">
+                                <option value="">All Doctors</option>
+                                <option value="doc1">Dr. Sarah Isaac</option>
+                                <option value="doc2">Dr. Rajesh Kumar</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="from-date">From Date</label>
+                            <input type="date" id="from-date">
+                        </div>
+                        <div class="filter-group">
+                            <label for="to-date">To Date</label>
+                            <input type="date" id="to-date">
+                        </div>
+                        <div class="filter-actions">
+                            <button type="button" class="btn btn-primary" aria-label="Search Invoices">Search</button>
+                            <button type="button" class="btn btn-secondary" aria-label="Apply Filters">Filter</button>
+                            <button type="reset" class="btn btn-outline" aria-label="Reset Filters">Reset</button>
+                            <button type="button" class="btn btn-outline" aria-label="Export Invoices">Export</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Bulk Action Bar (Hidden/Structural) -->
+                <section class="bulk-action-bar" aria-label="Bulk Actions" hidden>
+                    <span class="selected-count">0 Invoices Selected</span>
+                    <div class="bulk-buttons">
+                        <button type="button" class="btn btn-outline">Export</button>
+                        <button type="button" class="btn btn-outline">Mark Paid</button>
+                        <button type="button" class="btn btn-outline">Send Reminder</button>
+                        <button type="button" class="btn btn-outline">Archive</button>
+                    </div>
+                </section>
+
+                <!-- Invoice Management Table -->
+                <section class="table-section" aria-labelledby="invoices-heading">
+                    <div class="section-header">
+                        <h4 id="invoices-heading">Invoices</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" aria-label="Select all invoices"></th>
+                                    <th>Invoice ID</th>
+                                    <th>Patient</th>
+                                    <th>Patient ID</th>
+                                    <th>Invoice Date</th>
+                                    <th>Doctor</th>
+                                    <th>Billing Type</th>
+                                    <th>Amount</th>
+                                    <th>Paid</th>
+                                    <th>Balance</th>
+                                    <th>Payment Status</th>
+                                    <th>Invoice Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select invoice INV-2026-001"></td>
+                                    <td>INV-2026-001</td>
+                                    <td>Aarav Sharma</td>
+                                    <td>PT-1001</td>
+                                    <td>2026-08-15</td>
+                                    <td>Dr. Sarah Isaac</td>
+                                    <td>Consultation</td>
+                                    <td>₹1,500</td>
+                                    <td>₹1,500</td>
+                                    <td>₹0</td>
+                                    <td><span class="badge badge-paid">Paid</span></td>
+                                    <td><span class="badge badge-issued">Issued</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Invoice INV-2026-001">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Invoice INV-2026-001">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Record Payment INV-2026-001">💳</button>
+                                            <button type="button" class="btn-icon" aria-label="Download Receipt INV-2026-001">📥</button>
+                                            <button type="button" class="btn-icon" aria-label="Print Invoice INV-2026-001">🖨️</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for INV-2026-001">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select invoice INV-2026-002"></td>
+                                    <td>INV-2026-002</td>
+                                    <td>Priya Patel</td>
+                                    <td>PT-1002</td>
+                                    <td>2026-08-14</td>
+                                    <td>Dr. Rajesh Kumar</td>
+                                    <td>Treatment</td>
+                                    <td>₹8,500</td>
+                                    <td>₹4,000</td>
+                                    <td>₹4,500</td>
+                                    <td><span class="badge badge-partial">Partial</span></td>
+                                    <td><span class="badge badge-issued">Issued</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Invoice INV-2026-002">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Invoice INV-2026-002">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Record Payment INV-2026-002">💳</button>
+                                            <button type="button" class="btn-icon" aria-label="Download Receipt INV-2026-002">📥</button>
+                                            <button type="button" class="btn-icon" aria-label="Print Invoice INV-2026-002">🖨️</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for INV-2026-002">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select invoice INV-2026-003"></td>
+                                    <td>INV-2026-003</td>
+                                    <td> Rohan Verma</td>
+                                    <td>PT-1003</td>
+                                    <td>2026-08-12</td>
+                                    <td>Dr. Sarah Isaac</td>
+                                    <td>Laboratory</td>
+                                    <td>₹3,200</td>
+                                    <td>₹0</td>
+                                    <td>₹3,200</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td><span class="badge badge-issued">Issued</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Invoice INV-2026-003">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Invoice INV-2026-003">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Record Payment INV-2026-003">💳</button>
+                                            <button type="button" class="btn-icon" aria-label="Download Receipt INV-2026-003">📥</button>
+                                            <button type="button" class="btn-icon" aria-label="Print Invoice INV-2026-003">🖨️</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for INV-2026-003">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select invoice INV-2026-004"></td>
+                                    <td>INV-2026-004</td>
+                                    <td>Ananya Gupta</td>
+                                    <td>PT-1004</td>
+                                    <td>2026-08-01</td>
+                                    <td>Dr. Rajesh Kumar</td>
+                                    <td>Pharmacy</td>
+                                    <td>₹1,850</td>
+                                    <td>₹0</td>
+                                    <td>₹1,850</td>
+                                    <td><span class="badge badge-overdue">Overdue</span></td>
+                                    <td><span class="badge badge-issued">Issued</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Invoice INV-2026-004">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Invoice INV-2026-004">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Record Payment INV-2026-004">💳</button>
+                                            <button type="button" class="btn-icon" aria-label="Download Receipt INV-2026-004">📥</button>
+                                            <button type="button" class="btn-icon" aria-label="Print Invoice INV-2026-004">🖨️</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for INV-2026-004">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select invoice INV-2026-005"></td>
+                                    <td>INV-2026-005</td>
+                                    <td>Kabir Singh</td>
+                                    <td>PT-1005</td>
+                                    <td>2026-08-10</td>
+                                    <td>Dr. Sarah Isaac</td>
+                                    <td>Procedure</td>
+                                    <td>₹15,000</td>
+                                    <td>₹15,000</td>
+                                    <td>₹0</td>
+                                    <td><span class="badge badge-paid">Paid</span></td>
+                                    <td><span class="badge badge-paid">Paid</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Invoice INV-2026-005">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Invoice INV-2026-005">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Record Payment INV-2026-005">💳</button>
+                                            <button type="button" class="btn-icon" aria-label="Download Receipt INV-2026-005">📥</button>
+                                            <button type="button" class="btn-icon" aria-label="Print Invoice INV-2026-005">🖨️</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for INV-2026-005">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select invoice INV-2026-006"></td>
+                                    <td>INV-2026-006</td>
+                                    <td>Meera Nair</td>
+                                    <td>PT-1006</td>
+                                    <td>2026-07-28</td>
+                                    <td>Dr. Rajesh Kumar</td>
+                                    <td>Package</td>
+                                    <td>₹25,000</td>
+                                    <td>₹25,000</td>
+                                    <td>₹0</td>
+                                    <td><span class="badge badge-refunded">Refunded</span></td>
+                                    <td><span class="badge badge-cancelled">Cancelled</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Invoice INV-2026-006">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Invoice INV-2026-006">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Record Payment INV-2026-006">💳</button>
+                                            <button type="button" class="btn-icon" aria-label="Download Receipt INV-2026-006">📥</button>
+                                            <button type="button" class="btn-icon" aria-label="Print Invoice INV-2026-006">🖨️</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for INV-2026-006">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select invoice INV-2026-007"></td>
+                                    <td>INV-2026-007</td>
+                                    <td>Vikram Malhotra</td>
+                                    <td>PT-1007</td>
+                                    <td>2026-08-15</td>
+                                    <td>Dr. Sarah Isaac</td>
+                                    <td>Consultation</td>
+                                    <td>₹1,500</td>
+                                    <td>₹0</td>
+                                    <td>₹1,500</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td><span class="badge badge-draft">Draft</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Invoice INV-2026-007">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Invoice INV-2026-007">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Record Payment INV-2026-007">💳</button>
+                                            <button type="button" class="btn-icon" aria-label="Download Receipt INV-2026-007">📥</button>
+                                            <button type="button" class="btn-icon" aria-label="Print Invoice INV-2026-007">🖨️</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for INV-2026-007">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select invoice INV-2026-008"></td>
+                                    <td>INV-2026-008</td>
+                                    <td>Neha Joshi</td>
+                                    <td>PT-1008</td>
+                                    <td>2026-08-13</td>
+                                    <td>Dr. Rajesh Kumar</td>
+                                    <td>Laboratory</td>
+                                    <td>₹4,500</td>
+                                    <td>₹4,500</td>
+                                    <td>₹0</td>
+                                    <td><span class="badge badge-paid">Paid</span></td>
+                                    <td><span class="badge badge-issued">Issued</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Invoice INV-2026-008">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Invoice INV-2026-008">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Record Payment INV-2026-008">💳</button>
+                                            <button type="button" class="btn-icon" aria-label="Download Receipt INV-2026-008">📥</button>
+                                            <button type="button" class="btn-icon" aria-label="Print Invoice INV-2026-008">🖨️</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for INV-2026-008">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select invoice INV-2026-009"></td>
+                                    <td>INV-2026-009</td>
+                                    <td>Amit Deshmukh</td>
+                                    <td>PT-1009</td>
+                                    <td>2026-08-05</td>
+                                    <td>Dr. Sarah Isaac</td>
+                                    <td>Treatment</td>
+                                    <td>₹12,000</td>
+                                    <td>₹6,000</td>
+                                    <td>₹6,000</td>
+                                    <td><span class="badge badge-partial">Partial</span></td>
+                                    <td><span class="badge badge-issued">Issued</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Invoice INV-2026-009">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Invoice INV-2026-009">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Record Payment INV-2026-009">💳</button>
+                                            <button type="button" class="btn-icon" aria-label="Download Receipt INV-2026-009">📥</button>
+                                            <button type="button" class="btn-icon" aria-label="Print Invoice INV-2026-009">🖨️</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for INV-2026-009">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select invoice INV-2026-010"></td>
+                                    <td>INV-2026-010</td>
+                                    <td>Divya Rao</td>
+                                    <td>PT-1010</td>
+                                    <td>2026-08-02</td>
+                                    <td>Dr. Rajesh Kumar</td>
+                                    <td>Pharmacy</td>
+                                    <td>₹2,100</td>
+                                    <td>₹0</td>
+                                    <td>₹2,100</td>
+                                    <td><span class="badge badge-overdue">Overdue</span></td>
+                                    <td><span class="badge badge-issued">Issued</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-icon" aria-label="View Invoice INV-2026-010">👁️</button>
+                                            <button type="button" class="btn-icon" aria-label="Edit Invoice INV-2026-010">✏️</button>
+                                            <button type="button" class="btn-icon" aria-label="Record Payment INV-2026-010">💳</button>
+                                            <button type="button" class="btn-icon" aria-label="Download Receipt INV-2026-010">📥</button>
+                                            <button type="button" class="btn-icon" aria-label="Print Invoice INV-2026-010">🖨️</button>
+                                            <button type="button" class="btn-icon" aria-label="More actions for INV-2026-010">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Empty State for Invoices (Hidden by default for demonstration) -->
+                    <div class="empty-state" hidden>
+                        <div class="empty-icon"><span class="icon-placeholder" aria-hidden="true">📭</span></div>
+                        <h5>No Invoices Found</h5>
+                        <p>There are no invoices matching your search criteria.</p>
+                        <button type="button" class="btn btn-primary">Create New Invoice</button>
+                    </div>
+                    <!-- Pagination -->
+                    <nav class="pagination-container" aria-label="Invoice Table Navigation">
+                        <span class="pagination-info">Showing 1–10 of 120 invoices</span>
+                        <div class="pagination-controls">
+                            <label for="rows-per-page">Rows per page:</label>
+                            <select id="rows-per-page">
+                                <option value="10" selected>10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                            <button type="button" class="btn btn-outline" disabled>Previous</button>
+                            <span class="page-numbers">Page 1 of 12</span>
+                            <button type="button" class="btn btn-outline">Next</button>
+                        </div>
+                    </nav>
+                </section>
+
+                <!-- Payment Summary & Recent Transactions -->
+                <div class="grid-two-column">
+                    <!-- Payment Summary Section -->
+                    <section class="card-section" aria-labelledby="payment-summary-heading">
+                        <div class="section-header">
+                            <h4 id="payment-summary-heading">Payment Summary by Method</h4>
+                        </div>
+                        <div class="payment-methods-grid">
+                            <div class="payment-method-card">
+                                <span class="method-name">Cash</span>
+                                <span class="method-count">120 transactions</span>
+                                <span class="method-amount">₹3,45,000</span>
+                                <span class="method-percentage">28%</span>
+                            </div>
+                            <div class="payment-method-card">
+                                <span class="method-name">Card</span>
+                                <span class="method-count">185 transactions</span>
+                                <span class="method-amount">₹5,80,000</span>
+                                <span class="method-percentage">46%</span>
+                            </div>
+                            <div class="payment-method-card">
+                                <span class="method-name">UPI</span>
+                                <span class="method-count">210 transactions</span>
+                                <span class="method-amount">₹2,10,000</span>
+                                <span class="method-percentage">17%</span>
+                            </div>
+                            <div class="payment-method-card">
+                                <span class="method-name">Bank Transfer</span>
+                                <span class="method-count">25 transactions</span>
+                                <span class="method-amount">₹1,10,800</span>
+                                <span class="method-percentage">9%</span>
+                            </div>
+                            <div class="payment-method-card">
+                                <span class="method-name">Other</span>
+                                <span class="method-count">2 transactions</span>
+                                <span class="method-amount">₹0</span>
+                                <span class="method-percentage">0%</span>
+                            </div>
+                        </div>
+                        <div class="chart-placeholder" aria-label="Payment Method Visualization">
+                            <span>[Payment Method Chart Placeholder]</span>
+                        </div>
+                    </section>
+
+                    <!-- Revenue Analytics Section -->
+                    <section class="card-section" aria-labelledby="revenue-analytics-heading">
+                        <div class="section-header">
+                            <h4 id="revenue-analytics-heading">Revenue Analytics</h4>
+                        </div>
+                        <div class="analytics-sub-section">
+                            <h5>A. Revenue Overview</h5>
+                            <div class="chart-placeholder small" aria-label="Revenue Overview Chart">
+                                <span>[Revenue Overview: Today, Week, Month, Year Chart Placeholder]</span>
+                            </div>
+                        </div>
+                        <div class="analytics-sub-section">
+                            <h5>B. Payment Collection</h5>
+                            <div class="chart-placeholder small" aria-label="Payment Collection Chart">
+                                <span>[Payment Collection: Paid, Pending, Overdue Chart Placeholder]</span>
+                            </div>
+                        </div>
+                        <div class="analytics-sub-section">
+                            <h5>C. Revenue by Billing Type</h5>
+                            <div class="chart-placeholder small" aria-label="Revenue by Billing Type Chart">
+                                <span>[Billing Type: Consultation, Treatment, Lab, Pharmacy Chart Placeholder]</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Recent Transactions -->
+                <section class="table-section" aria-labelledby="transactions-heading">
+                    <div class="section-header">
+                        <h4 id="transactions-heading">Recent Transactions</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Transaction ID</th>
+                                    <th>Invoice ID</th>
+                                    <th>Patient</th>
+                                    <th>Date</th>
+                                    <th>Payment Method</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>TXN-9001</td>
+                                    <td>INV-2026-001</td>
+                                    <td>Aarav Sharma</td>
+                                    <td>2026-08-15</td>
+                                    <td>UPI</td>
+                                    <td>₹1,500</td>
+                                    <td><span class="badge badge-paid">Successful</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Receipt</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TXN-9002</td>
+                                    <td>INV-2026-002</td>
+                                    <td>Priya Patel</td>
+                                    <td>2026-08-14</td>
+                                    <td>Card</td>
+                                    <td>₹4,000</td>
+                                    <td><span class="badge badge-paid">Successful</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Receipt</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TXN-9003</td>
+                                    <td>INV-2026-003</td>
+                                    <td>Rohan Verma</td>
+                                    <td>2026-08-12</td>
+                                    <td>Cash</td>
+                                    <td>₹3,200</td>
+                                    <td><span class="badge badge-pending">Pending</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Verify</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TXN-9004</td>
+                                    <td>INV-2026-004</td>
+                                    <td>Ananya Gupta</td>
+                                    <td>2026-08-01</td>
+                                    <td>Bank Transfer</td>
+                                    <td>₹1,850</td>
+                                    <td><span class="badge badge-overdue">Failed</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Retry</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TXN-9005</td>
+                                    <td>INV-2026-005</td>
+                                    <td>Kabir Singh</td>
+                                    <td>2026-08-10</td>
+                                    <td>Card</td>
+                                    <td>₹15,000</td>
+                                    <td><span class="badge badge-paid">Successful</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Receipt</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TXN-9006</td>
+                                    <td>INV-2026-006</td>
+                                    <td>Meera Nair</td>
+                                    <td>2026-07-28</td>
+                                    <td>UPI</td>
+                                    <td>₹25,000</td>
+                                    <td><span class="badge badge-refunded">Refunded</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TXN-9007</td>
+                                    <td>INV-2026-008</td>
+                                    <td>Neha Joshi</td>
+                                    <td>2026-08-13</td>
+                                    <td>Card</td>
+                                    <td>₹4,500</td>
+                                    <td><span class="badge badge-paid">Successful</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Receipt</button></td>
+                                </tr>
+                                <tr>
+                                    <td>TXN-9008</td>
+                                    <td>INV-2026-009</td>
+                                    <td>Amit Deshmukh</td>
+                                    <td>2026-08-05</td>
+                                    <td>Cash</td>
+                                    <td>₹6,000</td>
+                                    <td><span class="badge badge-paid">Successful</span></td>
+                                    <td><button type="button" class="btn btn-outline btn-sm">Receipt</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Empty State for Transactions (Hidden) -->
+                    <div class="empty-state" hidden>
+                        <div class="empty-icon"><span class="icon-placeholder" aria-hidden="true">📭</span></div>
+                        <h5>No Transactions Found</h5>
+                        <p>There are no recent transactions recorded.</p>
+                    </div>
+                </section>
+
+                <!-- Outstanding Payments -->
+                <section class="table-section" aria-labelledby="outstanding-heading">
+                    <div class="section-header">
+                        <h4 id="outstanding-heading">Outstanding Payments</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Patient</th>
+                                    <th>Invoice ID</th>
+                                    <th>Invoice Date</th>
+                                    <th>Total Amount</th>
+                                    <th>Paid</th>
+                                    <th>Balance</th>
+                                    <th>Due Date</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Priya Patel</td>
+                                    <td>INV-2026-002</td>
+                                    <td>2026-08-14</td>
+                                    <td>₹8,500</td>
+                                    <td>₹4,000</td>
+                                    <td>₹4,500</td>
+                                    <td>2026-08-28</td>
+                                    <td><span class="badge badge-partial">Partial</span></td>
+                                    <td><button type="button" class="btn btn-primary btn-sm">Send Reminder</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Rohan Verma</td>
+                                    <td>INV-2026-003</td>
+                                    <td>2026-08-12</td>
+                                    <td>₹3,200</td>
+                                    <td>₹0</td>
+                                    <td>₹3,200</td>
+                                    <td>2026-08-26</td>
+                                    <td><span class="badge badge-pending">Due</span></td>
+                                    <td><button type="button" class="btn btn-primary btn-sm">Send Reminder</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Ananya Gupta</td>
+                                    <td>INV-2026-004</td>
+                                    <td>2026-08-01</td>
+                                    <td>₹1,850</td>
+                                    <td>₹0</td>
+                                    <td>₹1,850</td>
+                                    <td>2026-08-15</td>
+                                    <td><span class="badge badge-overdue">Overdue</span></td>
+                                    <td><button type="button" class="btn btn-primary btn-sm">Send Reminder</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Vikram Malhotra</td>
+                                    <td>INV-2026-007</td>
+                                    <td>2026-08-15</td>
+                                    <td>₹1,500</td>
+                                    <td>₹0</td>
+                                    <td>₹1,500</td>
+                                    <td>2026-08-29</td>
+                                    <td><span class="badge badge-pending">Due</span></td>
+                                    <td><button type="button" class="btn btn-primary btn-sm">Send Reminder</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Amit Deshmukh</td>
+                                    <td>INV-2026-009</td>
+                                    <td>2026-08-05</td>
+                                    <td>₹12,000</td>
+                                    <td>₹6,000</td>
+                                    <td>₹6,000</td>
+                                    <td>2026-08-19</td>
+                                    <td><span class="badge badge-partial">Partial</span></td>
+                                    <td><button type="button" class="btn btn-primary btn-sm">Send Reminder</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Divya Rao</td>
+                                    <td>INV-2026-010</td>
+                                    <td>2026-08-02</td>
+                                    <td>₹2,100</td>
+                                    <td>₹0</td>
+                                    <td>₹2,100</td>
+                                    <td>2026-08-16</td>
+                                    <td><span class="badge badge-overdue">Overdue</span></td>
+                                    <td><button type="button" class="btn btn-primary btn-sm">Send Reminder</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Empty State for Outstanding Payments (Hidden) -->
+                    <div class="empty-state" hidden>
+                        <div class="empty-icon"><span class="icon-placeholder" aria-hidden="true">📭</span></div>
+                        <h5>No Outstanding Payments</h5>
+                        <p>All patient invoices are fully paid.</p>
+                    </div>
+                </section>
+
+                <!-- Refund Section -->
+                <section class="table-section" aria-labelledby="refunds-heading">
+                    <div class="section-header">
+                        <h4 id="refunds-heading">Refund Management</h4>
+                        <button type="button" class="btn btn-secondary btn-sm" aria-label="Request Refund">Request Refund</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Refund ID</th>
+                                    <th>Invoice ID</th>
+                                    <th>Patient</th>
+                                    <th>Refund Date</th>
+                                    <th>Original Amount</th>
+                                    <th>Refund Amount</th>
+                                    <th>Refund Method</th>
+                                    <th>Reason</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>REF-5001</td>
+                                    <td>INV-2026-006</td>
+                                    <td>Meera Nair</td>
+                                    <td>2026-07-29</td>
+                                    <td>₹25,000</td>
+                                    <td>₹25,000</td>
+                                    <td>UPI</td>
+                                    <td>Package Cancelled</td>
+                                    <td><span class="badge badge-paid">Processed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>REF-5002</td>
+                                    <td>INV-2026-015</td>
+                                    <td>Siddharth Roy</td>
+                                    <td>2026-08-10</td>
+                                    <td>₹4,000</td>
+                                    <td>₹2,000</td>
+                                    <td>Card</td>
+                                    <td>Partial Lab Fee Adjustment</td>
+                                    <td><span class="badge badge-pending">Approved</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Forms & Side Panels Section (Structural / Hidden by default or displayed as card blocks) -->
+                <div class="forms-container-wrapper">
+                    <!-- Create New Invoice Form -->
+                    <section class="form-section-card" aria-labelledby="create-invoice-heading">
+                        <div class="section-header">
+                            <h4 id="create-invoice-heading">Create New Invoice</h4>
+                        </div>
+                        <form class="invoice-form">
+                            <fieldset>
+                                <legend>Patient Information</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="select-patient">Select Patient</label>
+                                        <select id="select-patient">
+                                            <option value="">Choose patient...</option>
+                                            <option value="pt-1001">Aarav Sharma (PT-1001)</option>
+                                            <option value="pt-1002">Priya Patel (PT-1002)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="patient-id-display">Patient ID</label>
+                                        <input type="text" id="patient-id-display" placeholder="Auto-filled" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="patient-contact">Contact</label>
+                                        <input type="text" id="patient-contact" placeholder="Phone / Email placeholder" readonly>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Invoice Information</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="invoice-number">Invoice Number</label>
+                                        <input type="text" id="invoice-number" value="INV-2026-011" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="invoice-date">Invoice Date</label>
+                                        <input type="date" id="invoice-date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="due-date">Due Date</label>
+                                        <input type="date" id="due-date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="invoice-doctor">Doctor</label>
+                                        <select id="invoice-doctor">
+                                            <option value="">Select doctor...</option>
+                                            <option value="doc1">Dr. Sarah Isaac</option>
+                                            <option value="doc2">Dr. Rajesh Kumar</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="invoice-department">Department</label>
+                                        <select id="invoice-department">
+                                            <option value="">Select department...</option>
+                                            <option value="general">General Medicine</option>
+                                            <option value="cardio">Cardiology</option>
+                                            <option value="derm">Dermatology</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Billing Items</legend>
+                                <div class="invoice-items-container">
+                                    <div class="invoice-item-row">
+                                        <div class="form-group">
+                                            <label>Item/Service</label>
+                                            <input type="text" placeholder="Service name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <input type="text" placeholder="Description">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Quantity</label>
+                                            <input type="number" value="1">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Unit Price</label>
+                                            <input type="number" placeholder="₹0.00">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Discount</label>
+                                            <input type="number" placeholder="₹0.00">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Tax</label>
+                                            <input type="number" placeholder="0%">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Total</label>
+                                            <input type="text" placeholder="₹0.00" readonly>
+                                        </div>
+                                        <div class="form-group action-col">
+                                            <button type="button" class="btn btn-outline btn-sm" aria-label="Remove Item">✕</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-secondary btn-sm" aria-label="Add Item">Add Item</button>
+                            </fieldset>
+
+                            <div class="billing-summary-box">
+                                <div class="summary-line"><span>Subtotal:</span> <span>₹0.00</span></div>
+                                <div class="summary-line"><span>Discount:</span> <span>₹0.00</span></div>
+                                <div class="summary-line"><span>Tax:</span> <span>₹0.00</span></div>
+                                <div class="summary-line grand-total"><span>Grand Total:</span> <span>₹0.00</span></div>
+                                <div class="summary-line"><span>Amount Paid:</span> <span>₹0.00</span></div>
+                                <div class="summary-line"><span>Balance Due:</span> <span>₹0.00</span></div>
+                            </div>
+
+                            <fieldset>
+                                <legend>Payment & Notes</legend>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="form-payment-method">Payment Method</label>
+                                        <select id="form-payment-method">
+                                            <option value="cash">Cash</option>
+                                            <option value="card">Card</option>
+                                            <option value="upi">UPI</option>
+                                            <option value="bank">Bank Transfer</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="form-payment-status">Payment Status</label>
+                                        <select id="form-payment-status">
+                                            <option value="pending">Pending</option>
+                                            <option value="paid">Paid</option>
+                                            <option value="partial">Partial</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="form-txn-ref">Transaction Reference</label>
+                                        <input type="text" id="form-txn-ref" placeholder="Ref ID / UTR">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="invoice-notes">Invoice Notes</label>
+                                        <textarea id="invoice-notes" placeholder="Notes for patient..."></textarea>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label for="invoice-terms">Terms/Conditions</label>
+                                        <textarea id="invoice-terms" placeholder="Payment terms..."></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary">Save Draft</button>
+                                <button type="button" class="btn btn-primary">Issue Invoice</button>
+                                <button type="button" class="btn btn-outline">Cancel</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <!-- Record Payment Form -->
+                    <section class="form-section-card" aria-labelledby="record-payment-heading">
+                        <div class="section-header">
+                            <h4 id="record-payment-heading">Record Payment Form</h4>
+                        </div>
+                        <form class="payment-record-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="rec-invoice-id">Invoice ID</label>
+                                    <select id="rec-invoice-id">
+                                        <option value="">Select Invoice...</option>
+                                        <option value="INV-2026-002">INV-2026-002 - Priya Patel</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rec-patient">Patient</label>
+                                    <input type="text" id="rec-patient" placeholder="Patient name" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rec-total-amount">Total Invoice Amount</label>
+                                    <input type="text" id="rec-total-amount" placeholder="₹0.00" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rec-prev-paid">Previous Paid Amount</label>
+                                    <input type="text" id="rec-prev-paid" placeholder="₹0.00" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rec-outstanding">Outstanding Balance</label>
+                                    <input type="text" id="rec-outstanding" placeholder="₹0.00" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rec-payment-amount">Payment Amount</label>
+                                    <input type="number" id="rec-payment-amount" placeholder="₹0.00">
+                                </div>
+                                <div class="form-group">
+                                    <label for="rec-payment-date">Payment Date</label>
+                                    <input type="date" id="rec-payment-date">
+                                </div>
+                                <div class="form-group">
+                                    <label for="rec-method">Payment Method</label>
+                                    <select id="rec-method">
+                                        <option value="cash">Cash</option>
+                                        <option value="card">Card</option>
+                                        <option value="upi">UPI</option>
+                                        <option value="bank">Bank Transfer</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rec-ref">Transaction Reference</label>
+                                    <input type="text" id="rec-ref" placeholder="Reference ID">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <label for="rec-notes">Payment Notes</label>
+                                    <textarea id="rec-notes" placeholder="Optional notes..."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary">Record Payment</button>
+                                <button type="button" class="btn btn-outline">Cancel</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <!-- Invoice Details Side Panel (Structural Modal) -->
+                    <aside class="side-panel-container" aria-label="Invoice Details Panel">
+                        <div class="section-header">
+                            <h4>Invoice Details</h4>
+                        </div>
+                        <div class="panel-content">
+                            <div class="panel-section">
+                                <h5>Invoice Information</h5>
+                                <p><strong>Invoice ID:</strong> INV-2026-001</p>
+                                <p><strong>Invoice Date:</strong> 2026-08-15</p>
+                                <p><strong>Due Date:</strong> 2026-08-29</p>
+                                <p><strong>Status:</strong> <span class="badge badge-paid">Paid</span></p>
+                            </div>
+                            <div class="panel-section">
+                                <h5>Patient Information</h5>
+                                <p><strong>Name:</strong> Aarav Sharma</p>
+                                <p><strong>Patient ID:</strong> PT-1001</p>
+                                <p><strong>Contact:</strong> +91 98765 43210</p>
+                            </div>
+                            <div class="panel-section">
+                                <h5>Doctor Information</h5>
+                                <p><strong>Doctor Name:</strong> Dr. Sarah Isaac</p>
+                                <p><strong>Department:</strong> General Medicine</p>
+                            </div>
+                            <div class="panel-section">
+                                <h5>Items</h5>
+                                <table class="mini-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Service</th>
+                                            <th>Qty</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>General Consultation</td>
+                                            <td>1</td>
+                                            <td>₹1,500</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="panel-section">
+                                <h5>Summary & Payment</h5>
+                                <p><strong>Subtotal:</strong> ₹1,500</p>
+                                <p><strong>Grand Total:</strong> ₹1,500</p>
+                                <p><strong>Paid:</strong> ₹1,500</p>
+                                <p><strong>Balance:</strong> ₹0</p>
+                                <p><strong>Payment Method:</strong> UPI</p>
+                                <p><strong>Last Payment Date:</strong> 2026-08-15</p>
+                            </div>
+                            <div class="panel-actions">
+                                <button type="button" class="btn btn-outline btn-sm">Print Invoice</button>
+                                <button type="button" class="btn btn-outline btn-sm">Download Invoice</button>
+                                <button type="button" class="btn btn-secondary btn-sm">Record Payment</button>
+                                <button type="button" class="btn btn-primary btn-sm">Send Receipt</button>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="app-footer" role="contentinfo">
+                <p>&copy; 2026 ISAAC CLINIC. Premium Clinic Management Dashboard. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

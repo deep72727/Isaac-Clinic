@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors & Medical Staff Management — ISAAC CLINIC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container" class="app-layout">
+        <!-- SIDEBAR -->
+        <aside id="sidebar" class="sidebar" aria-label="Main Navigation">
+            <div class="sidebar-brand">
+                <span class="brand-title">ISAAC CLINIC</span>
+                <span class="brand-subtitle">Clinic Management</span>
+            </div>
+            
+            <nav class="sidebar-nav" aria-label="Sidebar Navigation">
+                <div class="nav-section">
+                    <span class="nav-section-title">MAIN</span>
+                    <ul>
+                        <li>
+                            <a href="index.html" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">📊</span>
+                                <span class="nav-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="patients.html" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">👥</span>
+                                <span class="nav-text">Patients</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="appointments.html" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">📅</span>
+                                <span class="nav-text">Appointments</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="doctors.html" class="nav-item active" aria-current="page">
+                                <span class="nav-icon" aria-hidden="true">🩺</span>
+                                <span class="nav-text">Doctors</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#staff" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">👥</span>
+                                <span class="nav-text">Staff</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-section-title">CLINICAL</span>
+                    <ul>
+                        <li>
+                            <a href="#prescriptions" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">💊</span>
+                                <span class="nav-text">Prescriptions</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#laboratory" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">🧪</span>
+                                <span class="nav-text">Laboratory</span>
+                                <span class="badge" aria-label="3 pending items">3</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pharmacy" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">🏥</span>
+                                <span class="nav-text">Pharmacy</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#medical-records" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">📁</span>
+                                <span class="nav-text">Medical Records</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-section-title">FINANCE</span>
+                    <ul>
+                        <li>
+                            <a href="#billing" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">💳</span>
+                                <span class="nav-text">Billing</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#payments" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">💰</span>
+                                <span class="nav-text">Payments</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#expenses" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">📉</span>
+                                <span class="nav-text">Expenses</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-section-title">MANAGEMENT</span>
+                    <ul>
+                        <li>
+                            <a href="#reports" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">📈</span>
+                                <span class="nav-text">Reports</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#settings" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">⚙️</span>
+                                <span class="nav-text">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-user-profile">
+                    <div class="user-avatar-placeholder" aria-hidden="true">DR</div>
+                    <div class="user-info">
+                        <span class="user-name">Dr. Alexander Isaac</span>
+                        <span class="user-role">Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN WRAPPER -->
+        <div class="main-wrapper">
+            <!-- TOP HEADER -->
+            <header id="top-header" class="top-header">
+                <div class="header-left">
+                    <button id="sidebar-toggle" class="sidebar-toggle-btn" aria-label="Toggle Navigation Sidebar">
+                        <span aria-hidden="true">☰</span>
+                    </button>
+                    <div class="breadcrumb-container">
+                        <h1 class="page-title">Doctors</h1>
+                        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+                            <span class="breadcrumb-item">Dashboard</span>
+                            <span class="breadcrumb-separator" aria-hidden="true">/</span>
+                            <span class="breadcrumb-item active" aria-current="page">Doctors</span>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <div class="search-container">
+                        <label for="global-search" class="sr-only">Search doctors by name, specialty or ID</label>
+                        <input type="search" id="global-search" class="global-search-input" placeholder="Search doctors by name, specialty or ID..." aria-label="Search doctors by name, specialty or ID">
+                    </div>
+                    
+                    <button id="notification-btn" class="header-icon-btn" aria-label="View notifications">
+                        <span aria-hidden="true">🔔</span>
+                        <span class="notification-dot" aria-hidden="true"></span>
+                    </button>
+
+                    <div class="header-user-area">
+                        <div class="header-user-avatar" aria-hidden="true">AI</div>
+                        <div class="header-user-details">
+                            <span class="header-user-name">Dr. Alexander Isaac</span>
+                            <span class="header-user-role">Chief Medical Officer</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- MAIN CONTENT AREA -->
+            <main id="main-content" class="main-content">
+                <!-- PAGE HEADER -->
+                <section id="page-header-section" class="page-header-section" aria-label="Doctors Page Header">
+                    <div class="page-header-content">
+                        <div class="page-header-text">
+                            <h2>Doctors & Medical Staff</h2>
+                            <p>Manage doctors, specialists, schedules, availability and clinical staff information.</p>
+                        </div>
+                        <div class="page-header-actions">
+                            <button type="button" class="btn btn-primary" id="btn-add-doctor">
+                                <span aria-hidden="true">+</span> Add Doctor
+                            </button>
+                            <button type="button" class="btn btn-secondary" id="btn-manage-staff">
+                                <span aria-hidden="true">👥</span> Manage Staff
+                            </button>
+                            <button type="button" class="btn btn-outline" id="btn-export-doctors">
+                                <span aria-hidden="true">📥</span> Export Doctors
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DOCTOR STATISTICS -->
+                <section id="doctor-stats-section" class="kpi-section" aria-label="Doctor Statistics">
+                    <article class="kpi-card">
+                        <div class="kpi-icon-container" aria-hidden="true">🩺</div>
+                        <div class="kpi-data">
+                            <span class="kpi-label">Total Doctors</span>
+                            <span class="kpi-value">24</span>
+                            <span class="kpi-support-text">Active medical specialists</span>
+                        </div>
+                    </article>
+
+                    <article class="kpi-card">
+                        <div class="kpi-icon-container" aria-hidden="true">🟢</div>
+                        <div class="kpi-data">
+                            <span class="kpi-label">Available Today</span>
+                            <span class="kpi-value">18</span>
+                            <span class="kpi-support-text">Ready for consultation</span>
+                        </div>
+                    </article>
+
+                    <article class="kpi-card">
+                        <div class="kpi-icon-container" aria-hidden="true">⏳</div>
+                        <div class="kpi-data">
+                            <span class="kpi-label">On Appointment</span>
+                            <span class="kpi-value">6</span>
+                            <span class="kpi-support-text">Currently with patients</span>
+                        </div>
+                    </article>
+
+                    <article class="kpi-card">
+                        <div class="kpi-icon-container" aria-hidden="true">🏢</div>
+                        <div class="kpi-data">
+                            <span class="kpi-label">Departments</span>
+                            <span class="kpi-value">8</span>
+                            <span class="kpi-support-text">Specialized medical units</span>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- SEARCH AND FILTER TOOLBAR -->
+                <section id="doctor-control-bar" class="filter-toolbar-section" aria-label="Doctor Search and Filter Toolbar">
+                    <form class="filter-form filter-row" role="search">
+                        <div class="filter-group">
+                            <label for="filter-doctor-name">Search</label>
+                            <input type="search" id="filter-doctor-name" placeholder="Name, ID or Specialty...">
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filter-doctor-specialty">Specialty</label>
+                            <select id="filter-doctor-specialty" name="specialty">
+                                <option value="">All Specialties</option>
+                                <option value="general-medicine">General Medicine</option>
+                                <option value="cardiology">Cardiology</option>
+                                <option value="neurology">Neurology</option>
+                                <option value="pediatrics">Pediatrics</option>
+                                <option value="dermatology">Dermatology</option>
+                                <option value="orthopedics">Orthopedics</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filter-doctor-dept">Department</label>
+                            <select id="filter-doctor-dept" name="department">
+                                <option value="">All Departments</option>
+                                <option value="general">General Medicine</option>
+                                <option value="cardiology">Cardiology</option>
+                                <option value="neurology">Neurology</option>
+                                <option value="pediatrics">Pediatrics</option>
+                                <option value="dermatology">Dermatology</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filter-doctor-availability">Availability</label>
+                            <select id="filter-doctor-availability" name="availability">
+                                <option value="">All Statuses</option>
+                                <option value="available">Available</option>
+                                <option value="busy">Busy</option>
+                                <option value="in-consultation">In Consultation</option>
+                                <option value="on-leave">On Leave</option>
+                                <option value="off-duty">Off Duty</option>
+                                <option value="fully-booked">Fully Booked</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filter-doctor-employment">Employment Type</label>
+                            <select id="filter-doctor-employment" name="employment_type">
+                                <option value="">All Types</option>
+                                <option value="full-time">Full-time</option>
+                                <option value="part-time">Part-time</option>
+                                <option value="contractor">Contractor</option>
+                                <option value="visiting">Visiting Specialist</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filter-doctor-experience">Experience</label>
+                            <select id="filter-doctor-experience" name="experience">
+                                <option value="">All Experience</option>
+                                <option value="1-5">1–5 Years</option>
+                                <option value="5-10">5–10 Years</option>
+                                <option value="10+">10+ Years</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-actions">
+                            <button type="button" class="btn btn-primary" id="btn-search-doctor">Search</button>
+                            <button type="button" class="btn btn-secondary" id="btn-filter-doctor">Filter</button>
+                            <button type="reset" class="btn btn-text" id="btn-reset-doctor">Reset</button>
+                            <button type="button" class="btn btn-outline" id="btn-export-toolbar">Export</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- DOCTOR DIRECTORY -->
+                <section id="doctor-directory-section" class="dashboard-section" aria-labelledby="doctor-directory-title">
+                    <div class="section-header">
+                        <h3 id="doctor-directory-title" class="section-title">Doctor Directory</h3>
+                    </div>
+                    <div class="doctor-cards-grid">
+                        <!-- Doctor Card 1 -->
+                        <article class="doctor-card">
+                            <div class="doctor-card-header">
+                                <div class="doctor-avatar-placeholder" aria-hidden="true">SJ</div>
+                                <div class="doctor-meta">
+                                    <h4 class="doctor-name">Dr. Sarah Jenkins</h4>
+                                    <span class="doctor-id">#DOC-1001</span>
+                                    <span class="status-badge status-available">Available</span>
+                                </div>
+                            </div>
+                            <div class="doctor-card-body">
+                                <div class="doctor-info-row">
+                                    <span>Specialty:</span>
+                                    <span>General Medicine</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Department:</span>
+                                    <span>General Practice</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Experience:</span>
+                                    <span>12 Years</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Consultation Fee:</span>
+                                    <span>$150.00</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Today's Appts:</span>
+                                    <span>10 Scheduled</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Total Patients:</span>
+                                    <span>1,240</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Rating:</span>
+                                    <span>⭐ 4.9 (312 reviews)</span>
+                                </div>
+                            </div>
+                            <div class="doctor-card-footer">
+                                <button type="button" class="btn btn-sm btn-primary">View Profile</button>
+                                <button type="button" class="btn btn-sm btn-secondary">Edit</button>
+                                <button type="button" class="btn-action" aria-label="More actions for Dr. Sarah Jenkins">⋮</button>
+                            </div>
+                        </article>
+
+                        <!-- Doctor Card 2 -->
+                        <article class="doctor-card">
+                            <div class="doctor-card-header">
+                                <div class="doctor-avatar-placeholder" aria-hidden="true">RC</div>
+                                <div class="doctor-meta">
+                                    <h4 class="doctor-name">Dr. Robert Chen</h4>
+                                    <span class="doctor-id">#DOC-1002</span>
+                                    <span class="status-badge status-busy">Busy</span>
+                                </div>
+                            </div>
+                            <div class="doctor-card-body">
+                                <div class="doctor-info-row">
+                                    <span>Specialty:</span>
+                                    <span>Cardiology</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Department:</span>
+                                    <span>Cardiovascular Unit</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Experience:</span>
+                                    <span>15 Years</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Consultation Fee:</span>
+                                    <span>$220.00</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Today's Appts:</span>
+                                    <span>12 Scheduled</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Total Patients:</span>
+                                    <span>980</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Rating:</span>
+                                    <span>⭐ 4.8 (245 reviews)</span>
+                                </div>
+                            </div>
+                            <div class="doctor-card-footer">
+                                <button type="button" class="btn btn-sm btn-primary">View Profile</button>
+                                <button type="button" class="btn btn-sm btn-secondary">Edit</button>
+                                <button type="button" class="btn-action" aria-label="More actions for Dr. Robert Chen">⋮</button>
+                            </div>
+                        </article>
+
+                        <!-- Doctor Card 3 -->
+                        <article class="doctor-card">
+                            <div class="doctor-card-header">
+                                <div class="doctor-avatar-placeholder" aria-hidden="true">ET</div>
+                                <div class="doctor-meta">
+                                    <h4 class="doctor-name">Dr. Emily Thorne</h4>
+                                    <span class="doctor-id">#DOC-1003</span>
+                                    <span class="status-badge status-available">Available</span>
+                                </div>
+                            </div>
+                            <div class="doctor-card-body">
+                                <div class="doctor-info-row">
+                                    <span>Specialty:</span>
+                                    <span>Neurology</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Department:</span>
+                                    <span>Neurological Institute</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Experience:</span>
+                                    <span>10 Years</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Consultation Fee:</span>
+                                    <span>$200.00</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Today's Appts:</span>
+                                    <span>8 Scheduled</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Total Patients:</span>
+                                    <span>750</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Rating:</span>
+                                    <span>⭐ 4.9 (198 reviews)</span>
+                                </div>
+                            </div>
+                            <div class="doctor-card-footer">
+                                <button type="button" class="btn btn-sm btn-primary">View Profile</button>
+                                <button type="button" class="btn btn-sm btn-secondary">Edit</button>
+                                <button type="button" class="btn-action" aria-label="More actions for Dr. Emily Thorne">⋮</button>
+                            </div>
+                        </article>
+
+                        <!-- Doctor Card 4 -->
+                        <article class="doctor-card">
+                            <div class="doctor-card-header">
+                                <div class="doctor-avatar-placeholder" aria-hidden="true">MV</div>
+                                <div class="doctor-meta">
+                                    <h4 class="doctor-name">Dr. Michael Vance</h4>
+                                    <span class="doctor-id">#DOC-1004</span>
+                                    <span class="status-badge status-fully-booked">Fully Booked</span>
+                                </div>
+                            </div>
+                            <div class="doctor-card-body">
+                                <div class="doctor-info-row">
+                                    <span>Specialty:</span>
+                                    <span>Pediatrics</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Department:</span>
+                                    <span>Pediatric Care</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Experience:</span>
+                                    <span>8 Years</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Consultation Fee:</span>
+                                    <span>$130.00</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Today's Appts:</span>
+                                    <span>14 Scheduled</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Total Patients:</span>
+                                    <span>1,450</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Rating:</span>
+                                    <span>⭐ 4.7 (410 reviews)</span>
+                                </div>
+                            </div>
+                            <div class="doctor-card-footer">
+                                <button type="button" class="btn btn-sm btn-primary">View Profile</button>
+                                <button type="button" class="btn btn-sm btn-secondary">Edit</button>
+                                <button type="button" class="btn-action" aria-label="More actions for Dr. Michael Vance">⋮</button>
+                            </div>
+                        </article>
+
+                        <!-- Doctor Card 5 -->
+                        <article class="doctor-card">
+                            <div class="doctor-card-header">
+                                <div class="doctor-avatar-placeholder" aria-hidden="true">AK</div>
+                                <div class="doctor-meta">
+                                    <h4 class="doctor-name">Dr. Amanda King</h4>
+                                    <span class="doctor-id">#DOC-1005</span>
+                                    <span class="status-badge status-in-consultation">In Consultation</span>
+                                </div>
+                            </div>
+                            <div class="doctor-card-body">
+                                <div class="doctor-info-row">
+                                    <span>Specialty:</span>
+                                    <span>Dermatology</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Department:</span>
+                                    <span>Skin & Aesthetics</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Experience:</span>
+                                    <span>9 Years</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Consultation Fee:</span>
+                                    <span>$175.00</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Today's Appts:</span>
+                                    <span>9 Scheduled</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Total Patients:</span>
+                                    <span>890</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Rating:</span>
+                                    <span>⭐ 4.9 (275 reviews)</span>
+                                </div>
+                            </div>
+                            <div class="doctor-card-footer">
+                                <button type="button" class="btn btn-sm btn-primary">View Profile</button>
+                                <button type="button" class="btn btn-sm btn-secondary">Edit</button>
+                                <button type="button" class="btn-action" aria-label="More actions for Dr. Amanda King">⋮</button>
+                            </div>
+                        </article>
+
+                        <!-- Doctor Card 6 -->
+                        <article class="doctor-card">
+                            <div class="doctor-card-header">
+                                <div class="doctor-avatar-placeholder" aria-hidden="true">JD</div>
+                                <div class="doctor-meta">
+                                    <h4 class="doctor-name">Dr. James Davis</h4>
+                                    <span class="doctor-id">#DOC-1006</span>
+                                    <span class="status-badge status-on-leave">On Leave</span>
+                                </div>
+                            </div>
+                            <div class="doctor-card-body">
+                                <div class="doctor-info-row">
+                                    <span>Specialty:</span>
+                                    <span>Orthopedics</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Department:</span>
+                                    <span>Orthopedic Surgery</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Experience:</span>
+                                    <span>18 Years</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Consultation Fee:</span>
+                                    <span>$250.00</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Today's Appts:</span>
+                                    <span>0 Scheduled</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Total Patients:</span>
+                                    <span>1,620</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Rating:</span>
+                                    <span>⭐ 4.8 (380 reviews)</span>
+                                </div>
+                            </div>
+                            <div class="doctor-card-footer">
+                                <button type="button" class="btn btn-sm btn-primary">View Profile</button>
+                                <button type="button" class="btn btn-sm btn-secondary">Edit</button>
+                                <button type="button" class="btn-action" aria-label="More actions for Dr. James Davis">⋮</button>
+                            </div>
+                        </article>
+
+                        <!-- Doctor Card 7 -->
+                        <article class="doctor-card">
+                            <div class="doctor-card-header">
+                                <div class="doctor-avatar-placeholder" aria-hidden="true">SL</div>
+                                <div class="doctor-meta">
+                                    <h4 class="doctor-name">Dr. Sophia Lee</h4>
+                                    <span class="doctor-id">#DOC-1007</span>
+                                    <span class="status-badge status-available">Available</span>
+                                </div>
+                            </div>
+                            <div class="doctor-card-body">
+                                <div class="doctor-info-row">
+                                    <span>Specialty:</span>
+                                    <span>Gynecology</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Department:</span>
+                                    <span>Women's Health</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Experience:</span>
+                                    <span>11 Years</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Consultation Fee:</span>
+                                    <span>$180.00</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Today's Appts:</span>
+                                    <span>11 Scheduled</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Total Patients:</span>
+                                    <span>1,120</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Rating:</span>
+                                    <span>⭐ 4.9 (340 reviews)</span>
+                                </div>
+                            </div>
+                            <div class="doctor-card-footer">
+                                <button type="button" class="btn btn-sm btn-primary">View Profile</button>
+                                <button type="button" class="btn btn-sm btn-secondary">Edit</button>
+                                <button type="button" class="btn-action" aria-label="More actions for Dr. Sophia Lee">⋮</button>
+                            </div>
+                        </article>
+
+                        <!-- Doctor Card 8 -->
+                        <article class="doctor-card">
+                            <div class="doctor-card-header">
+                                <div class="doctor-avatar-placeholder" aria-hidden="true">BW</div>
+                                <div class="doctor-meta">
+                                    <h4 class="doctor-name">Dr. Benjamin Wright</h4>
+                                    <span class="doctor-id">#DOC-1008</span>
+                                    <span class="status-badge status-off-duty">Off Duty</span>
+                                </div>
+                            </div>
+                            <div class="doctor-card-body">
+                                <div class="doctor-info-row">
+                                    <span>Specialty:</span>
+                                    <span>ENT Specialist</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Department:</span>
+                                    <span>Otolaryngology</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Experience:</span>
+                                    <span>7 Years</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Consultation Fee:</span>
+                                    <span>$140.00</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Today's Appts:</span>
+                                    <span>0 Scheduled</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Total Patients:</span>
+                                    <span>620</span>
+                                </div>
+                                <div class="doctor-info-row">
+                                    <span>Rating:</span>
+                                    <span>⭐ 4.7 (150 reviews)</span>
+                                </div>
+                            </div>
+                            <div class="doctor-card-footer">
+                                <button type="button" class="btn btn-sm btn-primary">View Profile</button>
+                                <button type="button" class="btn btn-sm btn-secondary">Edit</button>
+                                <button type="button" class="btn-action" aria-label="More actions for Dr. Benjamin Wright">⋮</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- EMPTY STATE -->
+                <section id="doctor-empty-state" class="empty-state hidden" aria-hidden="true">
+                    <div class="empty-state-icon" aria-hidden="true">🩺</div>
+                    <h4 class="empty-state-title">No Doctors Found</h4>
+                    <p class="empty-state-text">No doctors match the selected search or filters.</p>
+                    <div class="empty-state-actions">
+                        <button type="button" class="btn btn-secondary">Clear Filters</button>
+                        <button type="button" class="btn btn-primary">Add Doctor</button>
+                    </div>
+                </section>
+
+                <!-- PAGINATION -->
+                <nav class="pagination-container" aria-label="Doctor Directory Pagination">
+                    <div class="pagination-info">
+                        Showing <span>1–8</span> of <span>24</span> results
+                    </div>
+                    <div class="pagination-controls">
+                        <button type="button" class="btn-page" aria-label="Previous page" disabled>Previous</button>
+                        <button type="button" class="btn-page active" aria-current="page">1</button>
+                        <button type="button" class="btn-page">2</button>
+                        <button type="button" class="btn-page">3</button>
+                        <button type="button" class="btn-page" aria-label="Next page">Next</button>
+                    </div>
+                    <div class="pagination-per-page">
+                        <label for="rows-per-page-doc">Rows per page:</label>
+                        <select id="rows-per-page-doc" name="rows_per_page">
+                            <option value="8" selected>8</option>
+                            <option value="16">16</option>
+                            <option value="24">24</option>
+                            <option value="50">50</option>
+                        </select>
+                    </div>
+                </nav>
+
+                <!-- DEPARTMENT OVERVIEW -->
+                <section id="department-overview-section" class="dashboard-section" aria-labelledby="dept-overview-title">
+                    <div class="section-header">
+                        <h3 id="dept-overview-title" class="section-title">Department Overview</h3>
+                    </div>
+                    <div class="department-cards-grid">
+                        <article class="department-card">
+                            <h4 class="dept-name">General Medicine</h4>
+                            <div class="dept-stats">
+                                <span>Doctors: 4</span>
+                                <span>Today's Appts: 28</span>
+                            </div>
+                            <span class="status-badge status-available">Fully Operational</span>
+                            <div class="dept-actions">
+                                <button type="button" class="btn btn-sm btn-outline">View Department</button>
+                            </div>
+                        </article>
+
+                        <article class="department-card">
+                            <h4 class="dept-name">Cardiology</h4>
+                            <div class="dept-stats">
+                                <span>Doctors: 3</span>
+                                <span>Today's Appts: 22</span>
+                            </div>
+                            <span class="status-badge status-available">Fully Operational</span>
+                            <div class="dept-actions">
+                                <button type="button" class="btn btn-sm btn-outline">View Department</button>
+                            </div>
+                        </article>
+
+                        <article class="department-card">
+                            <h4 class="dept-name">Dermatology</h4>
+                            <div class="dept-stats">
+                                <span>Doctors: 2</span>
+                                <span>Today's Appts: 15</span>
+                            </div>
+                            <span class="status-badge status-available">Fully Operational</span>
+                            <div class="dept-actions">
+                                <button type="button" class="btn btn-sm btn-outline">View Department</button>
+                            </div>
+                        </article>
+
+                        <article class="department-card">
+                            <h4 class="dept-name">Pediatrics</h4>
+                            <div class="dept-stats">
+                                <span>Doctors: 3</span>
+                                <span>Today's Appts: 30</span>
+                            </div>
+                            <span class="status-badge status-busy">High Traffic</span>
+                            <div class="dept-actions">
+                                <button type="button" class="btn btn-sm btn-outline">View Department</button>
+                            </div>
+                        </article>
+
+                        <article class="department-card">
+                            <h4 class="dept-name">Orthopedics</h4>
+                            <div class="dept-stats">
+                                <span>Doctors: 3</span>
+                                <span>Today's Appts: 18</span>
+                            </div>
+                            <span class="status-badge status-available">Fully Operational</span>
+                            <div class="dept-actions">
+                                <button type="button" class="btn btn-sm btn-outline">View Department</button>
+                            </div>
+                        </article>
+
+                        <article class="department-card">
+                            <h4 class="dept-name">Dental</h4>
+                            <div class="dept-stats">
+                                <span>Doctors: 3</span>
+                                <span>Today's Appts: 20</span>
+                            </div>
+                            <span class="status-badge status-available">Fully Operational</span>
+                            <div class="dept-actions">
+                                <button type="button" class="btn btn-sm btn-outline">View Department</button>
+                            </div>
+                        </article>
+
+                        <article class="department-card">
+                            <h4 class="dept-name">ENT</h4>
+                            <div class="dept-stats">
+                                <span>Doctors: 3</span>
+                                <span>Today's Appts: 14</span>
+                            </div>
+                            <span class="status-badge status-available">Fully Operational</span>
+                            <div class="dept-actions">
+                                <button type="button" class="btn btn-sm btn-outline">View Department</button>
+                            </div>
+                        </article>
+
+                        <article class="department-card">
+                            <h4 class="dept-name">Gynecology</h4>
+                            <div class="dept-stats">
+                                <span>Doctors: 3</span>
+                                <span>Today's Appts: 25</span>
+                            </div>
+                            <span class="status-badge status-available">Fully Operational</span>
+                            <div class="dept-actions">
+                                <button type="button" class="btn btn-sm btn-outline">View Department</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- DOCTOR AVAILABILITY SECTION -->
+                <section id="doctor-availability-section" class="dashboard-section" aria-labelledby="doctor-availability-title">
+                    <div class="section-header">
+                        <h3 id="doctor-availability-title" class="section-title">Doctor Availability Status</h3>
+                    </div>
+                    <div class="table-responsive-container">
+                        <table class="data-table" aria-label="Doctor Availability Management Table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Doctor</th>
+                                    <th scope="col">Specialty</th>
+                                    <th scope="col">Current Status</th>
+                                    <th scope="col">Available From</th>
+                                    <th scope="col">Available Until</th>
+                                    <th scope="col">Today's Appointments</th>
+                                    <th scope="col">Next Available Slot</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Dr. Sarah Jenkins (#DOC-1001)</td>
+                                    <td>General Medicine</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td>08:00 AM</td>
+                                    <td>04:00 PM</td>
+                                    <td>10</td>
+                                    <td>11:30 AM</td>
+                                </tr>
+                                <tr>
+                                    <td>Dr. Robert Chen (#DOC-1002)</td>
+                                    <td>Cardiology</td>
+                                    <td><span class="status-badge status-busy">Busy</span></td>
+                                    <td>09:00 AM</td>
+                                    <td>05:00 PM</td>
+                                    <td>12</td>
+                                    <td>02:15 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Dr. Emily Thorne (#DOC-1003)</td>
+                                    <td>Neurology</td>
+                                    <td><span class="status-badge status-available">Available</span></td>
+                                    <td>10:00 AM</td>
+                                    <td>06:00 PM</td>
+                                    <td>8</td>
+                                    <td>12:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Dr. Michael Vance (#DOC-1004)</td>
+                                    <td>Pediatrics</td>
+                                    <td><span class="status-badge status-fully-booked">Fully Booked</span></td>
+                                    <td>08:00 AM</td>
+                                    <td>02:00 PM</td>
+                                    <td>14</td>
+                                    <td>Tomorrow 09:00 AM</td>
+                                </tr>
+                                <tr>
+                                    <td>Dr. Amanda King (#DOC-1005)</td>
+                                    <td>Dermatology</td>
+                                    <td><span class="status-badge status-in-consultation">In Consultation</span></td>
+                                    <td>09:00 AM</td>
+                                    <td>04:00 PM</td>
+                                    <td>9</td>
+                                    <td>01:00 PM</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- DOCTOR WEEKLY SCHEDULE STRUCTURE -->
+                <section id="doctor-weekly-schedule" class="dashboard-section" aria-labelledby="weekly-schedule-title">
+                    <div class="section-header">
+                        <h3 id="weekly-schedule-title" class="section-title">Weekly Schedule Overview</h3>
+                        <div class="calendar-header-controls">
+                            <button type="button" class="btn btn-sm btn-secondary" aria-label="Previous week">◀ Previous Week</button>
+                            <span class="calendar-current-month">August 15 – August 21, 2026</span>
+                            <button type="button" class="btn btn-sm btn-secondary" aria-label="Next week">Next Week ▶</button>
+                        </div>
+                    </div>
+
+                    <div class="schedule-days-container">
+                        <div class="schedule-day-column">
+                            <h4 class="schedule-day-title">Monday</h4>
+                            <div class="schedule-block">
+                                <span class="doctor-name">Dr. Sarah Jenkins</span>
+                                <span class="time">08:00 AM - 04:00 PM</span>
+                                <span class="dept">General Medicine</span>
+                                <span class="appointments-count">10 appts</span>
+                                <span class="status-badge status-available">Available</span>
+                            </div>
+                            <div class="schedule-block">
+                                <span class="doctor-name">Dr. Robert Chen</span>
+                                <span class="time">09:00 AM - 05:00 PM</span>
+                                <span class="dept">Cardiology</span>
+                                <span class="appointments-count">12 appts</span>
+                                <span class="status-badge status-busy">Busy</span>
+                            </div>
+                        </div>
+
+                        <div class="schedule-day-column">
+                            <h4 class="schedule-day-title">Tuesday</h4>
+                            <div class="schedule-block">
+                                <span class="doctor-name">Dr. Emily Thorne</span>
+                                <span class="time">10:00 AM - 06:00 PM</span>
+                                <span class="dept">Neurology</span>
+                                <span class="appointments-count">8 appts</span>
+                                <span class="status-badge status-available">Available</span>
+                            </div>
+                            <div class="schedule-block">
+                                <span class="doctor-name">Dr. Michael Vance</span>
+                                <span class="time">08:00 AM - 02:00 PM</span>
+                                <span class="dept">Pediatrics</span>
+                                <span class="appointments-count">14 appts</span>
+                                <span class="status-badge status-fully-booked">Fully Booked</span>
+                            </div>
+                        </div>
+
+                        <div class="schedule-day-column">
+                            <h4 class="schedule-day-title">Wednesday</h4>
+                            <div class="schedule-block">
+                                <span class="doctor-name">Dr. Amanda King</span>
+                                <span class="time">09:00 AM - 04:00 PM</span>
+                                <span class="dept">Dermatology</span>
+                                <span class="appointments-count">9 appts</span>
+                                <span class="status-badge status-available">Available</span>
+                            </div>
+                        </div>
+
+                        <div class="schedule-day-column">
+                            <h4 class="schedule-day-title">Thursday</h4>
+                            <div class="schedule-block">
+                                <span class="doctor-name">Dr. Sophia Lee</span>
+                                <span class="time">08:30 AM - 04:30 PM</span>
+                                <span class="dept">Gynecology</span>
+                                <span class="appointments-count">11 appts</span>
+                                <span class="status-badge status-available">Available</span>
+                            </div>
+                        </div>
+
+                        <div class="schedule-day-column">
+                            <h4 class="schedule-day-title">Friday</h4>
+                            <div class="schedule-block">
+                                <span class="doctor-name">Dr. James Davis</span>
+                                <span class="time">09:00 AM - 03:00 PM</span>
+                                <span class="dept">Orthopedics</span>
+                                <span class="appointments-count">7 appts</span>
+                                <span class="status-badge status-on-leave">On Leave</span>
+                            </div>
+                        </div>
+
+                        <div class="schedule-day-column">
+                            <h4 class="schedule-day-title">Saturday</h4>
+                            <div class="schedule-block">
+                                <span class="doctor-name">Dr. Benjamin Wright</span>
+                                <span class="time">09:00 AM - 01:00 PM</span>
+                                <span class="dept">ENT</span>
+                                <span class="appointments-count">5 appts</span>
+                                <span class="status-badge status-off-duty">Off Duty</span>
+                            </div>
+                        </div>
+
+                        <div class="schedule-day-column">
+                            <h4 class="schedule-day-title">Sunday</h4>
+                            <div class="schedule-block empty-schedule">
+                                <span>Clinic Closed / Emergency On-Call Only</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DOCTOR PERFORMANCE ANALYTICS SECTION -->
+                <section id="doctor-performance-section" class="dashboard-section" aria-labelledby="performance-title">
+                    <div class="section-header">
+                        <h3 id="performance-title" class="section-title">Doctor Performance Analytics</h3>
+                    </div>
+                    <div class="analytics-grid">
+                        <article class="analytics-card">
+                            <h4 class="analytics-title">A. Consultations Overview</h4>
+                            <div class="analytics-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Consultations</span>
+                                    <span class="stat-value">1,420</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Completed</span>
+                                    <span class="stat-value text-success">1,350</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Cancelled</span>
+                                    <span class="stat-value text-danger">45</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Pending</span>
+                                    <span class="stat-value text-warning">25</span>
+                                </div>
+                            </div>
+                            <div class="chart-placeholder" aria-label="Consultations Overview Chart Placeholder">
+                                <span class="chart-label">[ Bar Chart: Monthly Consultations ]</span>
+                            </div>
+                        </article>
+
+                        <article class="analytics-card">
+                            <h4 class="analytics-title">B. Patient Satisfaction</h4>
+                            <div class="analytics-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Average Rating</span>
+                                    <span class="stat-value">⭐ 4.85 / 5.0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Feedback Received</span>
+                                    <span class="stat-value">2,150 Reviews</span>
+                                </div>
+                            </div>
+                            <div class="chart-placeholder" aria-label="Patient Satisfaction Rating Distribution Chart Placeholder">
+                                <span class="chart-label">[ Rating Distribution Histogram ]</span>
+                            </div>
+                        </article>
+
+                        <article class="analytics-card">
+                            <h4 class="analytics-title">C. Appointment Completion Rate</h4>
+                            <div class="analytics-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Completion Efficiency</span>
+                                    <span class="stat-value text-success">95.0%</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Target Benchmark</span>
+                                    <span class="stat-value">90.0%</span>
+                                </div>
+                            </div>
+                            <div class="chart-placeholder" aria-label="Completion Rate Progress Chart Placeholder">
+                                <span class="chart-label">[ Progress Ring / Line Chart ]</span>
+                            </div>
+                        </article>
+
+                        <article class="analytics-card">
+                            <h4 class="analytics-title">D. Revenue Generated</h4>
+                            <div class="analytics-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Revenue (MTD)</span>
+                                    <span class="stat-value">$248,500</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Average per Doctor</span>
+                                    <span class="stat-value">$10,354</span>
+                                </div>
+                            </div>
+                            <div class="chart-placeholder" aria-label="Revenue Trend Chart Placeholder">
+                                <span class="chart-label">[ Area Chart: Departmental Revenue ]</span>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- STAFF OVERVIEW SECTION -->
+                <section id="staff-overview-section" class="dashboard-section" aria-labelledby="staff-overview-title">
+                    <div class="section-header">
+                        <h3 id="staff-overview-title" class="section-title">Medical Staff Overview</h3>
+                        <button type="button" class="btn btn-sm btn-primary">View All Staff</button>
+                    </div>
+                    <div class="staff-cards-grid">
+                        <article class="staff-category-card">
+                            <h4 class="staff-category-title">Nurses</h4>
+                            <div class="staff-stats-row"><span>Total Count:</span> <strong>35</strong></div>
+                            <div class="staff-stats-row"><span>Available:</span> <strong>28</strong></div>
+                            <div class="staff-stats-row"><span>On Duty:</span> <strong class="text-success">30</strong></div>
+                            <div class="staff-stats-row"><span>Off Duty:</span> <strong>5</strong></div>
+                        </article>
+
+                        <article class="staff-category-card">
+                            <h4 class="staff-category-title">Receptionists</h4>
+                            <div class="staff-stats-row"><span>Total Count:</span> <strong>10</strong></div>
+                            <div class="staff-stats-row"><span>Available:</span> <strong>8</strong></div>
+                            <div class="staff-stats-row"><span>On Duty:</span> <strong class="text-success">9</strong></div>
+                            <div class="staff-stats-row"><span>Off Duty:</span> <strong>1</strong></div>
+                        </article>
+
+                        <article class="staff-category-card">
+                            <h4 class="staff-category-title">Lab Technicians</h4>
+                            <div class="staff-stats-row"><span>Total Count:</span> <strong>12</strong></div>
+                            <div class="staff-stats-row"><span>Available:</span> <strong>10</strong></div>
+                            <div class="staff-stats-row"><span>On Duty:</span> <strong class="text-success">11</strong></div>
+                            <div class="staff-stats-row"><span>Off Duty:</span> <strong>1</strong></div>
+                        </article>
+
+                        <article class="staff-category-card">
+                            <h4 class="staff-category-title">Pharmacists</h4>
+                            <div class="staff-stats-row"><span>Total Count:</span> <strong>8</strong></div>
+                            <div class="staff-stats-row"><span>Available:</span> <strong>6</strong></div>
+                            <div class="staff-stats-row"><span>On Duty:</span> <strong class="text-success">7</strong></div>
+                            <div class="staff-stats-row"><span>Off Duty:</span> <strong>1</strong></div>
+                        </article>
+
+                        <article class="staff-category-card">
+                            <h4 class="staff-category-title">Assistants</h4>
+                            <div class="staff-stats-row"><span>Total Count:</span> <strong>20</strong></div>
+                            <div class="staff-stats-row"><span>Available:</span> <strong>16</strong></div>
+                            <div class="staff-stats-row"><span>On Duty:</span> <strong class="text-success">18</strong></div>
+                            <div class="staff-stats-row"><span>Off Duty:</span> <strong>2</strong></div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- DOCTOR DETAILS PANEL (MODAL/SIDE-PANEL PLACEHOLDER) -->
+                <aside id="doctor-details-panel" class="side-panel-preview" aria-label="Doctor Profile Details Panel">
+                    <div class="panel-header">
+                        <h4 class="panel-title">Doctor Profile</h4>
+                        <button type="button" class="btn-close" aria-label="Close panel">×</button>
+                    </div>
+                    <div class="panel-body">
+                        <div class="preview-quick-info">
+                            <h6 class="subsection-title">Personal Information</h6>
+                            <div class="quick-info-list">
+                                <div class="quick-info-row">
+                                    <span>Doctor Name</span>
+                                    <span>Dr. Sarah Jenkins</span>
+                                </div>
+                                <div class="quick-info-row">
+                                    <span>Doctor ID</span>
+                                    <span>#DOC-1001</span>
+                                </div>
+                                <div class="quick-info-row">
+                                    <span>Gender</span>
+                                    <span>Female</span>
+                                </div>
+                                <div class="quick-info-row">
+                                    <span>Contact</span>
+                                    <span>+1 (555) 014-9281</span>
+                                </div>
+                                <div class="quick-info-row">
+                                    <span>Email</span>
+                                    <span>s.jenkins@isaacclinic.com</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="preview-quick-info">
+                            <h6 class="subsection-title">Professional Information</h6>
+                            <div class="quick-info-list">
+                                <div class="quick-info-row">
+                                    <span>Specialty</span>
+                                    <span>General Medicine</span>
+                                </div>
+                                <div class="quick-info-row">
+                                    <span>Department</span>
+                                    <span>General Practice</span>
+                                </div>
+                                <div class="quick-info-row">
+                                    <span>Qualification</span>
+                                    <span>MBBS, MD - General Medicine</span>
+                                </div>
+                                <div class="quick-info-row">
+                                    <span>Experience</span>
+                                    <span>12 Years</span>
+                                </div>
+                                <div class="quick-info-row">
+                                    <span>License / Registration</span>
+                                    <span>MED-9823410</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="preview-quick-info">
+                            <h6 class="subsection-title">Clinic Information</h6>
+                            <div class="quick-info-list">
+                                <div class="quick-info-row">
+                                    <span>Consultation Fee</span>
+                                    <span>$150.00</span>
+                                </div>
+                                <div class="quick-info-row">
+                                    <span>Working Days</span>
+                                    <span>Monday – Friday</span>
+                                </div>
+                                <div class="quick-info-row">
+                                    <span>Working Hours</span>
+                                    <span>08:00 AM – 04:00 PM</span>
+                                </div>
+                                <div class="quick-info-row">
+                                    <span>Current Status</span>
+                                    <span class="status-badge status-available">Available</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="preview-quick-info">
+                            <h6 class="subsection-title">Performance</h6>
+                            <div class="quick-info-list">
+                                <div class="quick-info-row">
+                                    <span>Total Patients</span>
+                                    <span>1,240</span>
+                                </div>
+                                <div class="quick-info-row">
+                                    <span>Total Appointments</span>
+                                    <span>1,890</span>
+                                </div>
+                                <div class="quick-info-row">
+                                    <span>Completed Consultations</span>
+                                    <span>1,820</span>
+                                </div>
+                                <div class="quick-info-row">
+                                    <span>Rating</span>
+                                    <span>⭐ 4.9 / 5.0</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="preview-quick-actions">
+                            <h6 class="subsection-title">Actions</h6>
+                            <div class="quick-action-buttons">
+                                <button type="button" class="btn btn-sm btn-primary">View Schedule</button>
+                                <button type="button" class="btn btn-sm btn-secondary">View Patients</button>
+                                <button type="button" class="btn btn-sm btn-outline">Edit Doctor</button>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- ADD DOCTOR FORM STRUCTURE (HIDDEN CONTAINER PLACEHOLDER) -->
+                <section id="add-doctor-form-container" class="dashboard-section hidden" aria-label="Add Doctor Form">
+                    <div class="section-header">
+                        <h3 class="section-title">Add New Doctor Form</h3>
+                    </div>
+                    <form class="standard-form">
+                        <fieldset>
+                            <legend class="subsection-title">Personal Information</legend>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-doc-firstname">First Name</label>
+                                    <input type="text" id="form-doc-firstname" name="first_name" required placeholder="Enter first name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-doc-lastname">Last Name</label>
+                                    <input type="text" id="form-doc-lastname" name="last_name" required placeholder="Enter last name">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-doc-gender">Gender</label>
+                                    <select id="form-doc-gender" name="gender" required>
+                                        <option value="">Select gender...</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-doc-dob">Date of Birth</label>
+                                    <input type="date" id="form-doc-dob" name="date_of_birth" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-doc-phone">Phone</label>
+                                    <input type="tel" id="form-doc-phone" name="phone" required placeholder="+1 (555) 000-0000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-doc-email">Email</label>
+                                    <input type="email" id="form-doc-email" name="email" required placeholder="doctor@isaacclinic.com">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend class="subsection-title">Professional Information</legend>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-doc-id">Doctor ID</label>
+                                    <input type="text" id="form-doc-id" name="doctor_id" required value="#DOC-1009" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-doc-specialty">Specialty</label>
+                                    <select id="form-doc-specialty" name="specialty" required>
+                                        <option value="">Select specialty...</option>
+                                        <option value="general-medicine">General Medicine</option>
+                                        <option value="cardiology">Cardiology</option>
+                                        <option value="neurology">Neurology</option>
+                                        <option value="pediatrics">Pediatrics</option>
+                                        <option value="dermatology">Dermatology</option>
+                                        <option value="orthopedics">Orthopedics</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-doc-department">Department</label>
+                                    <select id="form-doc-department" name="department" required>
+                                        <option value="">Select department...</option>
+                                        <option value="general">General Medicine</option>
+                                        <option value="cardiology">Cardiology</option>
+                                        <option value="neurology">Neurology</option>
+                                        <option value="pediatrics">Pediatrics</option>
+                                        <option value="dermatology">Dermatology</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-doc-qualification">Qualification</label>
+                                    <input type="text" id="form-doc-qualification" name="qualification" required placeholder="e.g. MBBS, MD">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-doc-experience">Experience (Years)</label>
+                                    <input type="number" id="form-doc-experience" name="experience" min="0" max="50" required placeholder="e.g. 5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-doc-reg">Registration Number</label>
+                                    <input type="text" id="form-doc-reg" name="registration_number" required placeholder="License / Registration #">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend class="subsection-title">Clinic Information</legend>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-doc-fee">Consultation Fee ($)</label>
+                                    <input type="text" id="form-doc-fee" name="consultation_fee" required value="$150.00">
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-doc-days">Working Days</label>
+                                    <input type="text" id="form-doc-days" name="working_days" required value="Monday – Friday">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-doc-starttime">Start Time</label>
+                                    <input type="time" id="form-doc-starttime" name="start_time" required value="08:00">
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-doc-endtime">End Time</label>
+                                    <input type="time" id="form-doc-endtime" name="end_time" required value="16:00">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-doc-status">Availability Status</label>
+                                    <select id="form-doc-status" name="availability_status" required>
+                                        <option value="available">Available</option>
+                                        <option value="busy">Busy</option>
+                                        <option value="in-consultation">In Consultation</option>
+                                        <option value="on-leave">On Leave</option>
+                                        <option value="off-duty">Off Duty</option>
+                                        <option value="fully-booked">Fully Booked</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend class="subsection-title">Profile & Additional Information</legend>
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <label for="form-doc-photo">Profile Photo Upload Placeholder</label>
+                                    <input type="file" id="form-doc-photo" name="profile_photo">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <label for="form-doc-bio">Short Bio</label>
+                                    <textarea id="form-doc-bio" name="bio" rows="3" placeholder="Enter professional summary or biography..."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group full-width">
+                                    <label for="form-doc-notes">Notes</label>
+                                    <textarea id="form-doc-notes" name="notes" rows="2" placeholder="Additional administrative or internal notes..."></textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Doctor</button>
+                            <button type="button" class="btn btn-secondary">Cancel</button>
+                        </div>
+                    </form>
+                </section>
+            </main>
+
+            <!-- FOOTER -->
+            <footer id="dashboard-footer" class="dashboard-footer" role="contentinfo">
+                <div class="footer-left">
+                    <span class="footer-brand">ISAAC CLINIC</span>
+                    <span class="footer-copyright">&copy; 2026 Isaac Health Systems Inc. All rights reserved.</span>
+                </div>
+                <div class="footer-center">
+                    <a href="#privacy" class="footer-link">Privacy Policy</a>
+                    <span class="footer-separator" aria-hidden="true">•</span>
+                    <a href="#terms" class="footer-link">Terms of Service</a>
+                </div>
+                <div class="footer-right">
+                    <span class="footer-version">Version 3.4.2-Pro</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

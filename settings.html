@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings & System Configuration - ISAAC CLINIC</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Lightweight CDN for Icons (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="isaac-clinic-body">
+
+    <!-- APPLICATION SHELL -->
+    <div class="app-shell">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" aria-label="Main Navigation">
+            <div class="sidebar-brand">
+                <h2>ISAAC CLINIC</h2>
+                <span class="brand-subtitle">Clinic Management</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-category">MAIN</div>
+                <ul>
+                    <li><a href="dashboard.html" class="nav-link"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+                    <li><a href="patients.html" class="nav-link"><i class="fa-solid fa-hospital-user"></i> Patients</a></li>
+                    <li><a href="appointments.html" class="nav-link"><i class="fa-solid fa-calendar-check"></i> Appointments <span class="badge">12</span></a></li>
+                    <li><a href="doctors.html" class="nav-link"><i class="fa-solid fa-user-doctor"></i> Doctors</a></li>
+                    <li><a href="staff.html" class="nav-link"><i class="fa-solid fa-users"></i> Staff</a></li>
+                </ul>
+
+                <div class="nav-category">CLINICAL</div>
+                <ul>
+                    <li><a href="prescriptions.html" class="nav-link"><i class="fa-solid fa-prescription"></i> Prescriptions</a></li>
+                    <li><a href="laboratory.html" class="nav-link"><i class="fa-solid fa-flask"></i> Laboratory</a></li>
+                    <li><a href="pharmacy.html" class="nav-link"><i class="fa-solid fa-pills"></i> Pharmacy</a></li>
+                    <li><a href="medical-records.html" class="nav-link"><i class="fa-solid fa-file-medical"></i> Medical Records</a></li>
+                </ul>
+
+                <div class="nav-category">FINANCE</div>
+                <ul>
+                    <li><a href="billing.html" class="nav-link"><i class="fa-solid fa-file-invoice-dollar"></i> Billing</a></li>
+                    <li><a href="payments.html" class="nav-link"><i class="fa-solid fa-credit-card"></i> Payments</a></li>
+                    <li><a href="expenses.html" class="nav-link"><i class="fa-solid fa-wallet"></i> Expenses</a></li>
+                </ul>
+
+                <div class="nav-category">MANAGEMENT</div>
+                <ul>
+                    <li><a href="reports.html" class="nav-link"><i class="fa-solid fa-chart-line"></i> Reports</a></li>
+                    <li><a href="settings.html" class="nav-link active" aria-current="page"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile-mini">
+                    <div class="user-avatar-placeholder">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Dr. Jonathan Isaac</span>
+                        <span class="user-role">Super Admin</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN WRAPPER -->
+        <div class="main-wrapper">
+
+            <!-- TOP HEADER -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" aria-label="Toggle Sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="page-title-breadcrumb">
+                        <h1>Settings</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="dashboard.html">Dashboard</a></li>
+                                <li class="separator">/</li>
+                                <li class="active" aria-current="page">Settings</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <div class="search-settings-container">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" placeholder="Search settings..." aria-label="Search settings">
+                    </div>
+                    <button class="notification-btn" aria-label="View Notifications">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <div class="header-user-profile">
+                        <div class="user-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="user-meta">
+                            <span class="user-name">Dr. Jonathan Isaac</span>
+                            <span class="user-role">Super Admin</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- MAIN CONTENT AREA -->
+            <main class="main-content">
+
+                <!-- SETTINGS LAYOUT (TWO-COLUMN) -->
+                <div class="settings-layout">
+
+                    <!-- LEFT SETTINGS NAVIGATION -->
+                    <nav class="settings-sidebar-nav" aria-label="Settings Sections">
+                        <div class="settings-nav-group">
+                            <span class="settings-nav-title">GENERAL</span>
+                            <ul>
+                                <li><a href="#clinic-profile" class="settings-nav-link active">Clinic Profile</a></li>
+                                <li><a href="#general-preferences" class="settings-nav-link">General Preferences</a></li>
+                                <li><a href="#appearance" class="settings-nav-link">Appearance</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="settings-nav-group">
+                            <span class="settings-nav-title">CLINIC MANAGEMENT</span>
+                            <ul>
+                                <li><a href="#departments" class="settings-nav-link">Departments</a></li>
+                                <li><a href="#appointment-settings" class="settings-nav-link">Appointment Settings</a></li>
+                                <li><a href="#billing-payments" class="settings-nav-link">Billing & Payments</a></li>
+                                <li><a href="#pharmacy" class="settings-nav-link">Pharmacy</a></li>
+                                <li><a href="#laboratory" class="settings-nav-link">Laboratory</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="settings-nav-group">
+                            <span class="settings-nav-title">ACCESS & SECURITY</span>
+                            <ul>
+                                <li><a href="#users-management" class="settings-nav-link">Users</a></li>
+                                <li><a href="#roles-permissions" class="settings-nav-link">Roles & Permissions</a></li>
+                                <li><a href="#security" class="settings-nav-link">Security</a></li>
+                                <li><a href="#privacy" class="settings-nav-link">Privacy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="settings-nav-group">
+                            <span class="settings-nav-title">COMMUNICATION</span>
+                            <ul>
+                                <li><a href="#notifications" class="settings-nav-link">Notifications</a></li>
+                                <li><a href="#email-settings" class="settings-nav-link">Email</a></li>
+                                <li><a href="#sms-settings" class="settings-nav-link">SMS</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="settings-nav-group">
+                            <span class="settings-nav-title">SYSTEM</span>
+                            <ul>
+                                <li><a href="#backup-data" class="settings-nav-link">Backup & Data</a></li>
+                                <li><a href="#audit-logs" class="settings-nav-link">Audit Logs</a></li>
+                                <li><a href="#system-information" class="settings-nav-link">System Information</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <!-- RIGHT CONTENT AREA -->
+                    <div class="settings-content-area">
+
+                        <!-- CLINIC PROFILE -->
+                        <section id="clinic-profile" class="settings-section">
+                            <div class="section-header">
+                                <h2>Clinic Profile</h2>
+                                <p>Manage your core clinic details and public identification data.</p>
+                            </div>
+                            <form class="settings-form">
+                                <fieldset>
+                                    <legend>Basic Information</legend>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="clinic-name">Clinic Name</label>
+                                            <input type="text" id="clinic-name" value="ISAAC CLINIC">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="clinic-id">Clinic ID</label>
+                                            <input type="text" id="clinic-id" value="ISC-98234-HQ" placeholder="Placeholder" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="clinic-type">Clinic Type</label>
+                                            <input type="text" id="clinic-type" value="Multi-Specialty Clinic">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="registration-number">Registration Number</label>
+                                            <input type="text" id="registration-number" placeholder="Placeholder">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="tax-gst-number">Tax/GST Number</label>
+                                            <input type="text" id="tax-gst-number" placeholder="Placeholder">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="clinic-logo">Clinic Logo</label>
+                                            <div class="file-upload-placeholder">
+                                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                                <span>Image/upload placeholder</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <legend>Contact & Location</legend>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="clinic-phone">Phone</label>
+                                            <input type="tel" id="clinic-phone" placeholder="Placeholder">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="clinic-email">Email</label>
+                                            <input type="email" id="clinic-email" placeholder="Placeholder">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="clinic-website">Website</label>
+                                            <input type="url" id="clinic-website" placeholder="Placeholder">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="clinic-country">Country</label>
+                                            <input type="text" id="clinic-country" value="India">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="clinic-city">City</label>
+                                            <input type="text" id="clinic-city" placeholder="Placeholder">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="clinic-state">State</label>
+                                            <input type="text" id="clinic-state" placeholder="Placeholder">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="postal-code">Postal Code</label>
+                                            <input type="text" id="postal-code" placeholder="Placeholder">
+                                        </div>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label for="clinic-address">Address</label>
+                                        <textarea id="clinic-address" rows="3" placeholder="Textarea"></textarea>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label for="clinic-description">Clinic Description</label>
+                                        <textarea id="clinic-description" rows="3" placeholder="Textarea"></textarea>
+                                    </div>
+                                </fieldset>
+
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-primary">Save Changes</button>
+                                    <button type="button" class="btn btn-secondary">Cancel</button>
+                                </div>
+                            </form>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- GENERAL PREFERENCES -->
+                        <section id="general-preferences" class="settings-section">
+                            <div class="section-header">
+                                <h2>General Preferences</h2>
+                                <p>Configure global system standards, date-time setups, and localization.</p>
+                            </div>
+                            <form class="settings-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="pref-language">Language</label>
+                                        <select id="pref-language">
+                                            <option selected>English</option>
+                                            <option>Hindi</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pref-timezone">Timezone</label>
+                                        <select id="pref-timezone">
+                                            <option selected>India Standard Time</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="pref-date-format">Date Format</label>
+                                        <select id="pref-date-format">
+                                            <option selected>DD/MM/YYYY</option>
+                                            <option>MM/DD/YYYY</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pref-time-format">Time Format</label>
+                                        <select id="pref-time-format">
+                                            <option selected>12 Hour</option>
+                                            <option>24 Hour</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="pref-currency">Currency</label>
+                                        <select id="pref-currency">
+                                            <option selected>Indian Rupee (₹)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pref-first-day">First Day of Week</label>
+                                        <select id="pref-first-day">
+                                            <option selected>Monday</option>
+                                            <option>Sunday</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="pref-default-dashboard">Default Dashboard</label>
+                                        <select id="pref-default-dashboard">
+                                            <option selected>Clinic Overview</option>
+                                            <option>Appointments</option>
+                                            <option>Reports</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-primary">Save Preferences</button>
+                                    <button type="button" class="btn btn-secondary">Reset</button>
+                                </div>
+                            </form>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- APPEARANCE SETTINGS -->
+                        <section id="appearance" class="settings-section">
+                            <div class="section-header">
+                                <h2>Appearance Settings</h2>
+                                <p>Customize the visual interface and layout structure of your dashboard.</p>
+                            </div>
+                            <form class="settings-form">
+                                <div class="form-group">
+                                    <label>Theme</label>
+                                    <div class="preview-cards-grid">
+                                        <div class="preview-card selected">
+                                            <div class="preview-box light"></div>
+                                            <span>Light</span>
+                                        </div>
+                                        <div class="preview-card">
+                                            <div class="preview-box dark"></div>
+                                            <span>Dark</span>
+                                        </div>
+                                        <div class="preview-card">
+                                            <div class="preview-box system"></div>
+                                            <span>System Default</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="app-layout">Dashboard Layout</label>
+                                        <select id="app-layout">
+                                            <option selected>Default</option>
+                                            <option>Compact</option>
+                                            <option>Comfortable</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="app-sidebar">Sidebar</label>
+                                        <select id="app-sidebar">
+                                            <option selected>Expanded</option>
+                                            <option>Collapsed</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="app-density">Density</label>
+                                        <select id="app-density">
+                                            <option selected>Comfortable</option>
+                                            <option>Compact</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-primary">Save Appearance</button>
+                                    <button type="button" class="btn btn-secondary">Reset</button>
+                                </div>
+                            </form>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- DEPARTMENT SETTINGS -->
+                        <section id="departments" class="settings-section">
+                            <div class="section-header">
+                                <div class="header-action-row">
+                                    <div>
+                                        <h2>Departments Management</h2>
+                                        <p>Manage clinical departments, units, and specialized teams.</p>
+                                    </div>
+                                    <button type="button" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add Department</button>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Department ID</th>
+                                            <th>Department Name</th>
+                                            <th>Head Doctor</th>
+                                            <th>Doctors</th>
+                                            <th>Status</th>
+                                            <th>Created Date</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>DEP-001</td>
+                                            <td>Cardiology</td>
+                                            <td>Dr. Robert Chen</td>
+                                            <td>6</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>12/01/2024</td>
+                                            <td>
+                                                <button class="action-icon-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="action-icon-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="action-icon-btn danger" title="Disable"><i class="fa-solid fa-ban"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>DEP-002</td>
+                                            <td>Neurology</td>
+                                            <td>Dr. Sarah Jenkins</td>
+                                            <td>4</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>15/01/2024</td>
+                                            <td>
+                                                <button class="action-icon-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="action-icon-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="action-icon-btn danger" title="Disable"><i class="fa-solid fa-ban"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>DEP-003</td>
+                                            <td>Pediatrics</td>
+                                            <td>Dr. Emily Blunt</td>
+                                            <td>5</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>20/01/2024</td>
+                                            <td>
+                                                <button class="action-icon-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="action-icon-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="action-icon-btn danger" title="Disable"><i class="fa-solid fa-ban"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>DEP-004</td>
+                                            <td>Orthopedics</td>
+                                            <td>Dr. Michael Stone</td>
+                                            <td>3</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>01/02/2024</td>
+                                            <td>
+                                                <button class="action-icon-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="action-icon-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="action-icon-btn danger" title="Disable"><i class="fa-solid fa-ban"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>DEP-005</td>
+                                            <td>Dermatology</td>
+                                            <td>Dr. Lisa Ray</td>
+                                            <td>2</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>10/02/2024</td>
+                                            <td>
+                                                <button class="action-icon-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="action-icon-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="action-icon-btn danger" title="Disable"><i class="fa-solid fa-ban"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>DEP-006</td>
+                                            <td>Ophthalmology</td>
+                                            <td>Dr. David Vance</td>
+                                            <td>3</td>
+                                            <td><span class="status-badge inactive">Inactive</span></td>
+                                            <td>18/02/2024</td>
+                                            <td>
+                                                <button class="action-icon-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="action-icon-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="action-icon-btn danger" title="Disable"><i class="fa-solid fa-ban"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>DEP-007</td>
+                                            <td>General Medicine</td>
+                                            <td>Dr. Jonathan Isaac</td>
+                                            <td>8</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>05/03/2024</td>
+                                            <td>
+                                                <button class="action-icon-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="action-icon-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="action-icon-btn danger" title="Disable"><i class="fa-solid fa-ban"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Add Department Structural Form -->
+                            <div class="sub-form-container">
+                                <h3>Add Department Form</h3>
+                                <form class="settings-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="new-dept-name">Department Name</label>
+                                            <input type="text" id="new-dept-name" placeholder="Enter department name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="new-dept-code">Department Code</label>
+                                            <input type="text" id="new-dept-code" placeholder="e.g., DEP-008">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="new-dept-head">Head Doctor</label>
+                                            <select id="new-dept-head">
+                                                <option>Dr. Jonathan Isaac</option>
+                                                <option>Dr. Robert Chen</option>
+                                                <option>Dr. Sarah Jenkins</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="new-dept-status">Status</label>
+                                            <select id="new-dept-status">
+                                                <option selected>Active</option>
+                                                <option>Inactive</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label for="new-dept-desc">Description</label>
+                                        <textarea id="new-dept-desc" rows="2" placeholder="Brief description of department scope"></textarea>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="button" class="btn btn-primary">Save Department</button>
+                                        <button type="button" class="btn btn-secondary">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- APPOINTMENT SETTINGS -->
+                        <section id="appointment-settings" class="settings-section">
+                            <div class="section-header">
+                                <h2>Appointment Settings</h2>
+                                <p>Configure booking rules, durations, time buffers, and patient scheduling policies.</p>
+                            </div>
+                            <form class="settings-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="apt-duration">Appointment Duration</label>
+                                        <select id="apt-duration">
+                                            <option>15 minutes</option>
+                                            <option selected>30 minutes</option>
+                                            <option>45 minutes</option>
+                                            <option>60 minutes</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="apt-buffer">Buffer Time</label>
+                                        <select id="apt-buffer">
+                                            <option>0</option>
+                                            <option selected>5 minutes</option>
+                                            <option>10 minutes</option>
+                                            <option>15 minutes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="apt-window">Booking Window</label>
+                                        <select id="apt-window">
+                                            <option>Same Day</option>
+                                            <option>7 Days</option>
+                                            <option selected>30 Days</option>
+                                            <option>90 Days</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="apt-reminder-timing">Reminder Timing</label>
+                                        <select id="apt-reminder-timing">
+                                            <option selected>1 Day Before</option>
+                                            <option>2 Hours Before</option>
+                                            <option>Custom</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-toggles-grid">
+                                    <div class="toggle-item">
+                                        <span>Cancellation Policy</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Allow Rescheduling</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Allow Online Booking</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Require Confirmation</span>
+                                        <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Automatic Reminder</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-primary">Save Appointment Settings</button>
+                                    <button type="button" class="btn btn-secondary">Reset</button>
+                                </div>
+                            </form>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- BILLING & PAYMENT SETTINGS -->
+                        <section id="billing-payments" class="settings-section">
+                            <div class="section-header">
+                                <h2>Billing & Payment Settings</h2>
+                                <p>Manage invoice parameters, taxation rules, accepted payment gateways, and receipts.</p>
+                            </div>
+                            <form class="settings-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="invoice-prefix">Invoice Prefix</label>
+                                        <input type="text" id="invoice-prefix" value="INV-" placeholder="Placeholder">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="invoice-format">Invoice Number Format</label>
+                                        <input type="text" id="invoice-format" value="INV-YYYYMM-0000" placeholder="Placeholder">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="default-tax-rate">Default Tax Rate (%)</label>
+                                        <input type="text" id="default-tax-rate" value="18" placeholder="Placeholder %">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="invoice-due-period">Invoice Due Period (Days)</label>
+                                        <input type="text" id="invoice-due-period" value="30" placeholder="Placeholder days">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Payment Methods Accepted</label>
+                                    <div class="checkbox-group-inline">
+                                        <label><input type="checkbox" checked> Cash</label>
+                                        <label><input type="checkbox" checked> Card</label>
+                                        <label><input type="checkbox" checked> UPI</label>
+                                        <label><input type="checkbox" checked> Bank Transfer</label>
+                                        <label><input type="checkbox"> Other</label>
+                                    </div>
+                                </div>
+                                <div class="form-toggles-grid">
+                                    <div class="toggle-item">
+                                        <span>Tax/GST</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Auto Generate Receipt</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Auto Email Receipt</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Allow Refunds</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Require Approval for Refunds</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-primary">Save Billing Settings</button>
+                                    <button type="button" class="btn btn-secondary">Reset</button>
+                                </div>
+                            </form>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- PHARMACY SETTINGS -->
+                        <section id="pharmacy" class="settings-section">
+                            <div class="section-header">
+                                <h2>Pharmacy Settings</h2>
+                                <p>Configure drug inventory thresholds, stock alerts, and prescription verification rules.</p>
+                            </div>
+                            <form class="settings-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="low-stock-threshold">Low Stock Threshold (Units)</label>
+                                        <input type="number" id="low-stock-threshold" value="20">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="expiry-warning-period">Expiry Warning Period</label>
+                                        <select id="expiry-warning-period">
+                                            <option>7 Days</option>
+                                            <option>15 Days</option>
+                                            <option selected>30 Days</option>
+                                            <option>60 Days</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="negative-stock-policy">Negative Stock Policy</label>
+                                        <select id="negative-stock-policy">
+                                            <option>Allow</option>
+                                            <option selected>Prevent</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-toggles-grid">
+                                    <div class="toggle-item">
+                                        <span>Low Stock Alert</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Expiry Alert</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Prescription Required</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Batch Tracking</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Automatic Stock Deduction</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-primary">Save Pharmacy Settings</button>
+                                    <button type="button" class="btn btn-secondary">Reset</button>
+                                </div>
+                            </form>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- LABORATORY SETTINGS -->
+                        <section id="laboratory" class="settings-section">
+                            <div class="section-header">
+                                <h2>Laboratory Settings</h2>
+                                <p>Manage diagnostic naming conventions, turnaround times, and result approvals.</p>
+                            </div>
+                            <form class="settings-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="sample-id-format">Sample ID Format</label>
+                                        <input type="text" id="sample-id-format" value="SMP-YYYY-0000" placeholder="Placeholder">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="report-id-format">Report ID Format</label>
+                                        <input type="text" id="report-id-format" value="LAB-YYYY-0000" placeholder="Placeholder">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="default-tat">Default Turnaround Time (TAT)</label>
+                                        <input type="text" id="default-tat" value="24 Hours" placeholder="Placeholder">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Lab Notification Channels</label>
+                                    <div class="checkbox-group-inline">
+                                        <label><input type="checkbox" checked> Email</label>
+                                        <label><input type="checkbox" checked> SMS</label>
+                                        <label><input type="checkbox" checked> In-App</label>
+                                    </div>
+                                </div>
+                                <div class="form-toggles-grid">
+                                    <div class="toggle-item">
+                                        <span>Critical Result Alert</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Require Pathologist Approval</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Automatic Report Generation</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Patient Report Access</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-primary">Save Laboratory Settings</button>
+                                    <button type="button" class="btn btn-secondary">Reset</button>
+                                </div>
+                            </form>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- USERS MANAGEMENT -->
+                        <section id="users-management" class="settings-section">
+                            <div class="section-header">
+                                <div class="header-action-row">
+                                    <div>
+                                        <h2>System Users</h2>
+                                        <p>Manage staff accounts, administrative roles, and credential states.</p>
+                                    </div>
+                                    <button type="button" class="btn btn-primary"><i class="fa-solid fa-user-plus"></i> Add User</button>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>User ID</th>
+                                            <th>User</th>
+                                            <th>Email</th>
+                                            <th>Role</th>
+                                            <th>Department</th>
+                                            <th>Last Login</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>USR-101</td>
+                                            <td>Dr. Jonathan Isaac</td>
+                                            <td>jonathan.isaac@isaacclinic.com</td>
+                                            <td>Super Admin</td>
+                                            <td>Administration</td>
+                                            <td>Today, 08:30 AM</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>
+                                                <button class="action-icon-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="action-icon-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="action-icon-btn danger" title="Disable"><i class="fa-solid fa-ban"></i></button>
+                                                <button class="action-icon-btn" title="Reset Password"><i class="fa-solid fa-key"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>USR-102</td>
+                                            <td>Dr. Robert Chen</td>
+                                            <td>robert.chen@isaacclinic.com</td>
+                                            <td>Doctor</td>
+                                            <td>Cardiology</td>
+                                            <td>Yesterday, 04:15 PM</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>
+                                                <button class="action-icon-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="action-icon-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="action-icon-btn danger" title="Disable"><i class="fa-solid fa-ban"></i></button>
+                                                <button class="action-icon-btn" title="Reset Password"><i class="fa-solid fa-key"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>USR-103</td>
+                                            <td>Sarah Jenkins</td>
+                                            <td>sarah.j@isaacclinic.com</td>
+                                            <td>Nurse</td>
+                                            <td>Neurology</td>
+                                            <td>12 Aug 2026, 10:00 AM</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>
+                                                <button class="action-icon-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="action-icon-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="action-icon-btn danger" title="Disable"><i class="fa-solid fa-ban"></i></button>
+                                                <button class="action-icon-btn" title="Reset Password"><i class="fa-solid fa-key"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>USR-104</td>
+                                            <td>Amanda Waller</td>
+                                            <td>amanda.w@isaacclinic.com</td>
+                                            <td>Receptionist</td>
+                                            <td>Front Desk</td>
+                                            <td>Today, 09:12 AM</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>
+                                                <button class="action-icon-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="action-icon-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="action-icon-btn danger" title="Disable"><i class="fa-solid fa-ban"></i></button>
+                                                <button class="action-icon-btn" title="Reset Password"><i class="fa-solid fa-key"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>USR-105</td>
+                                            <td>Mark Ruffalo</td>
+                                            <td>mark.r@isaacclinic.com</td>
+                                            <td>Pharmacist</td>
+                                            <td>Pharmacy</td>
+                                            <td>10 Aug 2026, 02:45 PM</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>
+                                                <button class="action-icon-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="action-icon-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="action-icon-btn danger" title="Disable"><i class="fa-solid fa-ban"></i></button>
+                                                <button class="action-icon-btn" title="Reset Password"><i class="fa-solid fa-key"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>USR-106</td>
+                                            <td>Elena Rostova</td>
+                                            <td>elena.r@isaacclinic.com</td>
+                                            <td>Lab Technician</td>
+                                            <td>Laboratory</td>
+                                            <td>09 Aug 2026, 11:30 AM</td>
+                                            <td><span class="status-badge inactive">Inactive</span></td>
+                                            <td>
+                                                <button class="action-icon-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="action-icon-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="action-icon-btn danger" title="Disable"><i class="fa-solid fa-ban"></i></button>
+                                                <button class="action-icon-btn" title="Reset Password"><i class="fa-solid fa-key"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>USR-107</td>
+                                            <td>Kevin Vance</td>
+                                            <td>kevin.v@isaacclinic.com</td>
+                                            <td>Accountant</td>
+                                            <td>Finance</td>
+                                            <td>01 Aug 2026, 09:00 AM</td>
+                                            <td><span class="status-badge suspended">Suspended</span></td>
+                                            <td>
+                                                <button class="action-icon-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="action-icon-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="action-icon-btn danger" title="Disable"><i class="fa-solid fa-ban"></i></button>
+                                                <button class="action-icon-btn" title="Reset Password"><i class="fa-solid fa-key"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>USR-108</td>
+                                            <td>Dr. Lisa Ray</td>
+                                            <td>lisa.ray@isaacclinic.com</td>
+                                            <td>Doctor</td>
+                                            <td>Dermatology</td>
+                                            <td>14 Aug 2026, 01:20 PM</td>
+                                            <td><span class="status-badge active">Active</span></td>
+                                            <td>
+                                                <button class="action-icon-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+                                                <button class="action-icon-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                                <button class="action-icon-btn danger" title="Disable"><i class="fa-solid fa-ban"></i></button>
+                                                <button class="action-icon-btn" title="Reset Password"><i class="fa-solid fa-key"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Empty State Example for Users -->
+                            <!--
+                            <div class="empty-state">
+                                <div class="empty-icon"><i class="fa-solid fa-users-slash"></i></div>
+                                <h3>No Users Found</h3>
+                                <p>There are no system users matching your current query or filter criteria.</p>
+                                <button class="btn btn-primary">Add New User</button>
+                            </div>
+                            -->
+
+                            <!-- Add User Form Structural -->
+                            <div class="sub-form-container">
+                                <h3>Add User Form</h3>
+                                <form class="settings-form">
+                                    <fieldset>
+                                        <legend>Personal Information</legend>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="usr-full-name">Full Name</label>
+                                                <input type="text" id="usr-full-name" placeholder="Enter full name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="usr-email">Email</label>
+                                                <input type="email" id="usr-email" placeholder="Enter email address">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group full-width">
+                                                <label for="usr-phone">Phone</label>
+                                                <input type="tel" id="usr-phone" placeholder="Enter phone number">
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Account Details</legend>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="usr-username">Username</label>
+                                                <input type="text" id="usr-username" placeholder="Choose username">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="usr-role">Role</label>
+                                                <select id="usr-role">
+                                                    <option>Clinic Admin</option>
+                                                    <option>Doctor</option>
+                                                    <option>Nurse</option>
+                                                    <option>Receptionist</option>
+                                                    <option>Pharmacist</option>
+                                                    <option>Lab Technician</option>
+                                                    <option>Accountant</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="usr-department">Department</label>
+                                                <select id="usr-department">
+                                                    <option>Cardiology</option>
+                                                    <option>Neurology</option>
+                                                    <option>Pediatrics</option>
+                                                    <option>General Medicine</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="usr-status">Status</label>
+                                                <select id="usr-status">
+                                                    <option selected>Active</option>
+                                                    <option>Inactive</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Security</legend>
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="usr-temp-password">Temporary Password</label>
+                                                <input type="password" id="usr-temp-password" placeholder="••••••••">
+                                            </div>
+                                            <div class="form-group checkbox-container-flex">
+                                                <label><input type="checkbox" checked> Require Password Change on First Login</label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <div class="form-actions">
+                                        <button type="button" class="btn btn-primary">Create User</button>
+                                        <button type="button" class="btn btn-secondary">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- ROLES & PERMISSIONS -->
+                        <section id="roles-permissions" class="settings-section">
+                            <div class="section-header">
+                                <h2>Roles & Permissions</h2>
+                                <p>Define access controls and matrix privileges across various system modules.</p>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="permission-matrix-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Module / Privilege</th>
+                                            <th>View</th>
+                                            <th>Create</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                            <th>Export</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Dashboard</strong></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Patients</strong></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Appointments</strong></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Doctors</strong></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Billing</strong></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Pharmacy</strong></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Laboratory</strong></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Reports</strong></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Settings</strong></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- NOTIFICATION SETTINGS -->
+                        <section id="notifications" class="settings-section">
+                            <div class="section-header">
+                                <h2>Notification Preferences</h2>
+                                <p>Control event triggers and channel dispatches across in-app, email, and SMS mediums.</p>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="data-table notification-matrix">
+                                    <thead>
+                                        <tr>
+                                            <th>Event</th>
+                                            <th>In-App</th>
+                                            <th>Email</th>
+                                            <th>SMS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>New Appointment</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Appointment Reminder</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Appointment Cancellation</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Payment Received</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Payment Due</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Low Pharmacy Stock</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Medicine Expiry</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lab Result Ready</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Critical Lab Result</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                        </tr>
+                                        <tr>
+                                            <td>New Patient</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary">Save Notification Settings</button>
+                                <button type="button" class="btn btn-secondary">Reset</button>
+                            </div>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- EMAIL SETTINGS -->
+                        <section id="email-settings" class="settings-section">
+                            <div class="section-header">
+                                <h2>Email Configuration</h2>
+                                <p>Configure outbound SMTP servers for system generated correspondence.</p>
+                            </div>
+                            <form class="settings-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="smtp-host">SMTP Host</label>
+                                        <input type="text" id="smtp-host" placeholder="smtp.provider.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="smtp-port">SMTP Port</label>
+                                        <input type="text" id="smtp-port" placeholder="587">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="smtp-username">Username</label>
+                                        <input type="text" id="smtp-username" placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="smtp-password">Password</label>
+                                        <input type="password" id="smtp-password" placeholder="••••••••">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="from-name">From Name</label>
+                                        <input type="text" id="from-name" value="ISAAC CLINIC">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="from-email">From Email</label>
+                                        <input type="email" id="from-email" value="no-reply@isaacclinic.com">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="smtp-encryption">Encryption</label>
+                                        <select id="smtp-encryption">
+                                            <option>None</option>
+                                            <option>SSL</option>
+                                            <option selected>TLS</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-secondary">Test Connection</button>
+                                    <button type="button" class="btn btn-primary">Save Settings</button>
+                                </div>
+                            </form>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- SMS SETTINGS -->
+                        <section id="sms-settings" class="settings-section">
+                            <div class="section-header">
+                                <h2>SMS Configuration</h2>
+                                <p>Setup gateway providers for text messaging and alerts.</p>
+                            </div>
+                            <form class="settings-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="sms-provider">SMS Provider</label>
+                                        <select id="sms-provider">
+                                            <option selected>Twilio</option>
+                                            <option>AWS SNS</option>
+                                            <option>Plivo</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="sms-api-key">API Key placeholder</label>
+                                        <input type="password" id="sms-api-key" placeholder="API Key token placeholder">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="sms-sender-id">Sender ID</label>
+                                        <input type="text" id="sms-sender-id" value="ISACNC">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="sms-country-code">Default Country Code</label>
+                                        <input type="text" id="sms-country-code" value="+91">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Enabled SMS Modules</label>
+                                    <div class="checkbox-group-inline">
+                                        <label><input type="checkbox" checked> Appointment Notifications</label>
+                                        <label><input type="checkbox" checked> Payment Notifications</label>
+                                        <label><input type="checkbox" checked> Lab Notifications</label>
+                                        <label><input type="checkbox"> Pharmacy Notifications</label>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-secondary">Test SMS</button>
+                                    <button type="button" class="btn btn-primary">Save Settings</button>
+                                </div>
+                            </form>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- SECURITY SETTINGS -->
+                        <section id="security" class="settings-section">
+                            <div class="section-header">
+                                <h2>Security Settings</h2>
+                                <p>Enhance authentication protocols, password constraints, and timeout policies.</p>
+                            </div>
+                            <form class="settings-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="session-timeout">Session Timeout</label>
+                                        <select id="session-timeout">
+                                            <option>15 Minutes</option>
+                                            <option selected>30 Minutes</option>
+                                            <option>60 Minutes</option>
+                                            <option>120 Minutes</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="failed-login-attempts">Failed Login Attempts Lockout</label>
+                                        <input type="number" id="failed-login-attempts" value="5">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="min-password-length">Minimum Password Length</label>
+                                        <input type="number" id="min-password-length" value="8">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="account-lock-duration">Account Lock Duration (Minutes)</label>
+                                        <input type="number" id="account-lock-duration" value="30">
+                                    </div>
+                                </div>
+                                <div class="form-toggles-grid">
+                                    <div class="toggle-item">
+                                        <span>Two-Factor Authentication (2FA)</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Require Uppercase Letter</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Require Lowercase Letter</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Require Number</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Require Special Character</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                </div>
+
+                                <div class="session-management-box">
+                                    <h3>Active Sessions</h3>
+                                    <p class="placeholder-text">Active Sessions placeholder (e.g., Chrome on Windows • New Delhi, India • Current Session)</p>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-primary">Save Security Settings</button>
+                                    <button type="button" class="btn btn-secondary">Sign Out Other Sessions</button>
+                                </div>
+                            </form>
+                            <!-- Empty state example for Active Sessions -->
+                            <!--
+                            <div class="empty-state">
+                                <div class="empty-icon"><i class="fa-solid fa-desktop"></i></div>
+                                <h3>No Active Sessions</h3>
+                                <p>There are no recorded active user sessions at this moment.</p>
+                            </div>
+                            -->
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- PRIVACY SETTINGS -->
+                        <section id="privacy" class="settings-section">
+                            <div class="section-header">
+                                <h2>Privacy & Data</h2>
+                                <p>Manage patient data protection protocols, audit logging, and regulatory retention rules.</p>
+                            </div>
+                            <form class="settings-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="data-retention">Data Retention Period</label>
+                                        <select id="data-retention">
+                                            <option>1 Year</option>
+                                            <option>3 Years</option>
+                                            <option selected>5 Years</option>
+                                            <option>10 Years</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="auto-cleanup">Automatic Data Cleanup</label>
+                                        <select id="auto-cleanup">
+                                            <option>Enabled</option>
+                                            <option selected>Disabled</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-toggles-grid">
+                                    <div class="toggle-item">
+                                        <span>Patient Data Protection</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Activity Tracking</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Audit Logging</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <span>Data Export Access</span>
+                                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                                    </div>
+                                </div>
+
+                                <div class="data-export-box">
+                                    <h3>Data Export Section</h3>
+                                    <p>Download structured archives of clinic records with confirmation prompts.</p>
+                                    <div class="export-buttons-row">
+                                        <button type="button" class="btn btn-secondary"><i class="fa-solid fa-download"></i> Export Patient Data</button>
+                                        <button type="button" class="btn btn-secondary"><i class="fa-solid fa-download"></i> Export Clinic Data</button>
+                                        <button type="button" class="btn btn-secondary"><i class="fa-solid fa-download"></i> Export Financial Data</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- BACKUP & DATA -->
+                        <section id="backup-data" class="settings-section">
+                            <div class="section-header">
+                                <h2>Backup & Data Management</h2>
+                                <p>Monitor automated system snapshots, storage locations, and perform manual archives.</p>
+                            </div>
+                            <div class="backup-status-card">
+                                <div class="status-grid">
+                                    <div class="status-item">
+                                        <span class="label">Last Backup:</span>
+                                        <span class="value">14 Aug 2026, 03:00 AM</span>
+                                    </div>
+                                    <div class="status-item">
+                                        <span class="label">Backup Size:</span>
+                                        <span class="value">1.42 GB</span>
+                                    </div>
+                                    <div class="status-item">
+                                        <span class="label">Backup Status:</span>
+                                        <span class="value"><span class="status-badge active">Successful</span></span>
+                                    </div>
+                                    <div class="status-item">
+                                        <span class="label">Next Scheduled Backup:</span>
+                                        <span class="value">15 Aug 2026, 03:00 AM</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <form class="settings-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="backup-freq">Backup Frequency</label>
+                                        <select id="backup-freq">
+                                            <option selected>Daily</option>
+                                            <option>Weekly</option>
+                                            <option>Monthly</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="backup-storage">Storage Destination</label>
+                                        <select id="backup-storage">
+                                            <option>Local</option>
+                                            <option selected>Cloud (Secure S3)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-primary"><i class="fa-solid fa-rotate"></i> Backup Now</button>
+                                    <button type="button" class="btn btn-secondary"><i class="fa-solid fa-clock-rotate-left"></i> Restore Backup</button>
+                                    <button type="button" class="btn btn-secondary"><i class="fa-solid fa-file-arrow-down"></i> Download Backup</button>
+                                </div>
+                            </form>
+
+                            <!-- Warning Area -->
+                            <div class="warning-panel">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <div>
+                                    <h4>Administrative Sensitivity Notice</h4>
+                                    <p>Restore and delete operations are sensitive administrative actions that can overwrite current database records. Proceed with extreme caution.</p>
+                                </div>
+                            </div>
+
+                            <!-- Empty state example for Backups -->
+                            <!--
+                            <div class="empty-state">
+                                <div class="empty-icon"><i class="fa-solid fa-database"></i></div>
+                                <h3>No Backups Found</h3>
+                                <p>There are no historical backup snapshots available in storage.</p>
+                                <button class="btn btn-primary">Create First Backup</button>
+                            </div>
+                            -->
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- AUDIT LOGS -->
+                        <section id="audit-logs" class="settings-section">
+                            <div class="section-header">
+                                <h2>Audit Logs</h2>
+                                <p>Track chronological administrative events, security triggers, and system actions.</p>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Log ID</th>
+                                            <th>Date & Time</th>
+                                            <th>User</th>
+                                            <th>Action</th>
+                                            <th>Module</th>
+                                            <th>IP / Session</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>LOG-9001</td>
+                                            <td>15 Aug 2026, 09:12 AM</td>
+                                            <td>Dr. Jonathan Isaac</td>
+                                            <td>Login</td>
+                                            <td>Authentication</td>
+                                            <td>[Session-Placeholder-A1]</td>
+                                            <td><span class="status-badge active">Success</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>LOG-9002</td>
+                                            <td>15 Aug 2026, 08:45 AM</td>
+                                            <td>Amanda Waller</td>
+                                            <td>Patient Created</td>
+                                            <td>Patients</td>
+                                            <td>[Session-Placeholder-A2]</td>
+                                            <td><span class="status-badge active">Success</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>LOG-9003</td>
+                                            <td>14 Aug 2026, 05:30 PM</td>
+                                            <td>Dr. Robert Chen</td>
+                                            <td>Appointment Updated</td>
+                                            <td>Appointments</td>
+                                            <td>[Session-Placeholder-B4]</td>
+                                            <td><span class="status-badge active">Success</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>LOG-9004</td>
+                                            <td>14 Aug 2026, 03:15 PM</td>
+                                            <td>Kevin Vance</td>
+                                            <td>Invoice Created</td>
+                                            <td>Billing</td>
+                                            <td>[Session-Placeholder-C1]</td>
+                                            <td><span class="status-badge active">Success</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>LOG-9005</td>
+                                            <td>14 Aug 2026, 02:10 PM</td>
+                                            <td>Kevin Vance</td>
+                                            <td>Payment Recorded</td>
+                                            <td>Payments</td>
+                                            <td>[Session-Placeholder-C1]</td>
+                                            <td><span class="status-badge active">Success</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>LOG-9006</td>
+                                            <td>13 Aug 2026, 11:22 AM</td>
+                                            <td>Mark Ruffalo</td>
+                                            <td>Medicine Updated</td>
+                                            <td>Pharmacy</td>
+                                            <td>[Session-Placeholder-D3]</td>
+                                            <td><span class="status-badge active">Success</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>LOG-9007</td>
+                                            <td>13 Aug 2026, 10:05 AM</td>
+                                            <td>Elena Rostova</td>
+                                            <td>Lab Report Released</td>
+                                            <td>Laboratory</td>
+                                            <td>[Session-Placeholder-E5]</td>
+                                            <td><span class="status-badge active">Success</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>LOG-9008</td>
+                                            <td>12 Aug 2026, 04:50 PM</td>
+                                            <td>Dr. Jonathan Isaac</td>
+                                            <td>Settings Changed</td>
+                                            <td>Settings</td>
+                                            <td>[Session-Placeholder-A1]</td>
+                                            <td><span class="status-badge warning">Warning</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>LOG-9009</td>
+                                            <td>12 Aug 2026, 01:14 PM</td>
+                                            <td>Unknown User</td>
+                                            <td>Login</td>
+                                            <td>Authentication</td>
+                                            <td>[Session-Placeholder-F9]</td>
+                                            <td><span class="status-badge suspended">Failed</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>LOG-9010</td>
+                                            <td>11 Aug 2026, 09:00 AM</td>
+                                            <td>Sarah Jenkins</td>
+                                            <td>Appointment Updated</td>
+                                            <td>Appointments</td>
+                                            <td>[Session-Placeholder-G2]</td>
+                                            <td><span class="status-badge active">Success</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Empty state example for Audit Logs -->
+                            <!--
+                            <div class="empty-state">
+                                <div class="empty-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+                                <h3>No Audit Logs</h3>
+                                <p>There are no audit trail entries recorded within the selected period.</p>
+                            </div>
+                            -->
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- SYSTEM INFORMATION -->
+                        <section id="system-information" class="settings-section">
+                            <div class="section-header">
+                                <h2>System Information</h2>
+                                <p>Runtime versions, software environments, and health status indicators.</p>
+                            </div>
+
+                            <div class="system-health-banner">
+                                <div class="health-indicator active"></div>
+                                <span>System Health: <strong>Optimal / All Services Operational</strong></span>
+                            </div>
+
+                            <div class="info-grid">
+                                <div class="info-card">
+                                    <span class="label">Application Name</span>
+                                    <span class="value">ISAAC CLINIC</span>
+                                </div>
+                                <div class="info-card">
+                                    <span class="label">Version</span>
+                                    <span class="value">v4.2.0-stable</span>
+                                </div>
+                                <div class="info-card">
+                                    <span class="label">Environment</span>
+                                    <span class="value">Production</span>
+                                </div>
+                                <div class="info-card">
+                                    <span class="label">Database Status</span>
+                                    <span class="value text-success">Connected (PostgreSQL)</span>
+                                </div>
+                                <div class="info-card">
+                                    <span class="label">Server Status</span>
+                                    <span class="value text-success">Online (99.98% Uptime)</span>
+                                </div>
+                                <div class="info-card">
+                                    <span class="label">Storage Status</span>
+                                    <span class="value">42% Used (420 GB / 1 TB)</span>
+                                </div>
+                                <div class="info-card">
+                                    <span class="label">Last System Check</span>
+                                    <span class="value">Today, 06:00 AM</span>
+                                </div>
+                                <div class="info-card">
+                                    <span class="label">License Status</span>
+                                    <span class="value text-success">Valid (Enterprise Unlimited)</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- DANGER ZONE -->
+                        <section id="danger-zone" class="settings-section danger-zone-container">
+                            <div class="section-header">
+                                <h2>Danger Zone</h2>
+                                <p>Destructive actions that permanently modify or purge clinic system records.</p>
+                            </div>
+                            <div class="danger-box">
+                                <div class="danger-action-item">
+                                    <div>
+                                        <h4>Disable Clinic Account</h4>
+                                        <p>Suspend all inbound operations and lock out non-admin access.</p>
+                                    </div>
+                                    <button type="button" class="btn btn-danger-outline">Disable Account</button>
+                                </div>
+                                <div class="danger-action-item">
+                                    <div>
+                                        <h4>Clear Cache</h4>
+                                        <p>Purge temporary runtime files, cached queries, and compiled assets.</p>
+                                    </div>
+                                    <button type="button" class="btn btn-danger-outline">Clear Cache</button>
+                                </div>
+                                <div class="danger-action-item">
+                                    <div>
+                                        <h4>Reset System Settings</h4>
+                                        <p>Revert all global configurations back to factory default values.</p>
+                                    </div>
+                                    <button type="button" class="btn btn-danger-outline">Reset Settings</button>
+                                </div>
+                                <div class="danger-action-item">
+                                    <div>
+                                        <h4>Delete Clinic Data</h4>
+                                        <p>Permanently erase all medical, financial, and patient records from storage.</p>
+                                    </div>
+                                    <button type="button" class="btn btn-danger">Delete All Data</button>
+                                </div>
+                            </div>
+                            <p class="danger-warning-note">
+                                <i class="fa-solid fa-triangle-exclamation"></i> Destructive actions require secondary confirmation and appropriate administrative authorization.
+                            </p>
+                        </section>
+
+                    </div>
+                </div>
+
+            </main>
+
+            <!-- FOOTER -->
+            <footer class="app-footer">
+                <div class="footer-left">
+                    <span>&copy; 2026 ISAAC CLINIC. All rights reserved.</span>
+                </div>
+                <div class="footer-right">
+                    <span>Premium Clinic Management Dashboard v4.2</span>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- SAVE BAR -->
+    <aside class="save-bar" aria-label="Save Changes Notification Bar">
+        <div class="save-bar-content">
+            <span class="unsaved-indicator"><i class="fa-solid fa-circle-exclamation"></i> You have unsaved changes in your settings.</span>
+            <div class="save-bar-actions">
+                <button type="button" class="btn btn-secondary">Discard Changes</button>
+                <button type="button" class="btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </aside>
+
+</body>
+</html>

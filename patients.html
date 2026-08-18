@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients Management — ISAAC CLINIC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container" class="app-layout">
+        <!-- SIDEBAR -->
+        <aside id="sidebar" class="sidebar" aria-label="Main Navigation">
+            <div class="sidebar-brand">
+                <span class="brand-title">ISAAC CLINIC</span>
+                <span class="brand-subtitle">Clinic Management</span>
+            </div>
+            
+            <nav class="sidebar-nav" aria-label="Sidebar Navigation">
+                <div class="nav-section">
+                    <span class="nav-section-title">MAIN</span>
+                    <ul>
+                        <li>
+                            <a href="index.html" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">📊</span>
+                                <span class="nav-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="patients.html" class="nav-item active" aria-current="page">
+                                <span class="nav-icon" aria-hidden="true">👥</span>
+                                <span class="nav-text">Patients</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#appointments" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">📅</span>
+                                <span class="nav-text">Appointments</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#doctors" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">🩺</span>
+                                <span class="nav-text">Doctors</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#staff" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">👥</span>
+                                <span class="nav-text">Staff</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-section-title">CLINICAL</span>
+                    <ul>
+                        <li>
+                            <a href="#prescriptions" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">💊</span>
+                                <span class="nav-text">Prescriptions</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#laboratory" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">🧪</span>
+                                <span class="nav-text">Laboratory</span>
+                                <span class="badge" aria-label="3 pending items">3</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pharmacy" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">🏥</span>
+                                <span class="nav-text">Pharmacy</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#medical-records" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">📁</span>
+                                <span class="nav-text">Medical Records</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-section-title">FINANCE</span>
+                    <ul>
+                        <li>
+                            <a href="#billing" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">💳</span>
+                                <span class="nav-text">Billing</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#payments" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">💰</span>
+                                <span class="nav-text">Payments</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#expenses" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">📉</span>
+                                <span class="nav-text">Expenses</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-section-title">MANAGEMENT</span>
+                    <ul>
+                        <li>
+                            <a href="#reports" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">📈</span>
+                                <span class="nav-text">Reports</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#settings" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">⚙️</span>
+                                <span class="nav-text">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-user-profile">
+                    <div class="user-avatar-placeholder" aria-hidden="true">DR</div>
+                    <div class="user-info">
+                        <span class="user-name">Dr. Alexander Isaac</span>
+                        <span class="user-role">Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN WRAPPER -->
+        <div class="main-wrapper">
+            <!-- TOP HEADER -->
+            <header id="top-header" class="top-header">
+                <div class="header-left">
+                    <button id="sidebar-toggle" class="sidebar-toggle-btn" aria-label="Toggle Navigation Sidebar">
+                        <span aria-hidden="true">☰</span>
+                    </button>
+                    <div class="breadcrumb-container">
+                        <h1 class="page-title">Patients</h1>
+                        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+                            <span class="breadcrumb-item">Dashboard</span>
+                            <span class="breadcrumb-separator" aria-hidden="true">/</span>
+                            <span class="breadcrumb-item active" aria-current="page">Patients</span>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <div class="search-container">
+                        <label for="global-search" class="sr-only">Search records</label>
+                        <input type="search" id="global-search" class="global-search-input" placeholder="Search records..." aria-label="Search records">
+                    </div>
+                    
+                    <button id="notification-btn" class="header-icon-btn" aria-label="View notifications">
+                        <span aria-hidden="true">🔔</span>
+                        <span class="notification-dot" aria-hidden="true"></span>
+                    </button>
+
+                    <div class="header-user-area">
+                        <div class="header-user-avatar" aria-hidden="true">AI</div>
+                        <div class="header-user-details">
+                            <span class="header-user-name">Dr. Alexander Isaac</span>
+                            <span class="header-user-role">Chief Medical Officer</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- MAIN CONTENT AREA -->
+            <main id="main-content" class="main-content">
+                <!-- PAGE HEADER -->
+                <section id="page-header-section" class="page-header-section" aria-label="Patients Page Header">
+                    <div class="page-header-content">
+                        <div class="page-header-text">
+                            <h2>Patients</h2>
+                            <p>Manage patient records, appointments, medical information and patient activity.</p>
+                            <div class="patient-count-summary">
+                                <span class="summary-label">Total Patients:</span>
+                                <span class="summary-value">3,842</span>
+                            </div>
+                        </div>
+                        <div class="page-header-actions">
+                            <button type="button" class="btn btn-primary" id="btn-add-new-patient">
+                                <span aria-hidden="true">+</span> Add New Patient
+                            </button>
+                            <button type="button" class="btn btn-secondary" id="btn-export-patients">
+                                <span aria-hidden="true">📥</span> Export Patients
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PATIENT STATISTICS -->
+                <section id="patient-stats-section" class="kpi-section" aria-label="Patient Statistics">
+                    <article class="kpi-card kpi-total-patients">
+                        <div class="kpi-icon-container" aria-hidden="true">👥</div>
+                        <div class="kpi-data">
+                            <span class="kpi-label">Total Patients</span>
+                            <span class="kpi-value">3,842</span>
+                            <span class="kpi-support-text">Registered clinic database</span>
+                        </div>
+                    </article>
+
+                    <article class="kpi-card kpi-new-patients">
+                        <div class="kpi-icon-container" aria-hidden="true">➕</div>
+                        <div class="kpi-data">
+                            <span class="kpi-label">New Patients</span>
+                            <span class="kpi-value">148</span>
+                            <div class="kpi-trend positive">
+                                <span aria-hidden="true">↑</span> +12% this month
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="kpi-card kpi-active-patients">
+                        <div class="kpi-icon-container" aria-hidden="true">🟢</div>
+                        <div class="kpi-data">
+                            <span class="kpi-label">Active Patients</span>
+                            <span class="kpi-value">2,910</span>
+                            <span class="kpi-support-text">Visited within last 90 days</span>
+                        </div>
+                    </article>
+
+                    <article class="kpi-card kpi-inactive-patients">
+                        <div class="kpi-icon-container" aria-hidden="true">⚪</div>
+                        <div class="kpi-data">
+                            <span class="kpi-label">Inactive Patients</span>
+                            <span class="kpi-value">932</span>
+                            <span class="kpi-support-text">No visit in over 90 days</span>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- SEARCH AND FILTER TOOLBAR -->
+                <section id="patient-filter-section" class="filter-toolbar-section" aria-label="Patient Search and Filters">
+                    <form class="filter-form" role="search">
+                        <div class="filter-row">
+                            <div class="filter-group search-group">
+                                <label for="patient-search-input">Search Patient</label>
+                                <input type="search" id="patient-search-input" placeholder="Search by Patient ID, Name, Phone or Email" aria-label="Search by Patient ID, Name, Phone or Email">
+                            </div>
+                            
+                            <div class="filter-group">
+                                <label for="filter-gender">Gender</label>
+                                <select id="filter-gender" name="gender">
+                                    <option value="">All Genders</option>
+                                    <option value="female">Female</option>
+                                    <option value="male">Male</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="filter-group">
+                                <label for="filter-age-group">Age Group</label>
+                                <select id="filter-age-group" name="age_group">
+                                    <option value="">All Ages</option>
+                                    <option value="pediatric">Pediatric (0-17)</option>
+                                    <option value="adult">Adult (18-64)</option>
+                                    <option value="senior">Senior (65+)</option>
+                                </select>
+                            </div>
+
+                            <div class="filter-group">
+                                <label for="filter-blood-group">Blood Group</label>
+                                <select id="filter-blood-group" name="blood_group">
+                                    <option value="">All Blood Groups</option>
+                                    <option value="a-pos">A+</option>
+                                    <option value="a-neg">A-</option>
+                                    <option value="b-pos">B+</option>
+                                    <option value="b-neg">B-</option>
+                                    <option value="o-pos">O+</option>
+                                    <option value="o-neg">O-</option>
+                                    <option value="ab-pos">AB+</option>
+                                    <option value="ab-neg">AB-</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="filter-row">
+                            <div class="filter-group">
+                                <label for="filter-status">Patient Status</label>
+                                <select id="filter-status" name="status">
+                                    <option value="">All Statuses</option>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                    <option value="follow-up">Follow-up</option>
+                                    <option value="new">New</option>
+                                </select>
+                            </div>
+
+                            <div class="filter-group">
+                                <label for="filter-doctor">Assigned Doctor</label>
+                                <select id="filter-doctor" name="doctor">
+                                    <option value="">All Doctors</option>
+                                    <option value="dr-jenkins">Dr. Sarah Jenkins</option>
+                                    <option value="dr-chen">Dr. Robert Chen</option>
+                                    <option value="dr-thorne">Dr. Emily Thorne</option>
+                                    <option value="dr-vance">Dr. Michael Vance</option>
+                                </select>
+                            </div>
+
+                            <div class="filter-group">
+                                <label for="filter-reg-date">Registration Date</label>
+                                <input type="date" id="filter-reg-date" name="registration_date">
+                            </div>
+
+                            <div class="filter-actions">
+                                <button type="button" class="btn btn-primary" id="btn-apply-search">Search</button>
+                                <button type="button" class="btn btn-secondary" id="btn-apply-filter">Filter</button>
+                                <button type="reset" class="btn btn-text" id="btn-reset-filters">Reset</button>
+                                <button type="button" class="btn btn-outline" id="btn-export-filtered">Export</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- BULK ACTION BAR PLACEHOLDER -->
+                <div id="bulk-action-bar" class="bulk-action-bar hidden" aria-hidden="true">
+                    <div class="bulk-info">
+                        <span id="selected-count">0</span> patients selected
+                    </div>
+                    <div class="bulk-buttons">
+                        <button type="button" class="btn btn-sm btn-secondary">Export Selected</button>
+                        <button type="button" class="btn btn-sm btn-secondary">Archive</button>
+                        <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                    </div>
+                </div>
+
+                <!-- PATIENT TABLE SECTION -->
+                <section id="patient-table-section" class="dashboard-section" aria-labelledby="patient-table-title">
+                    <div class="section-header">
+                        <h3 id="patient-table-title" class="section-title">All Patients</h3>
+                    </div>
+                    <div class="table-responsive-container">
+                        <table class="data-table" aria-label="All Patients Management Table">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="table-checkbox-col">
+                                        <input type="checkbox" id="select-all-patients" aria-label="Select all patients">
+                                    </th>
+                                    <th scope="col">Patient ID</th>
+                                    <th scope="col">Patient</th>
+                                    <th scope="col">Age</th>
+                                    <th scope="col">Gender</th>
+                                    <th scope="col">Contact</th>
+                                    <th scope="col">Blood Group</th>
+                                    <th scope="col">Last Visit</th>
+                                    <th scope="col">Assigned Doctor</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select patient Alice Williams"></td>
+                                    <td>#PT-9021</td>
+                                    <td>
+                                        <div class="patient-cell-info">
+                                            <div class="table-avatar-placeholder" aria-hidden="true">AW</div>
+                                            <span class="patient-name-text">Alice Williams</span>
+                                        </div>
+                                    </td>
+                                    <td>34</td>
+                                    <td>Female</td>
+                                    <td>+1 (555) 019-2834</td>
+                                    <td>O+</td>
+                                    <td>Aug 14, 2026</td>
+                                    <td>Dr. Sarah Jenkins</td>
+                                    <td><span class="status-badge status-active">Active</span></td>
+                                    <td>
+                                        <div class="action-buttons-group">
+                                            <button type="button" class="btn-action" aria-label="View patient Alice Williams">👁️</button>
+                                            <button type="button" class="btn-action" aria-label="Edit patient Alice Williams">✏️</button>
+                                            <button type="button" class="btn-action" aria-label="Medical record for Alice Williams">📁</button>
+                                            <button type="button" class="btn-action" aria-label="More actions for Alice Williams">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select patient David Miller"></td>
+                                    <td>#PT-9022</td>
+                                    <td>
+                                        <div class="patient-cell-info">
+                                            <div class="table-avatar-placeholder" aria-hidden="true">DM</div>
+                                            <span class="patient-name-text">David Miller</span>
+                                        </div>
+                                    </td>
+                                    <td>45</td>
+                                    <td>Male</td>
+                                    <td>+1 (555) 014-9281</td>
+                                    <td>A+</td>
+                                    <td>Aug 13, 2026</td>
+                                    <td>Dr. Robert Chen</td>
+                                    <td><span class="status-badge status-active">Active</span></td>
+                                    <td>
+                                        <div class="action-buttons-group">
+                                            <button type="button" class="btn-action" aria-label="View patient David Miller">👁️</button>
+                                            <button type="button" class="btn-action" aria-label="Edit patient David Miller">✏️</button>
+                                            <button type="button" class="btn-action" aria-label="Medical record for David Miller">📁</button>
+                                            <button type="button" class="btn-action" aria-label="More actions for David Miller">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select patient Sophia Taylor"></td>
+                                    <td>#PT-9023</td>
+                                    <td>
+                                        <div class="patient-cell-info">
+                                            <div class="table-avatar-placeholder" aria-hidden="true">ST</div>
+                                            <span class="patient-name-text">Sophia Taylor</span>
+                                        </div>
+                                    </td>
+                                    <td>29</td>
+                                    <td>Female</td>
+                                    <td>+1 (555) 018-3746</td>
+                                    <td>B-</td>
+                                    <td>Aug 12, 2026</td>
+                                    <td>Dr. Emily Thorne</td>
+                                    <td><span class="status-badge status-inactive">Inactive</span></td>
+                                    <td>
+                                        <div class="action-buttons-group">
+                                            <button type="button" class="btn-action" aria-label="View patient Sophia Taylor">👁️</button>
+                                            <button type="button" class="btn-action" aria-label="Edit patient Sophia Taylor">✏️</button>
+                                            <button type="button" class="btn-action" aria-label="Medical record for Sophia Taylor">📁</button>
+                                            <button type="button" class="btn-action" aria-label="More actions for Sophia Taylor">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select patient James Anderson"></td>
+                                    <td>#PT-9024</td>
+                                    <td>
+                                        <div class="patient-cell-info">
+                                            <div class="table-avatar-placeholder" aria-hidden="true">JA</div>
+                                            <span class="patient-name-text">James Anderson</span>
+                                        </div>
+                                    </td>
+                                    <td>52</td>
+                                    <td>Male</td>
+                                    <td>+1 (555) 012-8493</td>
+                                    <td>AB+</td>
+                                    <td>Aug 10, 2026</td>
+                                    <td>Dr. Michael Vance</td>
+                                    <td><span class="status-badge status-active">Active</span></td>
+                                    <td>
+                                        <div class="action-buttons-group">
+                                            <button type="button" class="btn-action" aria-label="View patient James Anderson">👁️</button>
+                                            <button type="button" class="btn-action" aria-label="Edit patient James Anderson">✏️</button>
+                                            <button type="button" class="btn-action" aria-label="Medical record for James Anderson">📁</button>
+                                            <button type="button" class="btn-action" aria-label="More actions for James Anderson">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select patient Olivia Martinez"></td>
+                                    <td>#PT-9025</td>
+                                    <td>
+                                        <div class="patient-cell-info">
+                                            <div class="table-avatar-placeholder" aria-hidden="true">OM</div>
+                                            <span class="patient-name-text">Olivia Martinez</span>
+                                        </div>
+                                    </td>
+                                    <td>41</td>
+                                    <td>Female</td>
+                                    <td>+1 (555) 017-5932</td>
+                                    <td>O-</td>
+                                    <td>Aug 09, 2026</td>
+                                    <td>Dr. Sarah Jenkins</td>
+                                    <td><span class="status-badge status-follow-up">Follow-up</span></td>
+                                    <td>
+                                        <div class="action-buttons-group">
+                                            <button type="button" class="btn-action" aria-label="View patient Olivia Martinez">👁️</button>
+                                            <button type="button" class="btn-action" aria-label="Edit patient Olivia Martinez">✏️</button>
+                                            <button type="button" class="btn-action" aria-label="Medical record for Olivia Martinez">📁</button>
+                                            <button type="button" class="btn-action" aria-label="More actions for Olivia Martinez">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select patient Liam Thomas"></td>
+                                    <td>#PT-9026</td>
+                                    <td>
+                                        <div class="patient-cell-info">
+                                            <div class="table-avatar-placeholder" aria-hidden="true">LT</div>
+                                            <span class="patient-name-text">Liam Thomas</span>
+                                        </div>
+                                    </td>
+                                    <td>23</td>
+                                    <td>Male</td>
+                                    <td>+1 (555) 016-4821</td>
+                                    <td>A-</td>
+                                    <td>Aug 08, 2026</td>
+                                    <td>Dr. Robert Chen</td>
+                                    <td><span class="status-badge status-new">New</span></td>
+                                    <td>
+                                        <div class="action-buttons-group">
+                                            <button type="button" class="btn-action" aria-label="View patient Liam Thomas">👁️</button>
+                                            <button type="button" class="btn-action" aria-label="Edit patient Liam Thomas">✏️</button>
+                                            <button type="button" class="btn-action" aria-label="Medical record for Liam Thomas">📁</button>
+                                            <button type="button" class="btn-action" aria-label="More actions for Liam Thomas">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select patient Charlotte White"></td>
+                                    <td>#PT-9027</td>
+                                    <td>
+                                        <div class="patient-cell-info">
+                                            <div class="table-avatar-placeholder" aria-hidden="true">CW</div>
+                                            <span class="patient-name-text">Charlotte White</span>
+                                        </div>
+                                    </td>
+                                    <td>60</td>
+                                    <td>Female</td>
+                                    <td>+1 (555) 015-3719</td>
+                                    <td>B+</td>
+                                    <td>Aug 05, 2026</td>
+                                    <td>Dr. Emily Thorne</td>
+                                    <td><span class="status-badge status-active">Active</span></td>
+                                    <td>
+                                        <div class="action-buttons-group">
+                                            <button type="button" class="btn-action" aria-label="View patient Charlotte White">👁️</button>
+                                            <button type="button" class="btn-action" aria-label="Edit patient Charlotte White">✏️</button>
+                                            <button type="button" class="btn-action" aria-label="Medical record for Charlotte White">📁</button>
+                                            <button type="button" class="btn-action" aria-label="More actions for Charlotte White">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" aria-label="Select patient Benjamin Harris"></td>
+                                    <td>#PT-9028</td>
+                                    <td>
+                                        <div class="patient-cell-info">
+                                            <div class="table-avatar-placeholder" aria-hidden="true">BH</div>
+                                            <span class="patient-name-text">Benjamin Harris</span>
+                                        </div>
+                                    </td>
+                                    <td>38</td>
+                                    <td>Male</td>
+                                    <td>+1 (555) 013-2608</td>
+                                    <td>AB-</td>
+                                    <td>Aug 04, 2026</td>
+                                    <td>Dr. Michael Vance</td>
+                                    <td><span class="status-badge status-inactive">Inactive</span></td>
+                                    <td>
+                                        <div class="action-buttons-group">
+                                            <button type="button" class="btn-action" aria-label="View patient Benjamin Harris">👁️</button>
+                                            <button type="button" class="btn-action" aria-label="Edit patient Benjamin Harris">✏️</button>
+                                            <button type="button" class="btn-action" aria-label="Medical record for Benjamin Harris">📁</button>
+                                            <button type="button" class="btn-action" aria-label="More actions for Benjamin Harris">⋮</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- EMPTY STATE (REUSABLE PLACEHOLDER) -->
+                    <div id="patient-empty-state" class="empty-state hidden" aria-hidden="true">
+                        <div class="empty-state-icon" aria-hidden="true">🔍</div>
+                        <h4 class="empty-state-title">No Patients Found</h4>
+                        <p class="empty-state-text">No patient records match your current search criteria or applied filters. Try adjusting your query or resetting filters.</p>
+                        <div class="empty-state-actions">
+                            <button type="button" class="btn btn-primary">Add New Patient</button>
+                            <button type="button" class="btn btn-secondary">Clear Filters</button>
+                        </div>
+                    </div>
+
+                    <!-- PAGINATION -->
+                    <div class="pagination-container" aria-label="Patient Table Pagination">
+                        <div class="pagination-info">
+                            Showing <span>1–10</span> of <span>3,842</span> results
+                        </div>
+                        <div class="pagination-controls">
+                            <button type="button" class="btn-page" aria-label="Previous page" disabled>Previous</button>
+                            <button type="button" class="btn-page active" aria-current="page">1</button>
+                            <button type="button" class="btn-page">2</button>
+                            <button type="button" class="btn-page">3</button>
+                            <button type="button" class="btn-page">4</button>
+                            <button type="button" class="btn-page" aria-label="Next page">Next</button>
+                        </div>
+                        <div class="pagination-per-page">
+                            <label for="rows-per-page">Rows per page:</label>
+                            <select id="rows-per-page" name="rows_per_page">
+                                <option value="10" selected>10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PATIENT PROFILE PREVIEW SIDE-PANEL / MODAL PLACEHOLDER -->
+                <aside id="patient-profile-preview" class="side-panel-preview" aria-label="Patient Profile Preview">
+                    <div class="panel-header">
+                        <h4 class="panel-title">Patient Profile Preview</h4>
+                        <button type="button" class="btn-close" aria-label="Close panel">×</button>
+                    </div>
+                    <div class="panel-body">
+                        <div class="preview-profile-card">
+                            <div class="preview-avatar-large" aria-hidden="true">AW</div>
+                            <div class="preview-identity">
+                                <h5 class="preview-name">Alice Williams</h5>
+                                <span class="preview-id">#PT-9021</span>
+                            </div>
+                        </div>
+
+                        <div class="preview-details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Age</span>
+                                <span class="detail-value">34 Years</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Gender</span>
+                                <span class="detail-value">Female</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Contact</span>
+                                <span class="detail-value">+1 (555) 019-2834</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Blood Group</span>
+                                <span class="detail-value">O+</span>
+                            </div>
+                            <div class="detail-item full-width">
+                                <span class="detail-label">Assigned Doctor</span>
+                                <span class="detail-value">Dr. Sarah Jenkins</span>
+                            </div>
+                        </div>
+
+                        <div class="preview-quick-info">
+                            <h6 class="subsection-title">Quick Information</h6>
+                            <div class="quick-info-list">
+                                <div class="quick-info-row">
+                                    <span>Last Visit</span>
+                                    <span>Aug 14, 2026</span>
+                                </div>
+                                <div class="quick-info-row">
+                                    <span>Next Appointment</span>
+                                    <span>Sep 01, 2026</span>
+                                </div>
+                                <div class="quick-info-row">
+                                    <span>Total Visits</span>
+                                    <span>12</span>
+                                </div>
+                                <div class="quick-info-row">
+                                    <span>Outstanding Balance</span>
+                                    <span class="text-highlight">$0.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="preview-quick-actions">
+                            <h6 class="subsection-title">Quick Actions</h6>
+                            <div class="quick-action-buttons">
+                                <button type="button" class="btn btn-sm btn-primary">View Profile</button>
+                                <button type="button" class="btn btn-sm btn-secondary">Medical Records</button>
+                                <button type="button" class="btn btn-sm btn-secondary">Appointments</button>
+                                <button type="button" class="btn btn-sm btn-secondary">Billing</button>
+                                <button type="button" class="btn btn-sm btn-secondary">Prescription</button>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </main>
+
+            <!-- FOOTER -->
+            <footer id="dashboard-footer" class="dashboard-footer" role="contentinfo">
+                <div class="footer-left">
+                    <span class="footer-brand">ISAAC CLINIC</span>
+                    <span class="footer-copyright">&copy; 2026 Isaac Health Systems Inc. All rights reserved.</span>
+                </div>
+                <div class="footer-center">
+                    <a href="#privacy" class="footer-link">Privacy Policy</a>
+                    <span class="footer-separator" aria-hidden="true">•</span>
+                    <a href="#terms" class="footer-link">Terms of Service</a>
+                </div>
+                <div class="footer-right">
+                    <span class="footer-version">Version 3.4.2-Pro</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

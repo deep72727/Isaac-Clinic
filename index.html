@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISAAC CLINIC — Premium Clinic Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container" class="app-layout">
+        <!-- SIDEBAR -->
+        <aside id="sidebar" class="sidebar" aria-label="Main Navigation">
+            <div class="sidebar-brand">
+                <span class="brand-title">ISAAC CLINIC</span>
+                <span class="brand-subtitle">Clinic Management</span>
+            </div>
+            
+            <nav class="sidebar-nav" aria-label="Sidebar Navigation">
+                <div class="nav-section">
+                    <span class="nav-section-title">MAIN</span>
+                    <ul>
+                        <li>
+                            <a href="#dashboard" class="nav-item active" aria-current="page">
+                                <span class="nav-icon" aria-hidden="true">📊</span>
+                                <span class="nav-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./patients.html" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">👥</span>
+                                <span class="nav-text">Patients</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./appointments.html" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">📅</span>
+                                <span class="nav-text">Appointments</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./doctors.html" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">🩺</span>
+                                <span class="nav-text">Doctors</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#staff" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">Staff</span>
+                                <span class="nav-text">Staff</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-section-title">CLINICAL</span>
+                    <ul>
+                        <li>
+                            <a href="#prescriptions" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">💊</span>
+                                <span class="nav-text">Prescriptions</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./laboratory.html" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">🧪</span>
+                                <span class="nav-text">Laboratory</span>
+                                <span class="badge" aria-label="3 pending items">3</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./pharmacy.html" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">🏥</span>
+                                <span class="nav-text">Pharmacy</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#medical-records" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">📁</span>
+                                <span class="nav-text">Medical Records</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-section-title">FINANCE</span>
+                    <ul>
+                        <li>
+                            <a href="./billing.html" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">💳</span>
+                                <span class="nav-text">Billing</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#payments" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">💰</span>
+                                <span class="nav-text">Payments</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#expenses" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">📉</span>
+                                <span class="nav-text">Expenses</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <span class="nav-section-title">MANAGEMENT</span>
+                    <ul>
+                        <li>
+                            <a href="./reports.html" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">📈</span>
+                                <span class="nav-text">Reports</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./settings.html" class="nav-item">
+                                <span class="nav-icon" aria-hidden="true">⚙️</span>
+                                <span class="nav-text">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-user-profile">
+                    <div class="user-avatar-placeholder" aria-hidden="true">DR</div>
+                    <div class="user-info">
+                        <span class="user-name">Dr.Meenakshi Arya</span>
+                        <span class="user-role">Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN WRAPPER -->
+        <div class="main-wrapper">
+            <!-- TOP HEADER -->
+            <header id="top-header" class="top-header">
+                <div class="header-left">
+                    <button id="sidebar-toggle" class="sidebar-toggle-btn" aria-label="Toggle Navigation Sidebar">
+                        <span aria-hidden="true">☰</span>
+                    </button>
+                    <h1 class="page-title">Dashboard</h1>
+                    <div class="location-placeholder">
+                        <span class="location-icon" aria-hidden="true">📍</span>
+                        <span class="location-text">Main Campus - Suite 400</span>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <div class="search-container">
+                        <label for="global-search" class="sr-only">Search patients, doctors, or appointments</label>
+                        <input type="search" id="global-search" class="global-search-input" placeholder="Search records..." aria-label="Search records">
+                    </div>
+                    
+                    <button id="notification-btn" class="header-icon-btn" aria-label="View notifications">
+                        <span aria-hidden="true">🔔</span>
+                        <span class="notification-dot" aria-hidden="true"></span>
+                    </button>
+
+                    <div class="header-user-area">
+                        <div class="header-user-avatar" aria-hidden="true"></div>
+                        <div class="header-user-details">
+                            <span class="header-user-name"  style="color: black; font-weight: bold;"    >Dr. Meenakshi Arya</span>
+                            <span class="header-user-role" style="color: black; font-weight: bold;"         >Chief Medical Officer</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- MAIN CONTENT AREA -->
+            <main id="main-content" class="main-content">
+                <!-- DASHBOARD WELCOME SECTION -->
+                <section id="welcome-section" class="welcome-section" aria-label="Dashboard Welcome">
+                    <div class="welcome-text-content">
+                        <h2 class="welcome-greeting">Good Morning, Dr. Isaac</h2>
+                        <p class="welcome-overview">Here is your daily clinical overview, active patient schedule, and operational metrics for today.</p>
+                        <div class="current-date-placeholder">
+                            <span aria-hidden="true">📅</span> 
+                            <time datetime="2026-08-15">Saturday, August 15, 2026</time>
+                        </div>
+                    </div>
+                    <div class="welcome-actions">
+                        <button type="button" class="btn btn-primary" id="btn-new-appointment">
+                            <span aria-hidden="true">+</span> New Appointment
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="btn-add-patient">
+                            <span aria-hidden="true">+</span> Add Patient
+                        </button>
+                    </div>
+                </section>
+
+                <!-- KPI / STATISTICS SECTION -->
+                <section id="kpi-section" class="kpi-section" aria-label="Clinic Key Performance Indicators">
+                    <article class="kpi-card kpi-patients">
+                        <div class="kpi-icon-container" aria-hidden="true">👥</div>
+                        <div class="kpi-data">
+                            <span class="kpi-label">Total Patients</span>
+                            <span class="kpi-value">3,842</span>
+                            <div class="kpi-trend positive">
+                                <span aria-hidden="true">↑</span> +12.5% from last month
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="kpi-card kpi-appointments">
+                        <div class="kpi-icon-container" aria-hidden="true">📅</div>
+                        <div class="kpi-data">
+                            <span class="kpi-label">Today's Appointments</span>
+                            <span class="kpi-value">48</span>
+                            <div class="kpi-trend positive">
+                                <span aria-hidden="true">↑</span> +4.2% vs yesterday
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="kpi-card kpi-doctors">
+                        <div class="kpi-icon-container" aria-hidden="true">🩺</div>
+                        <div class="kpi-data">
+                            <span class="kpi-label">Total Doctors</span>
+                            <span class="kpi-value">24</span>
+                            <span class="kpi-support-text">All departments active</span>
+                        </div>
+                    </article>
+
+                    <article class="kpi-card kpi-revenue">
+                        <div class="kpi-icon-container" aria-hidden="true">💰</div>
+                        <div class="kpi-data">
+                            <span class="kpi-label">Today's Revenue</span>
+                            <span class="kpi-value">$12,450</span>
+                            <div class="kpi-trend positive">
+                                <span aria-hidden="true">↑</span> +8.1% target met
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- APPOINTMENT OVERVIEW SECTION -->
+                <section id="appointment-overview" class="dashboard-section" aria-labelledby="appointment-overview-title">
+                    <div class="section-header">
+                        <h3 id="appointment-overview-title" class="section-title">Today's Appointments</h3>
+                        <button type="button" class="btn-text" id="view-all-appointments">View All</button>
+                    </div>
+                    <div class="table-responsive-container">
+                        <table class="data-table" aria-label="Today's Appointments List">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Patient</th>
+                                    <th scope="col">Doctor</th>
+                                    <th scope="col">Time</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>John Doe</td>
+                                    <td>Dr. Sarah Jenkins</td>
+                                    <td>09:00 AM</td>
+                                    <td>General Consultation</td>
+                                    <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                                    <td><button type="button" class="btn-action" aria-label="Manage appointment for John Doe">Manage</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Jane Smith</td>
+                                    <td>Dr. Robert Chen</td>
+                                    <td>09:30 AM</td>
+                                    <td>Cardiology Checkup</td>
+                                    <td><span class="status-badge status-waiting">Waiting</span></td>
+                                    <td><button type="button" class="btn-action" aria-label="Manage appointment for Jane Smith">Manage</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Robert Johnson</td>
+                                    <td>Dr. Emily Thorne</td>
+                                    <td>10:15 AM</td>
+                                    <td>Neurology Follow-up</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                    <td><button type="button" class="btn-action" aria-label="Manage appointment for Robert Johnson">Manage</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Emily Davis</td>
+                                    <td>Dr. Michael Vance</td>
+                                    <td>11:00 AM</td>
+                                    <td>Pediatric Exam</td>
+                                    <td><span class="status-badge status-cancelled">Cancelled</span></td>
+                                    <td><button type="button" class="btn-action" aria-label="Manage appointment for Emily Davis">Manage</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Michael Brown</td>
+                                    <td>Dr. Sarah Jenkins</td>
+                                    <td>11:45 AM</td>
+                                    <td>Dermatology Consultation</td>
+                                    <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                                    <td><button type="button" class="btn-action" aria-label="Manage appointment for Michael Brown">Manage</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- PATIENT OVERVIEW SECTION -->
+                <section id="patient-overview" class="dashboard-section" aria-labelledby="patient-overview-title">
+                    <div class="section-header">
+                        <h3 id="patient-overview-title" class="section-title">Recent Patients</h3>
+                        <button type="button" class="btn-text" id="view-all-patients">View All</button>
+                    </div>
+                    <div class="table-responsive-container">
+                        <table class="data-table" aria-label="Recent Patients List">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Patient ID</th>
+                                    <th scope="col">Patient Name</th>
+                                    <th scope="col">Age</th>
+                                    <th scope="col">Gender</th>
+                                    <th scope="col">Last Visit</th>
+                                    <th scope="col">Doctor</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#PT-9021</td>
+                                    <td>Alice Williams</td>
+                                    <td>34</td>
+                                    <td>Female</td>
+                                    <td>Aug 14, 2026</td>
+                                    <td>Dr. Sarah Jenkins</td>
+                                    <td><span class="status-badge status-active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#PT-9022</td>
+                                    <td>David Miller</td>
+                                    <td>45</td>
+                                    <td>Male</td>
+                                    <td>Aug 13, 2026</td>
+                                    <td>Dr. Robert Chen</td>
+                                    <td><span class="status-badge status-active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#PT-9023</td>
+                                    <td>Sophia Taylor</td>
+                                    <td>29</td>
+                                    <td>Female</td>
+                                    <td>Aug 12, 2026</td>
+                                    <td>Dr. Emily Thorne</td>
+                                    <td><span class="status-badge status-inactive">Inactive</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#PT-9024</td>
+                                    <td>James Anderson</td>
+                                    <td>52</td>
+                                    <td>Male</td>
+                                    <td>Aug 10, 2026</td>
+                                    <td>Dr. Michael Vance</td>
+                                    <td><span class="status-badge status-active">Active</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ANALYTICS SECTION -->
+                <div class="analytics-grid">
+                    <section id="revenue-overview" class="analytics-card" aria-labelledby="revenue-overview-title">
+                        <div class="section-header">
+                            <h3 id="revenue-overview-title" class="section-title">Revenue Overview</h3>
+                            <div class="filter-placeholder" aria-label="Filter revenue data by date">
+                                <span>Filter: This Month ▼</span>
+                            </div>
+                        </div>
+                        <div class="chart-container" id="revenue-chart-container" aria-label="Revenue chart placeholder">
+                            <!-- Chart Placeholder Container -->
+                            <div class="chart-placeholder-graphic">Revenue Chart Visualization Container</div>
+                        </div>
+                    </section>
+
+                    <section id="appointment-analytics" class="analytics-card" aria-labelledby="appointment-analytics-title">
+                        <div class="section-header">
+                            <h3 id="appointment-analytics-title" class="section-title">Appointment Analytics</h3>
+                            <div class="filter-placeholder" aria-label="Filter appointment analytics by date">
+                                <span>Filter: Weekly ▼</span>
+                            </div>
+                        </div>
+                        <div class="chart-container" id="appointment-chart-container" aria-label="Appointment analytics chart placeholder">
+                            <!-- Chart Placeholder Container -->
+                            <div class="chart-placeholder-graphic">Appointment Analytics Visualization Container</div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- QUICK ACTIONS SECTION -->
+                <section id="quick-actions" class="dashboard-section" aria-labelledby="quick-actions-title">
+                    <div class="section-header">
+                        <h3 id="quick-actions-title" class="section-title">Quick Actions</h3>
+                    </div>
+                    <div class="quick-actions-grid">
+                        <button type="button" class="quick-action-card" id="qa-new-patient">
+                            <span class="qa-icon" aria-hidden="true">👤</span>
+                            <span class="qa-label">New Patient</span>
+                        </button>
+                        <button type="button" class="quick-action-card" id="qa-new-appointment">
+                            <span class="qa-icon" aria-hidden="true">📅</span>
+                            <span class="qa-label">New Appointment</span>
+                        </button>
+                        <button type="button" class="quick-action-card" id="qa-create-invoice">
+                            <span class="qa-icon" aria-hidden="true">💳</span>
+                            <span class="qa-label">Create Invoice</span>
+                        </button>
+                        <button type="button" class="quick-action-card" id="qa-add-prescription">
+                            <span class="qa-icon" aria-hidden="true">💊</span>
+                            <span class="qa-label">Add Prescription</span>
+                        </button>
+                        <button type="button" class="quick-action-card" id="qa-add-lab-report">
+                            <span class="qa-icon" aria-hidden="true">🧪</span>
+                            <span class="qa-label">Add Lab Report</span>
+                        </button>
+                        <button type="button" class="quick-action-card" id="qa-view-reports">
+                            <span class="qa-icon" aria-hidden="true">📈</span>
+                            <span class="qa-label">View Reports</span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- SECONDARY GRID: UPCOMING APPOINTMENTS & SYSTEM STATUS -->
+                <div class="secondary-grid">
+                    <!-- UPCOMING APPOINTMENTS -->
+                    <section id="upcoming-appointments" class="dashboard-section compact-section" aria-labelledby="upcoming-title">
+                        <div class="section-header">
+                            <h3 id="upcoming-title" class="section-title">Upcoming Appointments</h3>
+                        </div>
+                        <div class="table-responsive-container">
+                            <table class="data-table compact-table" aria-label="Upcoming Appointments List">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Patient</th>
+                                        <th scope="col">Doctor</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Lucas Gray</td>
+                                        <td>Dr. Sarah Jenkins</td>
+                                        <td>Aug 16, 2026</td>
+                                        <td>09:00 AM</td>
+                                        <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mia White</td>
+                                        <td>Dr. Robert Chen</td>
+                                        <td>Aug 16, 2026</td>
+                                        <td>10:30 AM</td>
+                                        <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ethan Hunt</td>
+                                        <td>Dr. Emily Thorne</td>
+                                        <td>Aug 16, 2026</td>
+                                        <td>01:15 PM</td>
+                                        <td><span class="status-badge status-waiting">Waiting</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- SYSTEM / CLINIC STATUS -->
+                    <section id="clinic-status" class="dashboard-section compact-section" aria-labelledby="status-title">
+                        <div class="section-header">
+                            <h3 id="status-title" class="section-title">System & Clinic Status</h3>
+                        </div>
+                        <div class="status-list">
+                            <div class="status-item">
+                                <span class="status-label">Clinic Status</span>
+                                <span class="status-indicator operational">
+                                    <span class="indicator-dot" aria-hidden="true"></span> Operational
+                                </span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">Doctors Available</span>
+                                <span class="status-value-metric">22 / 24 On Duty</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">Pending Lab Reports</span>
+                                <span class="status-value-metric highlight-warning">3 Pending</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">Pending Payments</span>
+                                <span class="status-value-metric">5 Invoices</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <!-- FOOTER -->
+            <footer id="dashboard-footer" class="dashboard-footer" role="contentinfo">
+                <div class="footer-left">
+                    <span class="footer-brand">ISAAC CLINIC</span>
+                    <span class="footer-copyright">&copy; 2026 Isaac Health Systems Inc. All rights reserved.</span>
+                </div>
+                <div class="footer-right">
+                    <span class="footer-version">Version 3.4.2-Pro</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
